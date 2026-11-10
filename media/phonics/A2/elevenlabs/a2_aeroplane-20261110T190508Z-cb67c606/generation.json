@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-10T19:05:08.183381+00:00",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "model_id": "eleven_multilingual_v2",
+  "character_count": 75,
+  "output_format": "mp3_44100_128",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "speed": 0.85
+  },
+  "receipt_path": "D:\\kids-learning-app\\media\\phonics\\A2\\elevenlabs\\a2_aeroplane-20261110T190508Z-cb67c606\\generation.json",
+  "files": {
+    "audio": "D:\\kids-learning-app\\media\\phonics\\A2\\elevenlabs\\a2_aeroplane-20261110T190508Z-cb67c606\\a2_aeroplane.mp3",
+    "timing": "D:\\kids-learning-app\\media\\phonics\\A2\\elevenlabs\\a2_aeroplane-20261110T190508Z-cb67c606\\a2_aeroplane.timing.json",
+    "srt": "D:\\kids-learning-app\\media\\phonics\\A2\\elevenlabs\\a2_aeroplane-20261110T190508Z-cb67c606\\a2_aeroplane.srt",
+    "vtt": "D:\\kids-learning-app\\media\\phonics\\A2\\elevenlabs\\a2_aeroplane-20261110T190508Z-cb67c606\\a2_aeroplane.vtt",
+    "script": "D:\\kids-learning-app\\media\\phonics\\A2\\elevenlabs\\a2_aeroplane-20261110T190508Z-cb67c606\\script.txt"
+  },
+  "retry_policy": "Never retry automatically. An interrupted or timed-out POST may already have consumed credits.",
+  "provider_request_id": "5gqDhnIp9Qh0dfje24sl",
+  "history_item_id": "NXEK9uYtoS9BFTfBARr3",
+  "provider_character_cost": "30",
+  "audio_bytes": 156359,
+  "timed_text_end_seconds": 9.381,
+  "completed_at": "2026-11-10T19:05:10.241866+00:00"
+}

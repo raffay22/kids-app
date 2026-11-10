@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-10T19:15:56.691479+00:00",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "model_id": "eleven_multilingual_v2",
+  "character_count": 69,
+  "output_format": "mp3_44100_128",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "speed": 0.85
+  },
+  "receipt_path": "D:\\kids-learning-app\\media\\phonics\\B5\\elevenlabs\\b5_banana-20261110T191556Z-703477b3\\generation.json",
+  "files": {
+    "audio": "D:\\kids-learning-app\\media\\phonics\\B5\\elevenlabs\\b5_banana-20261110T191556Z-703477b3\\b5_banana.mp3",
+    "timing": "D:\\kids-learning-app\\media\\phonics\\B5\\elevenlabs\\b5_banana-20261110T191556Z-703477b3\\b5_banana.timing.json",
+    "srt": "D:\\kids-learning-app\\media\\phonics\\B5\\elevenlabs\\b5_banana-20261110T191556Z-703477b3\\b5_banana.srt",
+    "vtt": "D:\\kids-learning-app\\media\\phonics\\B5\\elevenlabs\\b5_banana-20261110T191556Z-703477b3\\b5_banana.vtt",
+    "script": "D:\\kids-learning-app\\media\\phonics\\B5\\elevenlabs\\b5_banana-20261110T191556Z-703477b3\\script.txt"
+  },
+  "retry_policy": "Never retry automatically. An interrupted or timed-out POST may already have consumed credits.",
+  "provider_request_id": "YEYo5ceCB9t2HHyC2OCX",
+  "history_item_id": "ahYaqZ7DRqGjhwaLuo3a",
+  "provider_character_cost": "28",
+  "audio_bytes": 118325,
+  "timed_text_end_seconds": 7.047,
+  "completed_at": "2026-11-10T19:16:12.017009+00:00"
+}

@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-10T19:08:03.355635+00:00",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "model_id": "eleven_multilingual_v2",
+  "character_count": 70,
+  "output_format": "mp3_44100_128",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "speed": 0.85
+  },
+  "receipt_path": "D:\\kids-learning-app\\media\\phonics\\A5\\elevenlabs\\a5_astronaut-20261110T190803Z-be0a700c\\generation.json",
+  "files": {
+    "audio": "D:\\kids-learning-app\\media\\phonics\\A5\\elevenlabs\\a5_astronaut-20261110T190803Z-be0a700c\\a5_astronaut.mp3",
+    "timing": "D:\\kids-learning-app\\media\\phonics\\A5\\elevenlabs\\a5_astronaut-20261110T190803Z-be0a700c\\a5_astronaut.timing.json",
+    "srt": "D:\\kids-learning-app\\media\\phonics\\A5\\elevenlabs\\a5_astronaut-20261110T190803Z-be0a700c\\a5_astronaut.srt",
+    "vtt": "D:\\kids-learning-app\\media\\phonics\\A5\\elevenlabs\\a5_astronaut-20261110T190803Z-be0a700c\\a5_astronaut.vtt",
+    "script": "D:\\kids-learning-app\\media\\phonics\\A5\\elevenlabs\\a5_astronaut-20261110T190803Z-be0a700c\\script.txt"
+  },
+  "retry_policy": "Never retry automatically. An interrupted or timed-out POST may already have consumed credits.",
+  "provider_request_id": "wryObSfrB22wUoJIYXzG",
+  "history_item_id": "8VKUlelbXbcPihhKvWl9",
+  "provider_character_cost": "28",
+  "audio_bytes": 165972,
+  "timed_text_end_seconds": 9.961,
+  "completed_at": "2026-11-10T19:08:04.940004+00:00"
+}

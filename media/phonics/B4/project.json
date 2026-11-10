@@ -1,0 +1,25 @@
+{
+  "id": "B4",
+  "schema_id": "b4_butterfly",
+  "style": "3d-cartoon-cinematic",
+  "art_engine": "faceless-deep-dive+toon",
+  "overlay": "2d-cartoon",
+  "word": "Butterfly",
+  "phonics_sound": "Buh... buh... buh...",
+  "elevenlabs_script": "Buh... buh... buh... B is for Butterfly! Butterfly is fluttering its wings!",
+  "action_3d_animation": "Glowy 3D Butterfly flaps its rainbow wings gently around a blooming flower.",
+  "file_name": "b4_butterfly.webm",
+  "motion": {
+    "engine": "three.js",
+    "advanced_motion_graphics": true,
+    "camera_always_moves": true
+  },
+  "aspect": "16:9",
+  "fps": 24,
+  "duration_s": 3,
+  "status": "local-preview",
+  "video": "public/phonics/B/b4_butterfly.mp4",
+  "audio": "public/phonics/B/b4_butterfly.mp3",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica"
+}

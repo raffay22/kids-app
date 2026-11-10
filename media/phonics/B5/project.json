@@ -1,0 +1,25 @@
+{
+  "id": "B5",
+  "schema_id": "b5_banana",
+  "style": "3d-cartoon-cinematic",
+  "art_engine": "faceless-deep-dive+toon",
+  "overlay": "2d-cartoon",
+  "word": "Banana",
+  "phonics_sound": "Buh... buh... buh...",
+  "elevenlabs_script": "Buh... buh... buh... B is for Banana! Banana is peeling and dancing!",
+  "action_3d_animation": "3D Banana character peels itself down halfway and does a funny silly wiggle.",
+  "file_name": "b5_banana.webm",
+  "motion": {
+    "engine": "three.js",
+    "advanced_motion_graphics": true,
+    "camera_always_moves": true
+  },
+  "aspect": "16:9",
+  "fps": 24,
+  "duration_s": 3,
+  "status": "local-preview",
+  "video": "public/phonics/B/b5_banana.mp4",
+  "audio": "public/phonics/B/b5_banana.mp3",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica"
+}

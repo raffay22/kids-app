@@ -1,0 +1,25 @@
+{
+  "id": "B3",
+  "schema_id": "b3_bear",
+  "style": "3d-cartoon-cinematic",
+  "art_engine": "faceless-deep-dive+toon",
+  "overlay": "2d-cartoon",
+  "word": "Bear",
+  "phonics_sound": "Buh... buh... buh...",
+  "elevenlabs_script": "Buh... buh... buh... B is for Bear! Bear is giving a warm hug!",
+  "action_3d_animation": "Cute 3D Teddy Bear waves both paws and does a soft gentle dance.",
+  "file_name": "b3_bear.webm",
+  "motion": {
+    "engine": "three.js",
+    "advanced_motion_graphics": true,
+    "camera_always_moves": true
+  },
+  "aspect": "16:9",
+  "fps": 24,
+  "duration_s": 3,
+  "status": "local-preview",
+  "video": "public/phonics/B/b3_bear.mp4",
+  "audio": "public/phonics/B/b3_bear.mp3",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica"
+}

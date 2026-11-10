@@ -1,0 +1,25 @@
+{
+  "id": "A1",
+  "schema_id": "a1_apple",
+  "style": "3d-cartoon-cinematic",
+  "art_engine": "faceless-deep-dive+toon",
+  "overlay": "2d-cartoon",
+  "word": "Apple",
+  "phonics_sound": "Ah... ah... ah...",
+  "elevenlabs_script": "Ah... ah... ah... A is for Apple! Look, Apple is moving its eyes!",
+  "action_3d_animation": "3D Cartoon Apple winks its eyes, smiles big, and wiggles its little green leaf.",
+  "file_name": "a1_apple.webm",
+  "motion": {
+    "engine": "three.js",
+    "advanced_motion_graphics": true,
+    "camera_always_moves": true
+  },
+  "aspect": "16:9",
+  "fps": 24,
+  "duration_s": 3,
+  "status": "local-preview",
+  "video": "public/phonics/A/a1_apple.mp4",
+  "audio": "public/phonics/A/a1_apple.mp3",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica"
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="Kids Learning App icon">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="44" fill="url(#bg)"/>
+  <path fill="#ffffff" d="M96 44l8.2 24.2H129l-20 14.6 7.6 24.2L96 92.4 75.4 107l7.6-24.2-20-14.6h24.8L96 44z"/>
+  <circle cx="96" cy="132" r="16" fill="#fde68a"/>
+</svg>

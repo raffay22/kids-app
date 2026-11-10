@@ -1,0 +1,1308 @@
+{
+  "_rules": {
+    "use_schema_script_exactly": true,
+    "video_loops_until_voice_ends": true,
+    "video_duration_seconds": 3,
+    "note": "Play elevenlabs_script in full. Loop the 3s video until that sound ends, then stop. Do not cut the voice to match the clip."
+  },
+  "A": {
+    "phonics_sound": "Ah... ah...",
+    "variations": [
+      {
+        "id": "a1_apple",
+        "word": "Apple",
+        "action_3d_animation": "3D Cartoon Apple winks its eyes, smiles big, and wiggles its little green leaf.",
+        "file_name": "a1_apple.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ah... ah... A is for Apple! Look, Apple is moving its eyes!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "a2_aeroplane",
+        "word": "Aeroplane",
+        "action_3d_animation": "Cute 3D Toy Aeroplane flies in a smooth circle with a tiny white smoke trail.",
+        "file_name": "a2_aeroplane.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ah... ah... A is for Aeroplane! Aeroplane is flying high in the sky!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "a3_ant",
+        "word": "Ant",
+        "action_3d_animation": "Friendly 3D Ant wears a tiny backpack and marches happily in place.",
+        "file_name": "a3_ant.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ah... ah... A is for Ant! Ant is marching along!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "a4_alligator",
+        "word": "Alligator",
+        "action_3d_animation": "3D Alligator wearing cute sunglasses gently snaps its mouth and does a happy wave.",
+        "file_name": "a4_alligator.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ah... ah... A is for Alligator! Alligator says hello!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "a5_astronaut",
+        "word": "Astronaut",
+        "action_3d_animation": "Little 3D Astronaut floats gently in space and waves a mini colorful flag.",
+        "file_name": "a5_astronaut.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ah... ah... A is for Astronaut! Astronaut is floating in space!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "B": {
+    "phonics_sound": "Buh... buh...",
+    "variations": [
+      {
+        "id": "b1_ball",
+        "word": "Ball",
+        "action_3d_animation": "Colorful 3D Beach Ball bounces up and down with squash-and-stretch squishy effects.",
+        "file_name": "b1_ball.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Buh... buh... B is for Ball! Ball is bouncing so high!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "b2_bus",
+        "word": "Bus",
+        "action_3d_animation": "Bright Yellow 3D School Bus wiggles its headlights and honks its friendly horn.",
+        "file_name": "b2_bus.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Buh... buh... B is for Bus! The Yellow Bus is rolling by!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "b3_bear",
+        "word": "Bear",
+        "action_3d_animation": "Cute 3D Teddy Bear waves both paws and does a soft gentle dance.",
+        "file_name": "b3_bear.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Buh... buh... B is for Bear! Bear is giving a warm hug!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "b4_butterfly",
+        "word": "Butterfly",
+        "action_3d_animation": "Glowy 3D Butterfly flaps its rainbow wings gently around a blooming flower.",
+        "file_name": "b4_butterfly.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Buh... buh... B is for Butterfly! Butterfly is fluttering its wings!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "b5_banana",
+        "word": "Banana",
+        "action_3d_animation": "3D Banana character peels itself down halfway and does a funny silly wiggle.",
+        "file_name": "b5_banana.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Buh... buh... B is for Banana! Banana is peeling and dancing!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "C": {
+    "phonics_sound": "Cuh... cuh...",
+    "variations": [
+      {
+        "id": "c1_cat",
+        "word": "Cat",
+        "action_3d_animation": "Fluffy 3D Kitten blinks its big blue eyes, purrs, and tilts its head playfully.",
+        "file_name": "c1_cat.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Cuh... cuh... C is for Cat! The little Cat says meow!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "c2_car",
+        "word": "Car",
+        "action_3d_animation": "Red 3D Sports Car revs its engine gently, blinks its big round eyes headlights, and zooms slightly forward.",
+        "file_name": "c2_car.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Cuh... cuh... C is for Car! Red Car goes vroom vroom!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "c3_cupcake",
+        "word": "Cupcake",
+        "action_3d_animation": "Delicious 3D Cupcake with sprinkles sparkles with magical glowing stars.",
+        "file_name": "c3_cupcake.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Cuh... cuh... C is for Cupcake! Cupcake is sweet and shiny!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "c4_cow",
+        "word": "Cow",
+        "action_3d_animation": "Friendly 3D Cow wearing a tiny bell chews happily and wiggles its ears.",
+        "file_name": "c4_cow.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Cuh... cuh... C is for Cow! Cow says moooo!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "c5_clock",
+        "word": "Clock",
+        "action_3d_animation": "3D Alarm Clock ticks rhythmically, wiggles its bells, and shows a smiley face.",
+        "file_name": "c5_clock.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Cuh... cuh... C is for Clock! Tick tock goes the happy clock!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "D": {
+    "phonics_sound": "Duh... duh...",
+    "variations": [
+      {
+        "id": "d1_dog",
+        "word": "Dog",
+        "action_3d_animation": "Playful 3D Puppy wags its tail fast, winks, and pants happily.",
+        "file_name": "d1_dog.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Duh... duh... D is for Dog! Dog is wagging its happy tail!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "d2_duck",
+        "word": "Duck",
+        "action_3d_animation": "Yellow 3D Rubber Duck floats in water ripples and quacks joyfully.",
+        "file_name": "d2_duck.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Duh... duh... D is for Duck! Duck says quack quack!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "d3_drum",
+        "word": "Drum",
+        "action_3d_animation": "3D Toy Drum gets tapped by drumsticks with little musical notes bouncing off.",
+        "file_name": "d3_drum.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Duh... duh... D is for Drum! Boom boom goes the drum!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "d4_dolphin",
+        "word": "Dolphin",
+        "action_3d_animation": "Shiny 3D Dolphin leaps out of blue ocean water in a beautiful arc.",
+        "file_name": "d4_dolphin.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Duh... duh... D is for Dolphin! Dolphin is leaping in the water!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "d5_dinosaur",
+        "word": "Dinosaur",
+        "action_3d_animation": "Friendly Green 3D Dino does a tiny stomping dance and lets out a tiny cute roar.",
+        "file_name": "d5_dinosaur.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Duh... duh... D is for Dinosaur! Dino goes rawr with a smile!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "E": {
+    "phonics_sound": "Eh... eh...",
+    "variations": [
+      {
+        "id": "e1_elephant",
+        "word": "Elephant",
+        "action_3d_animation": "Cute 3D Baby Elephant lifts its trunk and sprays playful water drops.",
+        "file_name": "e1_elephant.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Eh... eh... E is for Elephant! Elephant sprays cool water!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "e2_egg",
+        "word": "Egg",
+        "action_3d_animation": "Surprise 3D Golden Egg wiggles, cracks slightly, and a cute little chick peeks out.",
+        "file_name": "e2_egg.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Eh... eh... E is for Egg! Look, the egg is cracking open!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "e3_eagle",
+        "word": "Eagle",
+        "action_3d_animation": "Majestic 3D Cartoon Eagle glides gracefully across a sunny sky.",
+        "file_name": "e3_eagle.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Eh... eh... E is for Eagle! Eagle flies high in the sky!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "e4_engine",
+        "word": "Engine",
+        "action_3d_animation": "Steam 3D Train Engine chugs along releasing puffy heart-shaped smoke clouds.",
+        "file_name": "e4_engine.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Eh... eh... E is for Engine! Choo choo goes the train engine!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "e5_earth",
+        "word": "Earth",
+        "action_3d_animation": "3D Planet Earth wearing a friendly smile spins slowly with orbiting stars.",
+        "file_name": "e5_earth.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Eh... eh... E is for Earth! Our happy planet Earth is spinning!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "F": {
+    "phonics_sound": "Fff... fff...",
+    "variations": [
+      {
+        "id": "f1_fish",
+        "word": "Fish",
+        "action_3d_animation": "Bright Orange 3D Goldfish swims around popping tiny bubbles.",
+        "file_name": "f1_fish.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Fff... fff... F is for Fish! Fish is swimming and making bubbles!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "f2_frog",
+        "word": "Frog",
+        "action_3d_animation": "Green 3D Frog sits on a lily pad and does a high bouncy hop.",
+        "file_name": "f2_frog.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Fff... fff... F is for Frog! Ribbit! Frog hops up high!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "f3_flower",
+        "word": "Flower",
+        "action_3d_animation": "3D Sunflower blooms open with a bright smiling face facing the sun.",
+        "file_name": "f3_flower.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Fff... fff... F is for Flower! Sunflower blooms so bright!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "f4_fox",
+        "word": "Fox",
+        "action_3d_animation": "Cute Red 3D Fox wags its big bushy tail and winks happily.",
+        "file_name": "f4_fox.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Fff... fff... F is for Fox! Fox is swishing its fluffy tail!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "f5_fireengine",
+        "word": "Fire Engine",
+        "action_3d_animation": "Red 3D Fire Truck flashes its blue light and sprays a rainbow water stream.",
+        "file_name": "f5_fireengine.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Fff... fff... F is for Fire Engine! Wee-woo! Here comes the Fire Engine!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "G": {
+    "phonics_sound": "Guh... guh...",
+    "variations": [
+      {
+        "id": "g1_giraffe",
+        "word": "Giraffe",
+        "action_3d_animation": "Tall 3D Giraffe bends down to eat a green leaf and waves its ear.",
+        "file_name": "g1_giraffe.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Guh... guh... G is for Giraffe! Giraffe has a long long neck!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "g2_guitar",
+        "word": "Guitar",
+        "action_3d_animation": "3D Acoustic Guitar strums itself emitting colorful musical notes.",
+        "file_name": "g2_guitar.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Guh... guh... G is for Guitar! Strum strum goes the guitar!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "g3_grapes",
+        "word": "Grapes",
+        "action_3d_animation": "Bunch of Purple 3D Grapes do a cute collective wiggle dance.",
+        "file_name": "g3_grapes.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Guh... guh... G is for Grapes! Sweet juicy grapes!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "g4_gift",
+        "word": "Gift",
+        "action_3d_animation": "3D Gift Box with a ribbon shakes and opens briefly showing sparkling stars.",
+        "file_name": "g4_gift.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Guh... guh... G is for Gift! Surprise! What is inside the gift box?",
+        "duration_seconds": 3
+      },
+      {
+        "id": "g5_gorilla",
+        "word": "Gorilla",
+        "action_3d_animation": "Friendly 3D Gorilla taps its chest lightly and gives a big happy thumbs up.",
+        "file_name": "g5_gorilla.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Guh... guh... G is for Gorilla! Gorilla gives a big thumbs up!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "H": {
+    "phonics_sound": "Huh... huh...",
+    "variations": [
+      {
+        "id": "h1_horse",
+        "word": "Horse",
+        "action_3d_animation": "Brown 3D Horse gallops smoothly in place and shakes its golden mane.",
+        "file_name": "h1_horse.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Huh... huh... H is for Horse! Neigh! Horse is running fast!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "h2_hat",
+        "word": "Hat",
+        "action_3d_animation": "Magical 3D Top Hat tips itself and a cute bunny ears pop up.",
+        "file_name": "h2_hat.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Huh... huh... H is for Hat! Look at the funny magic hat!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "h3_house",
+        "word": "House",
+        "action_3d_animation": "Cozy 3D House with chimney smoke blowing heart shapes and lights turning on.",
+        "file_name": "h3_house.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Huh... huh... H is for House! Welcome to our cozy home!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "h4_helicopter",
+        "word": "Helicopter",
+        "action_3d_animation": "3D Toy Helicopter spins its top rotor blades and hovers up and down.",
+        "file_name": "h4_helicopter.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Huh... huh... H is for Helicopter! Helicopter is hovering high!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "h5_hippo",
+        "word": "Hippo",
+        "action_3d_animation": "Pink 3D Hippo splashes in a little pool and opens its mouth happily.",
+        "file_name": "h5_hippo.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Huh... huh... H is for Hippo! Hippo loves to splash in water!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "I": {
+    "phonics_sound": "Ih... ih...",
+    "variations": [
+      {
+        "id": "i1_icecream",
+        "word": "Ice Cream",
+        "action_3d_animation": "3D Ice Cream Cone wiggles its cherry on top with sparkling sprinkles.",
+        "file_name": "i1_icecream.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ih... ih... I is for Ice Cream! Yummy sweet ice cream!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "i2_igloo",
+        "word": "Igloo",
+        "action_3d_animation": "Snowy 3D Igloo with a friendly penguin sliding out of the entrance.",
+        "file_name": "i2_igloo.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ih... ih... I is for Igloo! A cool snowy igloo home!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "i3_iguana",
+        "word": "Iguana",
+        "action_3d_animation": "Green 3D Iguana blinks, changes color slightly, and waves its front paw.",
+        "file_name": "i3_iguana.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ih... ih... I is for Iguana! Iguana is relaxing on a branch!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "i4_island",
+        "word": "Island",
+        "action_3d_animation": "Tropical 3D Island with a swaying palm tree and jumping friendly fish.",
+        "file_name": "i4_island.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ih... ih... I is for Island! Look at the sunny palm tree island!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "i5_ink",
+        "word": "Ink",
+        "action_3d_animation": "3D Ink Bottle with a feather quill writing glowing colorful letters.",
+        "file_name": "i5_ink.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ih... ih... I is for Ink! Ink writes magical words!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "J": {
+    "phonics_sound": "Juh... juh...",
+    "variations": [
+      {
+        "id": "j1_juice",
+        "word": "Juice",
+        "action_3d_animation": "Glass of 3D Orange Juice with a straw bubbling up and down joyfully.",
+        "file_name": "j1_juice.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Juh... juh... J is for Juice! Refreshing orange juice!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "j2_jellyfish",
+        "word": "Jellyfish",
+        "action_3d_animation": "Glowing Pink 3D Jellyfish floats gently up and down underwater.",
+        "file_name": "j2_jellyfish.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Juh... juh... J is for Jellyfish! Jellyfish floats so softly!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "j3_jet",
+        "word": "Jet",
+        "action_3d_animation": "Sleek 3D Toy Jet speeds across screen leaving a rainbow trail.",
+        "file_name": "j3_jet.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Juh... juh... J is for Jet! Jet zooms super fast!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "j4_jaguar",
+        "word": "Jaguar",
+        "action_3d_animation": "Spotted 3D Jaguar does a friendly stretch and winks.",
+        "file_name": "j4_jaguar.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Juh... juh... J is for Jaguar! Jaguar stretches happily!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "j5_jug",
+        "word": "Jug",
+        "action_3d_animation": "3D Water Jug pours sparkling clean water drops into a cup.",
+        "file_name": "j5_jug.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Juh... juh... J is for Jug! Jug pours fresh water!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "K": {
+    "phonics_sound": "Kuh... kuh...",
+    "variations": [
+      {
+        "id": "k1_kite",
+        "word": "Kite",
+        "action_3d_animation": "Colorful 3D Diamond Kite dances and swoops gracefully in the wind.",
+        "file_name": "k1_kite.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Kuh... kuh... K is for Kite! Kite is flying high in the air!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "k2_kangaroo",
+        "word": "Kangaroo",
+        "action_3d_animation": "Cute 3D Kangaroo hops up and down with a little joey peeking from her pouch.",
+        "file_name": "k2_kangaroo.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Kuh... kuh... K is for Kangaroo! Boing boing hops the Kangaroo!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "k3_koala",
+        "word": "Koala",
+        "action_3d_animation": "Fluffy 3D Koala hugs a eucalyptus branch and waves its paw.",
+        "file_name": "k3_koala.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Kuh... kuh... K is for Koala! Sweet Koala hugs the tree!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "k4_king",
+        "word": "King",
+        "action_3d_animation": "3D King wearing a shiny gold crown waves his royal wand.",
+        "file_name": "k4_king.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Kuh... kuh... K is for King! King wears a shiny crown!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "k5_key",
+        "word": "Key",
+        "action_3d_animation": "Golden 3D Key turns in air unlocking a glowing heart portal.",
+        "file_name": "k5_key.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Kuh... kuh... K is for Key! Magic key turns and unlocks!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "L": {
+    "phonics_sound": "Luh... luh...",
+    "variations": [
+      {
+        "id": "l1_lion",
+        "word": "Lion",
+        "action_3d_animation": "Friendly 3D Lion shakes his golden mane and gives a gentle friendly roar.",
+        "file_name": "l1_lion.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Luh... luh... L is for Lion! The King Lion says roar!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "l2_lamp",
+        "word": "Lamp",
+        "action_3d_animation": "Cozy 3D Table Lamp clicks on and off casting warm glowing stars.",
+        "file_name": "l2_lamp.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Luh... luh... L is for Lamp! Lamp shines bright and cozy!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "l3_lemon",
+        "word": "Lemon",
+        "action_3d_animation": "Bright Yellow 3D Lemon rolls around and winks playfully.",
+        "file_name": "l3_lemon.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Luh... luh... L is for Lemon! Zesty yellow lemon!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "l4_leaf",
+        "word": "Leaf",
+        "action_3d_animation": "Green 3D Autumn Leaf floats down gently swaying in breezes.",
+        "file_name": "l4_leaf.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Luh... luh... L is for Leaf! Leaf floats softly down!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "l5_lollipop",
+        "word": "Lollipop",
+        "action_3d_animation": "Rainbow Swirl 3D Lollipop twirls around with sparkling glitters.",
+        "file_name": "l5_lollipop.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Luh... luh... L is for Lollipop! Sweet rainbow lollipop!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "M": {
+    "phonics_sound": "Muh... muh...",
+    "variations": [
+      {
+        "id": "m1_monkey",
+        "word": "Monkey",
+        "action_3d_animation": "Playful 3D Monkey swings on a vine and eats a banana.",
+        "file_name": "m1_monkey.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Muh... muh... M is for Monkey! Monkey is swinging on a vine!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "m2_moon",
+        "word": "Moon",
+        "action_3d_animation": "Smiling 3D Crescent Moon wears a nightcap with twinkling surrounding stars.",
+        "file_name": "m2_moon.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Muh... muh... M is for Moon! The Moon shines softly at night!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "m3_mango",
+        "word": "Mango",
+        "action_3d_animation": "Juicy 3D Golden Mango wiggles its green leaf and smiles.",
+        "file_name": "m3_mango.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Muh... muh... M is for Mango! Sweet yellow mango!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "m4_milk",
+        "word": "Milk",
+        "action_3d_animation": "Cute 3D Milk Carton splashes fresh milk into a glass with a smile.",
+        "file_name": "m4_milk.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Muh... muh... M is for Milk! Drink your healthy milk!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "m5_mouse",
+        "word": "Mouse",
+        "action_3d_animation": "Tiny 3D Mouse twitches its pink nose and nibbles a little cheese block.",
+        "file_name": "m5_mouse.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Muh... muh... M is for Mouse! Squeak squeak says the little mouse!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "N": {
+    "phonics_sound": "Nuh... nuh...",
+    "variations": [
+      {
+        "id": "n1_nest",
+        "word": "Nest",
+        "action_3d_animation": "Cozy 3D Bird Nest with three speckled blue eggs gently rocking.",
+        "file_name": "n1_nest.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Nuh... nuh... N is for Nest! Look at the eggs in the nest!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "n2_net",
+        "word": "Net",
+        "action_3d_animation": "3D Butterfly Net swoops gently catching a magical glowing star.",
+        "file_name": "n2_net.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Nuh... nuh... N is for Net! Catch the star with the net!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "n3_nut",
+        "word": "Nut",
+        "action_3d_animation": "3D Acorn Nut rolls around and a cute squirrel peeks out.",
+        "file_name": "n3_nut.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Nuh... nuh... N is for Nut! Squirrel loves crunchy nuts!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "n4_night",
+        "word": "Night",
+        "action_3d_animation": "3D Night Sky scene with twinkling stars and a shooting comet.",
+        "file_name": "n4_night.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Nuh... nuh... N is for Night! Beautiful starry night!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "n5_needle",
+        "word": "Needle",
+        "action_3d_animation": "3D Silver Needle weaves colorful thread into a heart pattern.",
+        "file_name": "n5_needle.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Nuh... nuh... N is for Needle! Needle stitches thread so neatly!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "O": {
+    "phonics_sound": "Oh... oh...",
+    "variations": [
+      {
+        "id": "o1_owl",
+        "word": "Owl",
+        "action_3d_animation": "Wise 3D Owl sits on a branch, turns its head, and blinks big round eyes.",
+        "file_name": "o1_owl.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Oh... oh... O is for Owl! Hoo hoo says the wise old owl!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "o2_orange",
+        "word": "Orange",
+        "action_3d_animation": "Bright 3D Orange fruit rolls in a circle and pops out a juicy slice.",
+        "file_name": "o2_orange.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Oh... oh... O is for Orange! Sweet and juicy orange!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "o3_octopus",
+        "word": "Octopus",
+        "action_3d_animation": "Friendly Purple 3D Octopus waves all eight tentacles in a silly wave dance.",
+        "file_name": "o3_octopus.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Oh... oh... O is for Octopus! Octopus waves all eight arms!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "o4_ostrich",
+        "word": "Ostrich",
+        "action_3d_animation": "Funny 3D Ostrich runs fast and pops its head up with a smile.",
+        "file_name": "o4_ostrich.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Oh... oh... O is for Ostrich! Ostrich runs super fast!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "o5_onion",
+        "word": "Onion",
+        "action_3d_animation": "Cute 3D Purple Onion character does a little wiggle and waves.",
+        "file_name": "o5_onion.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Oh... oh... O is for Onion! Little purple onion!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "P": {
+    "phonics_sound": "Puh... puh...",
+    "variations": [
+      {
+        "id": "p1_panda",
+        "word": "Panda",
+        "action_3d_animation": "Fluffy 3D Panda munching bamboo rolls over playfully.",
+        "file_name": "p1_panda.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Puh... puh... P is for Panda! Cute Panda rolls on the grass!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "p2_penguin",
+        "word": "Penguin",
+        "action_3d_animation": "Little 3D Penguin waddles on ice and slides down on its tummy.",
+        "file_name": "p2_penguin.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Puh... puh... P is for Penguin! Penguin waddles and slides!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "p3_parrot",
+        "word": "Parrot",
+        "action_3d_animation": "Colorful 3D Parrot flaps its feathers and squawks happily.",
+        "file_name": "p3_parrot.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Puh... puh... P is for Parrot! Rainbow Parrot says hello!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "p4_pencil",
+        "word": "Pencil",
+        "action_3d_animation": "Yellow 3D Pencil draws glowing sparkly hearts on screen.",
+        "file_name": "p4_pencil.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Puh... puh... P is for Pencil! Pencil draws beautiful shapes!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "p5_pizza",
+        "word": "Pizza",
+        "action_3d_animation": "Yummy 3D Pizza Slice stretches its gooey melted cheese.",
+        "file_name": "p5_pizza.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Puh... puh... P is for Pizza! Cheesy delicious pizza slice!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "Q": {
+    "phonics_sound": "Kwuh... kwuh...",
+    "variations": [
+      {
+        "id": "q1_queen",
+        "word": "Queen",
+        "action_3d_animation": "3D Queen wearing a sparkling diamond crown waves her royal hand.",
+        "file_name": "q1_queen.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Kwuh... kwuh... Q is for Queen! Queen waves her royal scepter!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "q2_quail",
+        "word": "Quail",
+        "action_3d_animation": "Small 3D Quail bird waddles and bobs its tiny head feather.",
+        "file_name": "q2_quail.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Kwuh... kwuh... Q is for Quail! Cute little quail bird!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "q3_quilt",
+        "word": "Quilt",
+        "action_3d_animation": "Cozy 3D Patchwork Quilt unfolds softly showing warm bright patterns.",
+        "file_name": "q3_quilt.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Kwuh... kwuh... Q is for Quilt! Cozy warm blanket quilt!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "q4_question",
+        "word": "Question Mark",
+        "action_3d_animation": "Glowing 3D Question Mark bounces and spins with curiosity sparkles.",
+        "file_name": "q4_question.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Kwuh... kwuh... Q is for Question Mark! What will we learn next?",
+        "duration_seconds": 3
+      },
+      {
+        "id": "q5_quarter",
+        "word": "Quarter",
+        "action_3d_animation": "Shiny 3D Silver Quarter Coin spins around catching light.",
+        "file_name": "q5_quarter.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Kwuh... kwuh... Q is for Quarter! Spin the shiny quarter coin!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "R": {
+    "phonics_sound": "Ruh... ruh...",
+    "variations": [
+      {
+        "id": "r1_rabbit",
+        "word": "Rabbit",
+        "action_3d_animation": "Cute White 3D Rabbit twitches its pink nose and hops forward.",
+        "file_name": "r1_rabbit.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ruh... ruh... R is for Rabbit! Hop hop goes the little rabbit!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "r2_rocket",
+        "word": "Rocket",
+        "action_3d_animation": "3D Space Rocket blasts off with bright orange flame trail.",
+        "file_name": "r2_rocket.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ruh... ruh... R is for Rocket! Blast off into space!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "r3_rainbow",
+        "word": "Rainbow",
+        "action_3d_animation": "Magical 3D Rainbow arches across clouds with glowing star bursts.",
+        "file_name": "r3_rainbow.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ruh... ruh... R is for Rainbow! Beautiful rainbow in the sky!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "r4_ring",
+        "word": "Ring",
+        "action_3d_animation": "Shiny Gold 3D Diamond Ring sparkles bright with light reflections.",
+        "file_name": "r4_ring.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ruh... ruh... R is for Ring! Sparkly gold diamond ring!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "r5_robot",
+        "word": "Robot",
+        "action_3d_animation": "Friendly 3D Robot does a mechanical dance with blinking antenna lights.",
+        "file_name": "r5_robot.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ruh... ruh... R is for Robot! Beep boop does the friendly robot!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "S": {
+    "phonics_sound": "Sss... sss...",
+    "variations": [
+      {
+        "id": "s1_sun",
+        "word": "Sun",
+        "action_3d_animation": "Smiling 3D Sun wearing cool sunglasses spins slowly and shines bright.",
+        "file_name": "s1_sun.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Sss... sss... S is for Sun! The bright warm sun is shining!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "s2_star",
+        "word": "Star",
+        "action_3d_animation": "Golden 3D Star sparkles, twinkles, and does a happy spin.",
+        "file_name": "s2_star.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Sss... sss... S is for Star! Twinkle twinkle little star!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "s3_ship",
+        "word": "Ship",
+        "action_3d_animation": "3D Toy Ship sails smoothly over blue ocean waves.",
+        "file_name": "s3_ship.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Sss... sss... S is for Ship! Sail away on the blue ocean ship!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "s4_snake",
+        "word": "Snake",
+        "action_3d_animation": "Cute Green 3D Snake slithers softly and winks with a friendly smile.",
+        "file_name": "s4_snake.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Sss... sss... S is for Snake! Friendly snake slithers along!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "s5_strawberry",
+        "word": "Strawberry",
+        "action_3d_animation": "Juicy Red 3D Strawberry bounces happily with green leaves wiggling.",
+        "file_name": "s5_strawberry.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Sss... sss... S is for Strawberry! Yummy sweet strawberry!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "T": {
+    "phonics_sound": "Tuh... tuh...",
+    "variations": [
+      {
+        "id": "t1_tiger",
+        "word": "Tiger",
+        "action_3d_animation": "Friendly 3D Tiger cub swishes tail and gives a cute roaring wave.",
+        "file_name": "t1_tiger.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Tuh... tuh... T is for Tiger! The little Tiger says roar!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "t2_train",
+        "word": "Train",
+        "action_3d_animation": "Colorful 3D Toy Train rolls along tracks choo-chooing smoke rings.",
+        "file_name": "t2_train.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Tuh... tuh... T is for Train! Choo choo goes the toy train!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "t3_turtle",
+        "word": "Turtle",
+        "action_3d_animation": "Cute 3D Sea Turtle swims gracefully in blue water.",
+        "file_name": "t3_turtle.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Tuh... tuh... T is for Turtle! Slow and steady sea turtle!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "t4_tree",
+        "word": "Tree",
+        "action_3d_animation": "Lush Green 3D Oak Tree sways softly dropping gentle leaves.",
+        "file_name": "t4_tree.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Tuh... tuh... T is for Tree! Big tall green tree!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "t5_telephone",
+        "word": "Telephone",
+        "action_3d_animation": "Retro Red 3D Toy Phone rings, wiggles, and displays a smile.",
+        "file_name": "t5_telephone.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Tuh... tuh... T is for Telephone! Ring ring goes the telephone!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "U": {
+    "phonics_sound": "Uh... uh...",
+    "variations": [
+      {
+        "id": "u1_umbrella",
+        "word": "Umbrella",
+        "action_3d_animation": "Polka-dot 3D Umbrella opens smoothly bouncing off gentle raindrops.",
+        "file_name": "u1_umbrella.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Uh... uh... U is for Umbrella! Open the umbrella in the rain!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "u2_unicorn",
+        "word": "Unicorn",
+        "action_3d_animation": "Magical 3D Unicorn prances with a sparkling golden horn.",
+        "file_name": "u2_unicorn.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Uh... uh... U is for Unicorn! Magical unicorn with a rainbow mane!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "u3_uniform",
+        "word": "Uniform",
+        "action_3d_animation": "Clean 3D Pilot Uniform hangs smartly and sparkles with star badges.",
+        "file_name": "u3_uniform.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Uh... uh... U is for Uniform! Neat and tidy uniform!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "u4_urn",
+        "word": "Urn",
+        "action_3d_animation": "Decorative 3D Pottery Urn glows with ancient colorful magic symbols.",
+        "file_name": "u4_urn.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Uh... uh... U is for Urn! Beautiful ceramic urn!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "u5_underwater",
+        "word": "Underwater",
+        "action_3d_animation": "3D Ocean Floor scene with coral reef, starfish, and swimming bubbles.",
+        "file_name": "u5_underwater.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Uh... uh... U is for Underwater! Explore deep underwater world!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "V": {
+    "phonics_sound": "Vuh... vuh...",
+    "variations": [
+      {
+        "id": "v1_van",
+        "word": "Van",
+        "action_3d_animation": "Purple 3D Camper Van rolls forward with wiggling surfboards on roof.",
+        "file_name": "v1_van.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Vuh... vuh... V is for Van! Beep beep goes the family van!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "v2_violin",
+        "word": "Violin",
+        "action_3d_animation": "Classical 3D Violin bow plays strings releasing golden musical notes.",
+        "file_name": "v2_violin.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Vuh... vuh... V is for Violin! Sweet music from the violin!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "v3_vase",
+        "word": "Vase",
+        "action_3d_animation": "Elegant 3D Flower Vase filled with blooming colorful roses.",
+        "file_name": "v3_vase.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Vuh... vuh... V is for Vase! Pretty flowers in a ceramic vase!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "v4_volcano",
+        "word": "Volcano",
+        "action_3d_animation": "Friendly Cartoon 3D Volcano puffs heart-shaped smoke rings.",
+        "file_name": "v4_volcano.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Vuh... vuh... V is for Volcano! Look at the friendly volcano!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "v5_vegetables",
+        "word": "Vegetables",
+        "action_3d_animation": "Basket of 3D Fresh Vegetables (Carrot, Broccoli) dancing happily.",
+        "file_name": "v5_vegetables.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Vuh... vuh... V is for Vegetables! Healthy crunchy vegetables!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "W": {
+    "phonics_sound": "Wuh... wuh...",
+    "variations": [
+      {
+        "id": "w1_whale",
+        "word": "Whale",
+        "action_3d_animation": "Giant Blue 3D Whale swims gently blowing a rainbow water spout.",
+        "file_name": "w1_whale.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Wuh... wuh... W is for Whale! The big blue whale spouts water!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "w2_watermelon",
+        "word": "Watermelon",
+        "action_3d_animation": "Juicy 3D Watermelon Slice smiles and wiggles its little black seeds.",
+        "file_name": "w2_watermelon.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Wuh... wuh... W is for Watermelon! Fresh juicy watermelon slice!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "w3_watch",
+        "word": "Watch",
+        "action_3d_animation": "Shiny 3D Wrist Watch ticks hands around with a smiley clockface.",
+        "file_name": "w3_watch.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Wuh... wuh... W is for Watch! Tick tock goes the wrist watch!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "w4_windmill",
+        "word": "Windmill",
+        "action_3d_animation": "Dutch 3D Windmill spins its big sails smoothly in breeze.",
+        "file_name": "w4_windmill.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Wuh... wuh... W is for Windmill! Windmill blades spinning round!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "w5_wolf",
+        "word": "Wolf",
+        "action_3d_animation": "Friendly 3D Wolf pup looks up at moon and gives a tiny cute howl.",
+        "file_name": "w5_wolf.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Wuh... wuh... W is for Wolf! Little wolf says a-woo!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "X": {
+    "phonics_sound": "Ks... ks...",
+    "variations": [
+      {
+        "id": "x1_xylophone",
+        "word": "Xylophone",
+        "action_3d_animation": "Rainbow 3D Xylophone keys get tapped playing cheerful musical notes.",
+        "file_name": "x1_xylophone.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ks... ks... X is for Xylophone! Plink plank plays the xylophone!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "x2_xray",
+        "word": "X-Ray",
+        "action_3d_animation": "Glowing 3D X-Ray film sheet reveals a cute smiley hand bone structure.",
+        "file_name": "x2_xray.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ks... ks... X is for X-Ray! X-ray shows the bones inside!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "x3_xmas_tree",
+        "word": "Xmas Tree",
+        "action_3d_animation": "Decorated 3D Christmas Tree sparkles with colorful blinking lights.",
+        "file_name": "x3_xmas_tree.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ks... ks... X is for Xmas Tree! Shiny tree with glowing lights!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "x4_xenops",
+        "word": "Xenops",
+        "action_3d_animation": "Cute little 3D Xenops bird hops along a tree branch.",
+        "file_name": "x4_xenops.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ks... ks... X is for Xenops! Tiny rain forest bird!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "x5_xiphosura",
+        "word": "Xiphosura",
+        "action_3d_animation": "3D Horseshoe Crab (Xiphosura) waddles along sea sand playfully.",
+        "file_name": "x5_xiphosura.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Ks... ks... X is for Xiphosura! Friendly horseshoe crab!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "Y": {
+    "phonics_sound": "Yuh... yuh...",
+    "variations": [
+      {
+        "id": "y1_yacht",
+        "word": "Yacht",
+        "action_3d_animation": "White 3D Sailboat Yacht glides smoothly over calm sea waves.",
+        "file_name": "y1_yacht.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Yuh... yuh... Y is for Yacht! Smooth sailing luxury yacht!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "y2_yoyo",
+        "word": "Yo-Yo",
+        "action_3d_animation": "Bright Red 3D Yo-Yo spins down and up on string effortlessly.",
+        "file_name": "y2_yoyo.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Yuh... yuh... Y is for Yo-Yo! Up and down goes the yo-yo!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "y3_yak",
+        "word": "Yak",
+        "action_3d_animation": "Shaggy 3D Yak shakes its long fur coat and munches mountain grass.",
+        "file_name": "y3_yak.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Yuh... yuh... Y is for Yak! Fluffy shaggy mountain yak!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "y4_yogurt",
+        "word": "Yogurt",
+        "action_3d_animation": "Cup of 3D Strawberry Yogurt gets scooped by a smiley spoon.",
+        "file_name": "y4_yogurt.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Yuh... yuh... Y is for Yogurt! Yummy creamy strawberry yogurt!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "y5_yarn",
+        "word": "Yarn",
+        "action_3d_animation": "Ball of 3D Pink Yarn rolls around as a playful kitten rolls it.",
+        "file_name": "y5_yarn.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Yuh... yuh... Y is for Yarn! Soft ball of wool yarn!",
+        "duration_seconds": 3
+      }
+    ]
+  },
+  "Z": {
+    "phonics_sound": "Zzz... zzz...",
+    "variations": [
+      {
+        "id": "z1_zebra",
+        "word": "Zebra",
+        "action_3d_animation": "Striped 3D Zebra trots happily and wiggles its tail.",
+        "file_name": "z1_zebra.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Zzz... zzz... Z is for Zebra! Black and white striped zebra!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "z2_zipper",
+        "word": "Zipper",
+        "action_3d_animation": "Shiny 3D Zipper zips up and down revealing a rainbow surprise.",
+        "file_name": "z2_zipper.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Zzz... zzz... Z is for Zipper! Zip up and zip down!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "z3_zoo",
+        "word": "Zoo",
+        "action_3d_animation": "3D Zoo Entrance Gate opens up with animals waving behind it.",
+        "file_name": "z3_zoo.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Zzz... zzz... Z is for Zoo! Welcome to the fun animal zoo!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "z4_zero",
+        "word": "Zero",
+        "action_3d_animation": "Friendly 3D Number Zero character spins and does a funny dance.",
+        "file_name": "z4_zero.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Zzz... zzz... Z is for Zero! Round and round number zero!",
+        "duration_seconds": 3
+      },
+      {
+        "id": "z5_zucchini",
+        "word": "Zucchini",
+        "action_3d_animation": "Green 3D Zucchini character wearing cute glasses smiles and waves.",
+        "file_name": "z5_zucchini.webm",
+        "file_size_guidelines": "Under 800 KB, 3-sec seamless loop, 60 FPS, WebM/MP4.",
+        "elevenlabs_script": "Zzz... zzz... Z is for Zucchini! Fresh green zucchini!",
+        "duration_seconds": 3
+      }
+    ]
+  }
+}

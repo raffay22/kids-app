@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-10T19:07:52.868884+00:00",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "model_id": "eleven_multilingual_v2",
+  "character_count": 60,
+  "output_format": "mp3_44100_128",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "speed": 0.85
+  },
+  "receipt_path": "D:\\kids-learning-app\\media\\phonics\\A4\\elevenlabs\\a4_alligator-20261110T190752Z-6b9563e2\\generation.json",
+  "files": {
+    "audio": "D:\\kids-learning-app\\media\\phonics\\A4\\elevenlabs\\a4_alligator-20261110T190752Z-6b9563e2\\a4_alligator.mp3",
+    "timing": "D:\\kids-learning-app\\media\\phonics\\A4\\elevenlabs\\a4_alligator-20261110T190752Z-6b9563e2\\a4_alligator.timing.json",
+    "srt": "D:\\kids-learning-app\\media\\phonics\\A4\\elevenlabs\\a4_alligator-20261110T190752Z-6b9563e2\\a4_alligator.srt",
+    "vtt": "D:\\kids-learning-app\\media\\phonics\\A4\\elevenlabs\\a4_alligator-20261110T190752Z-6b9563e2\\a4_alligator.vtt",
+    "script": "D:\\kids-learning-app\\media\\phonics\\A4\\elevenlabs\\a4_alligator-20261110T190752Z-6b9563e2\\script.txt"
+  },
+  "retry_policy": "Never retry automatically. An interrupted or timed-out POST may already have consumed credits.",
+  "provider_request_id": "JHoaVwV5KF13G0RCJSIM",
+  "history_item_id": "IM9b243hqjHFkZfmfu3S",
+  "provider_character_cost": "24",
+  "audio_bytes": 122923,
+  "timed_text_end_seconds": 7.361,
+  "completed_at": "2026-11-10T19:07:54.416779+00:00"
+}

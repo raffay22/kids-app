@@ -1,0 +1,16 @@
+{
+  "card": "A1",
+  "schema_id": "a1_apple",
+  "text": "Ah... ah... ah... A is for Apple! Look, Apple is moving its eyes!",
+  "character_count": 68,
+  "language": "en-US",
+  "model_id": "eleven_multilingual_v2",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica - Playful, Bright, Warm",
+  "voice_policy": "Kids-safe library voice. Never use Shadow Protocol voice hgAoejldxKTXsFSP7qeO or o0kuOa7rSjdarn7nIRbL.",
+  "pricing_note": "Published base about US$0.08 per 1,000 characters for Multilingual v2 (26 Oct 2026). Actual account credits may cover this.",
+  "estimated_usd_multilingual_v2": 0.0054,
+  "estimated_usd_flash_turbo": 0.0027,
+  "status": "plan-approved-for-A1-only",
+  "offline_fallback": "Web Speech API en-US via speakEnglish()"
+}

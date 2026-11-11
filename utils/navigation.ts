@@ -1,15 +1,16 @@
 import {
   BarChart3,
   BookOpen,
-  Coins,
   Compass,
   Crown,
+  Gamepad2,
   Grid,
   HeartHandshake,
   Home,
   MessageCircleCode,
   Paintbrush,
   ShieldCheck,
+  Coins,
   ShoppingBag,
   Sliders,
   Sparkles,
@@ -48,9 +49,15 @@ export const NAV_ROUTES: NavRoute[] = [
   },
   {
     href: "/games/stories/toddlers",
-    label: "IQ Stories Engine",
+    label: "Stories Under 3 Years",
     shortLabel: "Stories",
     icon: BookOpen,
+  },
+  {
+    href: "/games",
+    label: "Games",
+    shortLabel: "Games",
+    icon: Gamepad2,
   },
   {
     href: "/shop",
@@ -72,7 +79,7 @@ export const NAV_ROUTES: NavRoute[] = [
   },
   {
     href: "/games/coin-shop",
-    label: "Math Coin Toy Shop",
+    label: "Math and Coin Toy Shop",
     shortLabel: "Coin Shop",
     icon: Coins,
   },

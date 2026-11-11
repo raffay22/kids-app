@@ -85,6 +85,23 @@ export function playDing() {
   tone(ctx, 1046.5, 0.3, 0.4, 0.16); // C6 sparkle
 }
 
+/** Short coin clink for the saving bank. */
+export function playClink() {
+  const ctx = getCtx();
+  if (!ctx) return;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = "square";
+  osc.frequency.setValueAtTime(1760, ctx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.09);
+  gain.gain.setValueAtTime(0.07, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start();
+  osc.stop(ctx.currentTime + 0.14);
+}
+
 /** Gentle two-note "try again" boop — encouraging, not sad */
 export function playBoop() {
   const ctx = getCtx();

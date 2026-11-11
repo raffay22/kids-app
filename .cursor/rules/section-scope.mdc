@@ -1,0 +1,31 @@
+---
+description: Only edit the section named in the prompt. Leave every other section's files, code, and logic alone.
+alwaysApply: true
+---
+
+# Work only the section in the prompt
+
+This app is large. A prompt is about one section. Edit that section only.
+
+## Pick the section from the prompt
+
+- Use the route, game, story, or screen the user named (`/games/coin-shop`, trolley, phonics, stories, shop, settings, and so on).
+- If the prompt names no section, stay inside the files already in this conversation.
+- Do not expand the task into a nearby feature.
+
+## Files you may change
+
+- The section's own page, components, catalog, and helpers.
+- A shared list only to add that section: one hub tile, one route label, or one nav entry. Do not change the other entries.
+
+## Files you must not change
+
+- Any other section's pages, components, catalogs, copy, styles, or rules.
+- A shared engine when the prompt is about a different section.
+- Drive-by refactors, renames, or cleanups outside the section.
+
+## Examples
+
+- Coin shop prompt: edit `app/games/coin-shop`, `components/coin-shop`, and `utils/coinShop.ts`. Do not change `components/trolley` or the trolley star and letter rules.
+- Trolley prompt: edit the trolley files only. Do not change the coin shop.
+- One phonics letter: edit that letter's media and its catalog row only.

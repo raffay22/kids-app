@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sammy the Turtle's Slow Swim</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: #073642;
+      background: radial-gradient(circle at top, #7ec8e3, #1a6b82 55%, #0b3a4a);
+      padding: 20px;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    h1 { color: #fff; margin: 0 0 6px; font-size: 1.55rem; }
+    .sub { color: #dff6ff; margin-bottom: 18px; }
+    .grid { display: grid; gap: 16px; }
+    @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card {
+      background: rgba(255,255,255,.94);
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.22);
+    }
+    .stage { position: relative; border-radius: 16px; overflow: hidden; background: #083344; }
+    video { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+    .hotspot {
+      position: absolute;
+      left: 9%; top: 30%; width: 26%; height: 40%;
+      border-radius: 50%;
+      border: 2px dashed rgba(255,90,90,.95);
+      background: rgba(255,80,80,.14);
+      cursor: pointer;
+    }
+    .line { margin: 12px 0 0; font-size: 1.05rem; line-height: 1.4; font-weight: 650; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    button {
+      border: 0; border-radius: 14px; padding: 12px 16px; font-weight: 800; cursor: pointer;
+      background: #fff; color: #0b4a5e;
+    }
+    button.primary { background: #ffd166; }
+    button.red { background: #ff6b6b; color: #fff; }
+    button.blue { background: #4dabf7; color: #fff; }
+    button.yellow { background: #ffe066; }
+    .hint, .badge {
+      position: absolute; left: 50%; transform: translateX(-50%);
+      border-radius: 999px; padding: 6px 14px; font-weight: 800; display: none;
+    }
+    .hint { bottom: 12px; background: rgba(255,255,255,.94); color: #c92a2a; }
+    .badge { top: 12px; background: #ffd166; color: #5c3b00; }
+    .nav { display: grid; gap: 10px; margin-top: 18px; }
+    @media (min-width: 700px) { .nav { grid-template-columns: 1fr 1fr 1fr; } }
+    .nav a, .nav button {
+      text-align: center; text-decoration: none; display: block;
+      background: #fff; color: #0b4a5e; padding: 14px; border-radius: 14px; font-weight: 800;
+    }
+    .nav .home { background: #1c7ed6; color: #fff; }
+    .nav .next { background: #2f9e44; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Sammy the Turtle's Slow Swim</h1>
+    <div class="sub">Both parts on one screen · tap the red starfish to wake it</div>
+
+    <div class="grid">
+      <section class="card">
+        <div class="stage">
+          <video id="v1" src="./scene1.mp4" playsinline muted autoplay loop></video>
+        </div>
+        <p class="line">Sammy the turtle wants to swim home. Help him glide slowly through the water!</p>
+        <div class="row">
+          <button class="primary" id="hear1">Hear story</button>
+          <button class="primary" id="glide">Help Sammy glide</button>
+        </div>
+        <audio id="a1" src="./scene1.mp3"></audio>
+      </section>
+
+      <section class="card">
+        <div class="stage">
+          <video id="v2" src="./scene2_sleep.mp4" playsinline muted autoplay loop></video>
+          <button id="hotspot" class="hotspot" aria-label="Tap the red starfish"></button>
+          <div id="hint" class="hint">Tap the red starfish!</div>
+          <div id="badge" class="badge">Starfish is awake!</div>
+        </div>
+        <p class="line">Oh look! A red starfish is sleeping. Tap the RED starfish to wake it up!</p>
+        <div class="row" id="colors"></div>
+        <audio id="a2" src="./scene2.mp3"></audio>
+      </section>
+    </div>
+
+    <nav class="nav" aria-label="Story navigation">
+      <a href="/games/stories/toddlers">Previous / Library</a>
+      <a class="home" href="/">Home</a>
+      <a class="next" href="/games/stories/toddlers">Next / Library</a>
+    </nav>
+  </div>
+  <script>
+    const v1 = document.getElementById("v1");
+    const v2 = document.getElementById("v2");
+    const a1 = document.getElementById("a1");
+    const a2 = document.getElementById("a2");
+    const hotspot = document.getElementById("hotspot");
+    const hint = document.getElementById("hint");
+    const badge = document.getElementById("badge");
+    const colors = document.getElementById("colors");
+
+    setTimeout(() => a1.play().catch(() => {}), 300);
+    setTimeout(() => a2.play().catch(() => {}), 900);
+    a2.onended = () => { hint.style.display = "block"; };
+
+    document.getElementById("hear1").onclick = () => { a1.currentTime = 0; a1.play().catch(() => {}); };
+    document.getElementById("glide").onclick = () => { a1.currentTime = 0; a1.play().catch(() => {}); };
+
+    function wake() {
+      hotspot.style.display = "none";
+      hint.style.display = "none";
+      badge.style.display = "block";
+      v2.loop = false;
+      v2.src = "./scene2_wake.mp4";
+      v2.play().catch(() => {});
+    }
+
+    hotspot.onclick = wake;
+    ["blue", "red", "yellow"].forEach((color) => {
+      const b = document.createElement("button");
+      b.className = color;
+      b.textContent = color.toUpperCase() + " starfish";
+      b.onclick = () => {
+        if (color === "red") wake();
+        else { hint.textContent = "Try the RED starfish!"; hint.style.display = "block"; }
+      };
+      colors.appendChild(b);
+    });
+  </script>
+</body>
+</html>

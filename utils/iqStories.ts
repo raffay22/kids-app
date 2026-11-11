@@ -13,6 +13,14 @@ export type StoryPuzzle = {
   sequence?: string[];
 };
 
+export type StoryTapTarget = {
+  /** What the child should tap, e.g. "red starfish" */
+  label: string;
+  color?: string;
+  /** Percent-based hotspot over the video (0–100). */
+  hotspot?: { left: number; top: number; width: number; height: number };
+};
+
 export type StorySceneData = {
   scene_number: number;
   narrative_text: string;
@@ -21,6 +29,13 @@ export type StorySceneData = {
   lottie_animation_url?: string;
   visual_asset_keyword?: string;
   interaction_type?: string;
+  /** Looping / VO-timed scene video */
+  video_url?: string;
+  /** Plays after a correct tap (e.g. starfish wakes) */
+  wake_video_url?: string;
+  /** ElevenLabs (or other) narration for this scene */
+  audio_url?: string;
+  tap_target?: StoryTapTarget;
   puzzle?: StoryPuzzle;
 };
 
@@ -43,6 +58,8 @@ export type StoryRecord = {
   theme: string;
   content: StoryContent;
   is_active: boolean;
+  /** Video-frame cover for library cards (no separate AI still). */
+  cover_image?: string;
 };
 
 export type StoryAgeGroup = "1-3" | "3-6";
@@ -50,30 +67,51 @@ export type StoryAgeGroup = "1-3" | "3-6";
 const FALLBACK_TODDLER: StoryRecord[] = [
   {
     id: "fb-t1",
-    story_id: "story_toddler_fb1",
+    story_id: "story_toddler_01",
     title: "Sammy the Turtle's Slow Swim",
     target_age_group: "1-3",
     difficulty_level: "beginner",
     theme: "ocean",
     is_active: true,
+    cover_image: "/stories/story_toddler_01/cover.jpg",
     content: {
+      story_id: "story_toddler_01",
+      title: "Sammy the Turtle's Slow Swim",
+      target_age_group: "1-3",
+      theme: "ocean",
       scenes: [
         {
           scene_number: 1,
-          narrative_text: "Sammy the turtle wants to swim home. Tap the blue water to help him glide!",
-          audio_prompt: "Sammy the turtle wants to swim home. Tap the blue water!",
-          visual_asset_keyword: "water",
-          lottie_animation: "/lottie/water.json",
+          narrative_text:
+            "Sammy the turtle wants to swim home. Help him glide slowly through the water!",
+          audio_prompt:
+            "Sammy the turtle wants to swim home. Help him glide slowly through the water!",
+          visual_asset_keyword: "turtle",
+          interaction_type: "slow_trace",
+          video_url: "/stories/story_toddler_01/scene1.mp4",
+          audio_url: "/stories/story_toddler_01/scene1.mp3",
         },
         {
           scene_number: 2,
-          narrative_text: "A red starfish is sleeping. Tap the RED starfish to wake it up!",
-          audio_prompt: "Tap the RED starfish!",
-          visual_asset_keyword: "fish",
+          narrative_text:
+            "Oh look! A red starfish is sleeping. Tap the RED starfish to wake it up!",
+          audio_prompt:
+            "Oh look! A red starfish is sleeping. Tap the RED starfish to wake it up!",
+          visual_asset_keyword: "starfish",
+          interaction_type: "tap_wake",
+          video_url: "/stories/story_toddler_01/scene2_sleep.mp4",
+          wake_video_url: "/stories/story_toddler_01/scene2_wake.mp4",
+          audio_url: "/stories/story_toddler_01/scene2.mp3",
+          tap_target: {
+            label: "red starfish",
+            color: "red",
+            // Tuned against scene2_sleep screenshot: cover the whole red starfish.
+            hotspot: { left: 9, top: 30, width: 26, height: 40 },
+          },
           puzzle: {
             type: "color_match",
             target_color: "red",
-            options: ["red", "blue", "green"],
+            options: ["blue", "red", "yellow"],
             correct_answer: "red",
           },
         },
@@ -82,20 +120,51 @@ const FALLBACK_TODDLER: StoryRecord[] = [
   },
   {
     id: "fb-t2",
-    story_id: "story_toddler_fb2",
-    title: "Luna's Moonlight Nap",
+    story_id: "story_toddler_02",
+    title: "The Sleepy Bear's Nest",
     target_age_group: "1-3",
     difficulty_level: "beginner",
-    theme: "bedtime",
+    theme: "animals",
     is_active: true,
+    cover_image: "/stories/story_toddler_02/cover.jpg",
     content: {
+      story_id: "story_toddler_02",
+      title: "The Sleepy Bear's Nest",
+      target_age_group: "1-3",
+      theme: "animals",
       scenes: [
         {
           scene_number: 1,
-          narrative_text: "Luna the bunny yawns at the moon. Tap the moon to say goodnight!",
-          audio_prompt: "Tap the moon to say goodnight!",
-          visual_asset_keyword: "moon",
-          lottie_animation: "/lottie/moon.json",
+          narrative_text:
+            "Bear is very tired after a long day. Touch and hold the screen to help Bear breathe softly.",
+          audio_prompt:
+            "Bear is very tired after a long day. Touch and hold the screen to help Bear breathe softly.",
+          visual_asset_keyword: "bear",
+          interaction_type: "hold_breath",
+          video_url: "/stories/story_toddler_02/scene1_breathe.mp4",
+          wake_video_url: "/stories/story_toddler_02/scene1_calm.mp4",
+          audio_url: "/stories/story_toddler_02/scene1.mp3",
+        },
+        {
+          scene_number: 2,
+          narrative_text: "Which blanket is SOFT and BLUE for Bear?",
+          audio_prompt: "Which blanket is SOFT and BLUE for Bear?",
+          visual_asset_keyword: "blanket",
+          interaction_type: "color_match",
+          video_url: "/stories/story_toddler_02/scene2_blankets.mp4",
+          wake_video_url: "/stories/story_toddler_02/scene2_blue.mp4",
+          audio_url: "/stories/story_toddler_02/scene2.mp3",
+          tap_target: {
+            label: "blue blanket",
+            color: "blue",
+            hotspot: { left: 38, top: 42, width: 28, height: 36 },
+          },
+          puzzle: {
+            type: "color_match",
+            target_color: "blue",
+            options: ["green", "blue", "orange"],
+            correct_answer: "blue",
+          },
         },
       ],
     },
@@ -191,15 +260,51 @@ export function normalizeStory(raw: Record<string, unknown>): StoryRecord {
     content = { ...content, scenes: [] };
   }
 
+  const storyId = String(raw.story_id);
+  const coverFromRow =
+    typeof raw.cover_image === "string" && raw.cover_image
+      ? raw.cover_image
+      : typeof (content as StoryContent & { cover_image?: string }).cover_image === "string"
+        ? (content as StoryContent & { cover_image?: string }).cover_image
+        : undefined;
+
   return {
     id: String(raw.id ?? raw.story_id),
-    story_id: String(raw.story_id),
+    story_id: storyId,
     title: String(raw.title),
     target_age_group: (raw.target_age_group as StoryAgeGroup) ?? "3-6",
     difficulty_level: String(raw.difficulty_level ?? "beginner"),
     theme: String(raw.theme ?? "general"),
     content,
     is_active: raw.is_active !== false,
+    cover_image: coverFromRow ?? `/stories/${storyId}/cover.jpg`,
+  };
+}
+
+export function getStoryCoverUrl(story: StoryRecord): string | null {
+  if (story.cover_image) return story.cover_image;
+  const firstVideo = story.content.scenes.find((s) => s.video_url)?.video_url;
+  if (!firstVideo) return null;
+  return `/stories/${story.story_id}/cover.jpg`;
+}
+
+export function findStoryById(
+  stories: StoryRecord[],
+  storyId: string,
+): StoryRecord | undefined {
+  return stories.find((s) => s.story_id === storyId);
+}
+
+export function getAdjacentStoryIds(
+  stories: StoryRecord[],
+  storyId: string,
+): { prevId: string | null; nextId: string | null; index: number } {
+  const index = stories.findIndex((s) => s.story_id === storyId);
+  if (index < 0) return { prevId: null, nextId: null, index: -1 };
+  return {
+    index,
+    prevId: index > 0 ? stories[index - 1].story_id : null,
+    nextId: index < stories.length - 1 ? stories[index + 1].story_id : null,
   };
 }
 
@@ -207,7 +312,27 @@ export function getFallbackStories(ageGroup: StoryAgeGroup): StoryRecord[] {
   return ageGroup === "1-3" ? FALLBACK_TODDLER : FALLBACK_EXPLORER;
 }
 
+function storyHasLocalMedia(story: StoryRecord): boolean {
+  return story.content.scenes.some((scene) => Boolean(scene.video_url || scene.audio_url));
+}
+
+/** Merge remote + local decks; local media-produced stories always win. */
+export function mergeStoryDecks(
+  remote: StoryRecord[],
+  local: StoryRecord[],
+): StoryRecord[] {
+  const byId = new Map<string, StoryRecord>();
+  for (const story of remote) byId.set(story.story_id, story);
+  for (const story of local) {
+    if (storyHasLocalMedia(story) || !byId.has(story.story_id)) {
+      byId.set(story.story_id, story);
+    }
+  }
+  return Array.from(byId.values()).sort((a, b) => a.story_id.localeCompare(b.story_id));
+}
+
 export async function fetchStories(ageGroup: StoryAgeGroup): Promise<StoryRecord[]> {
+  const local = getFallbackStories(ageGroup);
   try {
     const supabase = createClient();
     const { data, error } = await supabase
@@ -217,9 +342,10 @@ export async function fetchStories(ageGroup: StoryAgeGroup): Promise<StoryRecord
       .eq("target_age_group", ageGroup)
       .order("story_id", { ascending: true });
 
-    if (error || !data?.length) return getFallbackStories(ageGroup);
-    return data.map((row) => normalizeStory(row as Record<string, unknown>));
+    if (error || !data?.length) return local;
+    const remote = data.map((row) => normalizeStory(row as Record<string, unknown>));
+    return mergeStoryDecks(remote, local);
   } catch {
-    return getFallbackStories(ageGroup);
+    return local;
   }
 }

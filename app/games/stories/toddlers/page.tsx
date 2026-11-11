@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import StoryEngine from "@/components/StoryEngine";
+import ToddlerStoriesLibrary from "@/components/ToddlerStoriesLibrary";
 import { getRouteMeta } from "@/utils/navigation";
 
 const route = getRouteMeta("/games/stories/toddlers");
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function ToddlerStoriesPage() {
-  return <StoryEngine ageGroup="1-3" routeLabel={route.label} />;
+  return <ToddlerStoriesLibrary routeLabel={route.label} />;
 }

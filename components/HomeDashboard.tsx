@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   BookOpen,
+  Gamepad2,
   Grid,
   MessageCircleCode,
   Paintbrush,
@@ -55,12 +56,21 @@ const FEATURES: FeatureCard[] = [
   },
   {
     id: "stories",
-    name: "IQ Stories Engine",
+    name: "Stories Under 3 Years",
     href: "/games/stories/toddlers",
     icon: BookOpen,
     accentClass: "from-rose-50/80 to-pink-100/60",
     iconWrapClass: "bg-rose-400 text-white shadow-rose-300/50",
     ringClass: "ring-rose-300/70",
+  },
+  {
+    id: "games",
+    name: "Games",
+    href: "/games",
+    icon: Gamepad2,
+    accentClass: "from-lime-50/90 to-cyan-100/70",
+    iconWrapClass: "bg-teal-500 text-white shadow-teal-300/50",
+    ringClass: "ring-teal-300/70",
   },
   {
     id: "shop",

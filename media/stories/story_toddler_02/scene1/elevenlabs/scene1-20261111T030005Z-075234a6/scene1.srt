@@ -1,0 +1,7 @@
+1
+00:00:00,070 --> 00:00:02,543
+Bear is very tired after a long day.
+
+2
+00:00:03,251 --> 00:00:06,444
+Touch and hold the screen to help Bear breathe softly.

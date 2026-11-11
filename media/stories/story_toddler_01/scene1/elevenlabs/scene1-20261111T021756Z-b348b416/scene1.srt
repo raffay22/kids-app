@@ -1,0 +1,7 @@
+1
+00:00:00,081 --> 00:00:02,310
+Sammy the turtle wants to swim home.
+
+2
+00:00:02,763 --> 00:00:05,108
+Help him glide slowly through the water!

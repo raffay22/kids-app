@@ -19,7 +19,15 @@ export default function AppShell({ children }: AppShellProps) {
   return (
     <div className="min-h-screen bg-slate-50">
       <Header />
-      <main className="mx-auto max-w-5xl p-4 sm:p-6">{children}</main>
+      <main
+        className={
+          pathname.startsWith("/games/trolley") || pathname.startsWith("/games/coin-shop")
+            ? "mx-auto w-full max-w-[90rem] px-3 py-3 sm:px-5 lg:px-8"
+            : "mx-auto max-w-5xl p-4 sm:p-6"
+        }
+      >
+        {children}
+      </main>
     </div>
   );
 }

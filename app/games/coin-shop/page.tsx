@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-import CoinShopGame from "@/components/CoinShopGame";
-import { getRouteMeta } from "@/utils/navigation";
-
-const route = getRouteMeta("/games/coin-shop");
+import ToyShopRide from "@/components/coin-shop/ToyShopRide";
 
 export const metadata: Metadata = {
-  title: route.label,
+  title: "Math and Coin Toy Shop",
 };
 
 export default function CoinShopPage() {
-  return <CoinShopGame />;
+  return <ToyShopRide />;
 }

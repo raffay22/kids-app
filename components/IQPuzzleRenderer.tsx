@@ -8,6 +8,8 @@ type IQPuzzleRendererProps = {
   puzzle: StoryPuzzle;
   onCorrect: () => void;
   onWrong: () => void;
+  /** Hide technical labels like "color match" for kid-facing IQ stories. */
+  hideTypeLabel?: boolean;
 };
 
 const COLOR_SWATCH: Record<string, string> = {
@@ -24,7 +26,12 @@ const SHAPE_LABEL: Record<string, string> = {
   hexagon: "Hexagon",
 };
 
-export default function IQPuzzleRenderer({ puzzle, onCorrect, onWrong }: IQPuzzleRendererProps) {
+export default function IQPuzzleRenderer({
+  puzzle,
+  onCorrect,
+  onWrong,
+  hideTypeLabel = false,
+}: IQPuzzleRendererProps) {
   const options = puzzle.options ?? [];
 
   const checkAnswer = (choice: string) => {
@@ -61,9 +68,11 @@ export default function IQPuzzleRenderer({ puzzle, onCorrect, onWrong }: IQPuzzl
 
   return (
     <div className="space-y-3">
-      <p className="text-center text-sm font-bold uppercase tracking-wide text-indigo-500">
-        {puzzle.type.replace(/_/g, " ")}
-      </p>
+      {!hideTypeLabel && (
+        <p className="text-center text-sm font-bold uppercase tracking-wide text-indigo-500">
+          {puzzle.type.replace(/_/g, " ")}
+        </p>
+      )}
       {puzzle.type === "pattern_sequence" && puzzle.sequence && (
         <div className="flex flex-wrap justify-center gap-2">
           {puzzle.sequence.map((item, i) => (

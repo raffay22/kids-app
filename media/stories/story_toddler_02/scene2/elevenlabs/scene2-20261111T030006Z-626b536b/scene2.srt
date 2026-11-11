@@ -1,0 +1,3 @@
+1
+00:00:00,070 --> 00:00:02,392
+Which blanket is SOFT and BLUE for Bear?

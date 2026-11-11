@@ -1,0 +1,36 @@
+{
+  "story_id": "story_toddler_01",
+  "title": "Sammy the Turtle's Slow Swim",
+  "target_age_group": "1-3",
+  "difficulty_level": "beginner",
+  "theme": "ocean",
+  "style": "3d-cartoon-cinematic",
+  "pipeline": "generate-image → generate-video → elevenlabs_voice.py → ffmpeg VO-timed merge",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica",
+  "model_id": "eleven_multilingual_v2",
+  "speed": 0.85,
+  "merged_story": "public/stories/story_toddler_01/story.mp4",
+  "status": "interactive-preview",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "narrative_text": "Sammy the turtle wants to swim home. Help him glide slowly through the water!",
+      "audio_prompt": "Sammy the turtle wants to swim home. Help him glide slowly through the water!",
+      "interaction_type": "slow_trace",
+      "video": "public/stories/story_toddler_01/scene1.mp4",
+      "audio": "public/stories/story_toddler_01/scene1.mp3",
+      "motion_source": "public/stories/story_toddler_01/scene1_motion.mp4"
+    },
+    {
+      "scene_number": 2,
+      "narrative_text": "Oh look! A red starfish is sleeping. Tap the RED starfish to wake it up!",
+      "audio_prompt": "Oh look! A red starfish is sleeping. Tap the RED starfish to wake it up!",
+      "interaction_type": "tap_wake",
+      "video_sleep": "public/stories/story_toddler_01/scene2_sleep.mp4",
+      "video_wake": "public/stories/story_toddler_01/scene2_wake.mp4",
+      "audio": "public/stories/story_toddler_01/scene2.mp3",
+      "tap_target": "red starfish"
+    }
+  ]
+}

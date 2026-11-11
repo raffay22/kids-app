@@ -1,0 +1,7 @@
+1
+00:00:00,081 --> 00:00:02,403
+Oh look! A red starfish is sleeping.
+
+2
+00:00:02,647 --> 00:00:04,632
+Tap the RED starfish to wake it up!

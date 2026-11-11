@@ -1,0 +1,1449 @@
+{
+  "compressed_at": "2026-11-11T09:30:54.971Z",
+  "ok": 205,
+  "fail": 1,
+  "bytes_saved": 4475784,
+  "mb_saved": 4.48,
+  "files": [
+    {
+      "file": "public\\stories\\story_toddler_01\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 798533,
+      "after": 737488
+    },
+    {
+      "file": "public\\stories\\story_toddler_01\\scene1_motion.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 1328615,
+      "after": 1232056
+    },
+    {
+      "file": "public\\stories\\story_toddler_01\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 731488,
+      "after": 659915
+    },
+    {
+      "file": "public\\stories\\story_toddler_01\\scene2_sleep.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 935665,
+      "after": 883691
+    },
+    {
+      "file": "public\\stories\\story_toddler_01\\scene2_wake.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 717472,
+      "after": 661399
+    },
+    {
+      "file": "public\\stories\\story_toddler_01\\story.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 1536800,
+      "after": 1406062
+    },
+    {
+      "file": "public\\stories\\story_toddler_02\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 846182,
+      "after": 756468
+    },
+    {
+      "file": "public\\stories\\story_toddler_02\\scene1_breathe.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 800142,
+      "after": 707876
+    },
+    {
+      "file": "public\\stories\\story_toddler_02\\scene1_calm.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 815528,
+      "after": 739601
+    },
+    {
+      "file": "public\\stories\\story_toddler_02\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 309826,
+      "after": 274110
+    },
+    {
+      "file": "public\\stories\\story_toddler_02\\scene2_blankets.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 620030,
+      "after": 547058
+    },
+    {
+      "file": "public\\stories\\story_toddler_02\\scene2_blue.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 585754,
+      "after": 531632
+    },
+    {
+      "file": "public\\stories\\story_toddler_03\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 406638,
+      "after": 367337
+    },
+    {
+      "file": "public\\stories\\story_toddler_03\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 193439,
+      "after": 174966
+    },
+    {
+      "file": "public\\stories\\story_toddler_03\\scene2_blue.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 251018,
+      "after": 233140
+    },
+    {
+      "file": "public\\stories\\story_toddler_04\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 215209,
+      "after": 197896
+    },
+    {
+      "file": "public\\stories\\story_toddler_04\\scene1_land.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 300661,
+      "after": 279526
+    },
+    {
+      "file": "public\\stories\\story_toddler_04\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 278445,
+      "after": 253231
+    },
+    {
+      "file": "public\\stories\\story_toddler_04\\scene2_yellow.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 232347,
+      "after": 214562
+    },
+    {
+      "file": "public\\stories\\story_toddler_05\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 185751,
+      "after": 171601
+    },
+    {
+      "file": "public\\stories\\story_toddler_05\\scene1_wake.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 203063,
+      "after": 191955
+    },
+    {
+      "file": "public\\stories\\story_toddler_05\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 274367,
+      "after": 251313
+    },
+    {
+      "file": "public\\stories\\story_toddler_06\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 415834,
+      "after": 367546
+    },
+    {
+      "file": "public\\stories\\story_toddler_06\\scene1_stretch.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 360759,
+      "after": 330290
+    },
+    {
+      "file": "public\\stories\\story_toddler_06\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 309914,
+      "after": 279806
+    },
+    {
+      "file": "public\\stories\\story_toddler_06\\scene2_orange.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 350821,
+      "after": 316896
+    },
+    {
+      "file": "public\\stories\\story_toddler_07\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 841550,
+      "after": 771456
+    },
+    {
+      "file": "public\\stories\\story_toddler_07\\scene1_splash.mp4",
+      "ok": false,
+      "error": "ompatible_brands: isomiso2avc1mp41\r\n    encoder         : Lavf63.1.101\r\n  Stream #0:0(und): Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720, q=2-31, 24 fps, 12288 tbn (default)\r\n    Metadata:\r\n      encoder         : Lavc63.1.101 libx264\r\n      handler_name    : VideoHandler\r\n    Side data:\r\n      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\r\n"
+    },
+    {
+      "file": "public\\stories\\story_toddler_07\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 558333,
+      "after": 509398
+    },
+    {
+      "file": "public\\stories\\story_toddler_07\\scene2_yellow.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 608231,
+      "after": 549372
+    },
+    {
+      "file": "public\\stories\\story_toddler_08\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 523443,
+      "after": 475320
+    },
+    {
+      "file": "public\\stories\\story_toddler_08\\scene1_hop.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 407121,
+      "after": 382094
+    },
+    {
+      "file": "public\\stories\\story_toddler_08\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 481301,
+      "after": 433300
+    },
+    {
+      "file": "public\\stories\\story_toddler_09\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 422724,
+      "after": 375383
+    },
+    {
+      "file": "public\\stories\\story_toddler_09\\scene1_pull.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 506638,
+      "after": 462241
+    },
+    {
+      "file": "public\\stories\\story_toddler_09\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 327228,
+      "after": 288861
+    },
+    {
+      "file": "public\\stories\\story_toddler_09\\scene2_orange.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 349102,
+      "after": 312624
+    },
+    {
+      "file": "public\\stories\\story_toddler_10\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 118328,
+      "after": 106218
+    },
+    {
+      "file": "public\\stories\\story_toddler_10\\scene1_roll.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 435091,
+      "after": 397418
+    },
+    {
+      "file": "public\\stories\\story_toddler_10\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 89006,
+      "after": 78550
+    },
+    {
+      "file": "public\\stories\\story_toddler_10\\scene2_pink.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 133697,
+      "after": 121899
+    },
+    {
+      "file": "public\\stories\\story_toddler_11\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 139366,
+      "after": 129846
+    },
+    {
+      "file": "public\\stories\\story_toddler_11\\scene1_swing.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 392666,
+      "after": 362774
+    },
+    {
+      "file": "public\\stories\\story_toddler_11\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 157222,
+      "after": 144892
+    },
+    {
+      "file": "public\\stories\\story_toddler_11\\scene2_yellow.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 207260,
+      "after": 191942
+    },
+    {
+      "file": "public\\stories\\story_toddler_12\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 110602,
+      "after": 99407
+    },
+    {
+      "file": "public\\stories\\story_toddler_12\\scene1_eat.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 119438,
+      "after": 107995
+    },
+    {
+      "file": "public\\stories\\story_toddler_12\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 85612,
+      "after": 76806
+    },
+    {
+      "file": "public\\stories\\story_toddler_12\\scene2_green.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 177494,
+      "after": 166996
+    },
+    {
+      "file": "public\\stories\\story_toddler_13\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 102793,
+      "after": 93121
+    },
+    {
+      "file": "public\\stories\\story_toddler_13\\scene1_pat.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 151177,
+      "after": 141411
+    },
+    {
+      "file": "public\\stories\\story_toddler_13\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 113885,
+      "after": 103216
+    },
+    {
+      "file": "public\\stories\\story_toddler_13\\scene2_white.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 186203,
+      "after": 171811
+    },
+    {
+      "file": "public\\stories\\story_toddler_14\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 208375,
+      "after": 185332
+    },
+    {
+      "file": "public\\stories\\story_toddler_14\\scene1_reach.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 374807,
+      "after": 335710
+    },
+    {
+      "file": "public\\stories\\story_toddler_14\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 177820,
+      "after": 156519
+    },
+    {
+      "file": "public\\stories\\story_toddler_14\\scene2_green.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 246973,
+      "after": 220917
+    },
+    {
+      "file": "public\\stories\\story_toddler_15\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 156157,
+      "after": 143473
+    },
+    {
+      "file": "public\\stories\\story_toddler_15\\scene1_circle.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 182461,
+      "after": 169397
+    },
+    {
+      "file": "public\\stories\\story_toddler_15\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 138403,
+      "after": 124278
+    },
+    {
+      "file": "public\\stories\\story_toddler_16\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 210444,
+      "after": 189993
+    },
+    {
+      "file": "public\\stories\\story_toddler_16\\scene1_spout.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 483568,
+      "after": 435055
+    },
+    {
+      "file": "public\\stories\\story_toddler_16\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 197258,
+      "after": 175324
+    },
+    {
+      "file": "public\\stories\\story_toddler_16\\scene2_blue.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 250809,
+      "after": 239203
+    },
+    {
+      "file": "public\\stories\\story_toddler_17\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 124764,
+      "after": 112115
+    },
+    {
+      "file": "public\\stories\\story_toddler_17\\scene1_stripe.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 161829,
+      "after": 147749
+    },
+    {
+      "file": "public\\stories\\story_toddler_17\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 118260,
+      "after": 106831
+    },
+    {
+      "file": "public\\stories\\story_toddler_17\\scene2_black.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 187270,
+      "after": 171677
+    },
+    {
+      "file": "public\\stories\\story_toddler_18\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 255805,
+      "after": 239352
+    },
+    {
+      "file": "public\\stories\\story_toddler_18\\scene1_bubble.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 247819,
+      "after": 232953
+    },
+    {
+      "file": "public\\stories\\story_toddler_18\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 180180,
+      "after": 168847
+    },
+    {
+      "file": "public\\stories\\story_toddler_18\\scene2_orange.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 239239,
+      "after": 224334
+    },
+    {
+      "file": "public\\stories\\story_toddler_19\\scene1.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 249479,
+      "after": 223062
+    },
+    {
+      "file": "public\\stories\\story_toddler_19\\scene1_circle.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 254708,
+      "after": 230373
+    },
+    {
+      "file": "public\\stories\\story_toddler_19\\scene2.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 251218,
+      "after": 224432
+    },
+    {
+      "file": "public\\stories\\story_toddler_19\\scene2_brown.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 709259,
+      "after": 640738
+    },
+    {
+      "file": "public\\phonics\\A\\a1_apple.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 120924,
+      "after": 112518
+    },
+    {
+      "file": "public\\phonics\\A\\a2_aeroplane.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 206768,
+      "after": 199596
+    },
+    {
+      "file": "public\\phonics\\A\\a3_ant.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 249019,
+      "after": 234702
+    },
+    {
+      "file": "public\\phonics\\A\\a4_alligator.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 244915,
+      "after": 225113
+    },
+    {
+      "file": "public\\phonics\\A\\a5_astronaut.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 140299,
+      "after": 133295
+    },
+    {
+      "file": "public\\phonics\\B\\b1_ball.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 253227,
+      "after": 236548
+    },
+    {
+      "file": "public\\phonics\\B\\b2_bus.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 242111,
+      "after": 225333
+    },
+    {
+      "file": "public\\phonics\\B\\b3_bear.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 390055,
+      "after": 361609
+    },
+    {
+      "file": "public\\phonics\\B\\b4_butterfly.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 175470,
+      "after": 164802
+    },
+    {
+      "file": "public\\phonics\\B\\b5_banana.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 182400,
+      "after": 171858
+    },
+    {
+      "file": "public\\phonics\\C\\c1_cat.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 167162,
+      "after": 157701
+    },
+    {
+      "file": "public\\phonics\\C\\c2_car.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 258993,
+      "after": 242191
+    },
+    {
+      "file": "public\\phonics\\C\\c3_cupcake.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 235709,
+      "after": 219238
+    },
+    {
+      "file": "public\\phonics\\C\\c4_cow.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 376398,
+      "after": 354121
+    },
+    {
+      "file": "public\\phonics\\C\\c5_clock.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 154860,
+      "after": 145642
+    },
+    {
+      "file": "public\\phonics\\D\\d1_dog.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 481173,
+      "after": 439999
+    },
+    {
+      "file": "public\\phonics\\D\\d2_duck.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 334054,
+      "after": 313603
+    },
+    {
+      "file": "public\\phonics\\D\\d3_drum.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 308607,
+      "after": 292717
+    },
+    {
+      "file": "public\\phonics\\D\\d4_dolphin.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 362207,
+      "after": 332838
+    },
+    {
+      "file": "public\\phonics\\D\\d5_dinosaur.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 221799,
+      "after": 201971
+    },
+    {
+      "file": "public\\phonics\\E\\e1_elephant.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 292003,
+      "after": 269517
+    },
+    {
+      "file": "public\\phonics\\E\\e2_egg.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 193292,
+      "after": 183178
+    },
+    {
+      "file": "public\\phonics\\E\\e3_eagle.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 202337,
+      "after": 190858
+    },
+    {
+      "file": "public\\phonics\\E\\e4_engine.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 278226,
+      "after": 255744
+    },
+    {
+      "file": "public\\phonics\\E\\e5_earth.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 178905,
+      "after": 167894
+    },
+    {
+      "file": "public\\phonics\\F\\f1_fish.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 280963,
+      "after": 269105
+    },
+    {
+      "file": "public\\phonics\\F\\f2_frog.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 201281,
+      "after": 185105
+    },
+    {
+      "file": "public\\phonics\\F\\f3_flower.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 165866,
+      "after": 159352
+    },
+    {
+      "file": "public\\phonics\\F\\f4_fox.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 253950,
+      "after": 233809
+    },
+    {
+      "file": "public\\phonics\\F\\f5_fireengine.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 264865,
+      "after": 246397
+    },
+    {
+      "file": "public\\phonics\\G\\g1_giraffe.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 154858,
+      "after": 148281
+    },
+    {
+      "file": "public\\phonics\\G\\g2_guitar.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 253521,
+      "after": 237933
+    },
+    {
+      "file": "public\\phonics\\G\\g3_grapes.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 142800,
+      "after": 133811
+    },
+    {
+      "file": "public\\phonics\\G\\g4_gift.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 192999,
+      "after": 185830
+    },
+    {
+      "file": "public\\phonics\\G\\g5_gorilla.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 194685,
+      "after": 174780
+    },
+    {
+      "file": "public\\phonics\\H\\h1_horse.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 381650,
+      "after": 352022
+    },
+    {
+      "file": "public\\phonics\\H\\h2_hat.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 126391,
+      "after": 120502
+    },
+    {
+      "file": "public\\phonics\\H\\h3_house.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 121475,
+      "after": 109827
+    },
+    {
+      "file": "public\\phonics\\H\\h4_helicopter.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 238205,
+      "after": 222107
+    },
+    {
+      "file": "public\\phonics\\H\\h5_hippo.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 454389,
+      "after": 413662
+    },
+    {
+      "file": "public\\phonics\\I\\i1_icecream.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 210277,
+      "after": 197663
+    },
+    {
+      "file": "public\\phonics\\I\\i2_igloo.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 115660,
+      "after": 107678
+    },
+    {
+      "file": "public\\phonics\\I\\i3_iguana.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 162452,
+      "after": 146076
+    },
+    {
+      "file": "public\\phonics\\I\\i4_island.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 259568,
+      "after": 236317
+    },
+    {
+      "file": "public\\phonics\\I\\i5_ink.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 154826,
+      "after": 142966
+    },
+    {
+      "file": "public\\phonics\\J\\j1_juice.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 149616,
+      "after": 136024
+    },
+    {
+      "file": "public\\phonics\\J\\j2_jellyfish.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 133173,
+      "after": 128983
+    },
+    {
+      "file": "public\\phonics\\J\\j3_jet.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 219273,
+      "after": 209175
+    },
+    {
+      "file": "public\\phonics\\J\\j4_jaguar.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 197845,
+      "after": 178588
+    },
+    {
+      "file": "public\\phonics\\J\\j5_jug.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 248963,
+      "after": 229904
+    },
+    {
+      "file": "public\\phonics\\K\\k1_kite.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 222394,
+      "after": 213762
+    },
+    {
+      "file": "public\\phonics\\K\\k2_kangaroo.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 279884,
+      "after": 257853
+    },
+    {
+      "file": "public\\phonics\\K\\k3_koala.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 175678,
+      "after": 159684
+    },
+    {
+      "file": "public\\phonics\\K\\k4_king.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 216068,
+      "after": 202790
+    },
+    {
+      "file": "public\\phonics\\K\\k5_key.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 199476,
+      "after": 190652
+    },
+    {
+      "file": "public\\phonics\\L\\l1_lion.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 197895,
+      "after": 182648
+    },
+    {
+      "file": "public\\phonics\\L\\l2_lamp.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 139957,
+      "after": 132374
+    },
+    {
+      "file": "public\\phonics\\L\\l3_lemon.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 150809,
+      "after": 143069
+    },
+    {
+      "file": "public\\phonics\\L\\l4_leaf.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 138330,
+      "after": 131336
+    },
+    {
+      "file": "public\\phonics\\L\\l5_lollipop.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 278005,
+      "after": 261027
+    },
+    {
+      "file": "public\\phonics\\M\\m1_monkey.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 187377,
+      "after": 175572
+    },
+    {
+      "file": "public\\phonics\\M\\m2_moon.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 201254,
+      "after": 194901
+    },
+    {
+      "file": "public\\phonics\\M\\m3_mango.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 138175,
+      "after": 127988
+    },
+    {
+      "file": "public\\phonics\\M\\m4_milk.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 169411,
+      "after": 159715
+    },
+    {
+      "file": "public\\phonics\\M\\m5_mouse.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 151110,
+      "after": 141999
+    },
+    {
+      "file": "public\\phonics\\N\\n1_nest.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 157559,
+      "after": 145261
+    },
+    {
+      "file": "public\\phonics\\N\\n2_net.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 301576,
+      "after": 276534
+    },
+    {
+      "file": "public\\phonics\\N\\n3_nut.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 355269,
+      "after": 333417
+    },
+    {
+      "file": "public\\phonics\\N\\n4_night.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 116648,
+      "after": 101663
+    },
+    {
+      "file": "public\\phonics\\N\\n5_needle.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 299077,
+      "after": 279076
+    },
+    {
+      "file": "public\\phonics\\O\\o1_owl.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 130972,
+      "after": 121569
+    },
+    {
+      "file": "public\\phonics\\O\\o2_orange.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 187530,
+      "after": 173376
+    },
+    {
+      "file": "public\\phonics\\O\\o3_octopus.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 230843,
+      "after": 221824
+    },
+    {
+      "file": "public\\phonics\\O\\o4_ostrich.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 388243,
+      "after": 348984
+    },
+    {
+      "file": "public\\phonics\\O\\o5_onion.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 152047,
+      "after": 142160
+    },
+    {
+      "file": "public\\phonics\\P\\p1_panda.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 233876,
+      "after": 221334
+    },
+    {
+      "file": "public\\phonics\\P\\p2_penguin.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 230217,
+      "after": 215219
+    },
+    {
+      "file": "public\\phonics\\P\\p3_parrot.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 363395,
+      "after": 341760
+    },
+    {
+      "file": "public\\phonics\\P\\p4_pencil.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 272986,
+      "after": 257619
+    },
+    {
+      "file": "public\\phonics\\P\\p5_pizza.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 204543,
+      "after": 190970
+    },
+    {
+      "file": "public\\phonics\\Q\\q1_queen.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 227580,
+      "after": 212176
+    },
+    {
+      "file": "public\\phonics\\Q\\q2_quail.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 341029,
+      "after": 310448
+    },
+    {
+      "file": "public\\phonics\\Q\\q3_quilt.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 262397,
+      "after": 238912
+    },
+    {
+      "file": "public\\phonics\\Q\\q4_question.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 149888,
+      "after": 142942
+    },
+    {
+      "file": "public\\phonics\\Q\\q5_quarter.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 226046,
+      "after": 213041
+    },
+    {
+      "file": "public\\phonics\\R\\r1_rabbit.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 238109,
+      "after": 222695
+    },
+    {
+      "file": "public\\phonics\\R\\r2_rocket.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 249026,
+      "after": 233997
+    },
+    {
+      "file": "public\\phonics\\R\\r3_rainbow.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 150362,
+      "after": 140775
+    },
+    {
+      "file": "public\\phonics\\R\\r4_ring.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 246847,
+      "after": 234889
+    },
+    {
+      "file": "public\\phonics\\R\\r5_robot.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 165341,
+      "after": 157394
+    },
+    {
+      "file": "public\\phonics\\S\\s1_sun.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 243470,
+      "after": 232896
+    },
+    {
+      "file": "public\\phonics\\S\\s2_star.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 239265,
+      "after": 226562
+    },
+    {
+      "file": "public\\phonics\\S\\s3_ship.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 329105,
+      "after": 307544
+    },
+    {
+      "file": "public\\phonics\\S\\s4_snake.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 361633,
+      "after": 334831
+    },
+    {
+      "file": "public\\phonics\\S\\s5_strawberry.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 196537,
+      "after": 187547
+    },
+    {
+      "file": "public\\phonics\\T\\t1_tiger.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 362277,
+      "after": 336792
+    },
+    {
+      "file": "public\\phonics\\T\\t2_train.mp4",
+      "ok": true,
+      "skipped": true,
+      "before": 205346,
+      "after": 205346
+    },
+    {
+      "file": "public\\phonics\\T\\t3_turtle.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 453135,
+      "after": 426383
+    },
+    {
+      "file": "public\\phonics\\T\\t4_tree.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 427781,
+      "after": 392021
+    },
+    {
+      "file": "public\\phonics\\T\\t5_telephone.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 170653,
+      "after": 162345
+    },
+    {
+      "file": "public\\phonics\\U\\u1_umbrella.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 235742,
+      "after": 214110
+    },
+    {
+      "file": "public\\phonics\\U\\u2_unicorn.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 263063,
+      "after": 242899
+    },
+    {
+      "file": "public\\phonics\\U\\u3_uniform.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 149041,
+      "after": 144530
+    },
+    {
+      "file": "public\\phonics\\U\\u4_urn.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 191471,
+      "after": 180427
+    },
+    {
+      "file": "public\\phonics\\U\\u5_underwater.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 257386,
+      "after": 239540
+    },
+    {
+      "file": "public\\phonics\\V\\v1_van.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 224490,
+      "after": 201750
+    },
+    {
+      "file": "public\\phonics\\V\\v2_violin.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 189401,
+      "after": 178186
+    },
+    {
+      "file": "public\\phonics\\V\\v3_vase.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 246566,
+      "after": 230415
+    },
+    {
+      "file": "public\\phonics\\V\\v4_volcano.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 259929,
+      "after": 239880
+    },
+    {
+      "file": "public\\phonics\\V\\v5_vegetables.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 302833,
+      "after": 282836
+    },
+    {
+      "file": "public\\phonics\\W\\w1_whale.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 316057,
+      "after": 294143
+    },
+    {
+      "file": "public\\phonics\\W\\w2_watermelon.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 143568,
+      "after": 131507
+    },
+    {
+      "file": "public\\phonics\\W\\w3_watch.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 178896,
+      "after": 169299
+    },
+    {
+      "file": "public\\phonics\\W\\w4_windmill.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 332837,
+      "after": 311717
+    },
+    {
+      "file": "public\\phonics\\W\\w5_wolf.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 132063,
+      "after": 122829
+    },
+    {
+      "file": "public\\phonics\\X\\x1_xylophone.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 233946,
+      "after": 221136
+    },
+    {
+      "file": "public\\phonics\\X\\x2_xray.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 89728,
+      "after": 84874
+    },
+    {
+      "file": "public\\phonics\\X\\x3_xmas_tree.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 173013,
+      "after": 160561
+    },
+    {
+      "file": "public\\phonics\\X\\x4_xenops.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 279573,
+      "after": 255972
+    },
+    {
+      "file": "public\\phonics\\X\\x5_xiphosura.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 319626,
+      "after": 290198
+    },
+    {
+      "file": "public\\phonics\\Y\\y1_yacht.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 245474,
+      "after": 222362
+    },
+    {
+      "file": "public\\phonics\\Y\\y2_yoyo.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 252180,
+      "after": 237628
+    },
+    {
+      "file": "public\\phonics\\Y\\y3_yak.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 240122,
+      "after": 221848
+    },
+    {
+      "file": "public\\phonics\\Y\\y4_yogurt.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 271149,
+      "after": 253598
+    },
+    {
+      "file": "public\\phonics\\Y\\y5_yarn.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 243223,
+      "after": 225757
+    },
+    {
+      "file": "public\\phonics\\Z\\z1_zebra.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 387549,
+      "after": 353565
+    },
+    {
+      "file": "public\\phonics\\Z\\z2_zipper.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 224665,
+      "after": 207950
+    },
+    {
+      "file": "public\\phonics\\Z\\z3_zoo.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 181111,
+      "after": 162335
+    },
+    {
+      "file": "public\\phonics\\Z\\z4_zero.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 162506,
+      "after": 159233
+    },
+    {
+      "file": "public\\phonics\\Z\\z5_zucchini.mp4",
+      "ok": true,
+      "skipped": false,
+      "before": 152942,
+      "after": 143302
+    }
+  ]
+}

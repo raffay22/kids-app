@@ -1,0 +1,33 @@
+{
+  "story_id": "story_toddler_11",
+  "title": "Milo Monkey's Banana Swing",
+  "target_age_group": "1-3",
+  "difficulty_level": "beginner",
+  "theme": "jungle",
+  "style": "3d-cartoon-cinematic",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica",
+  "model_id": "eleven_multilingual_v2",
+  "speed": 0.85,
+  "stars_per_action": 5,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "narrative_text": "Milo monkey is swinging on a jungle vine. Slowly drag Milo to the next tree branch.",
+      "interaction_type": "slow_trace",
+      "video": "public/stories/story_toddler_11/scene1.mp4",
+      "success_video": "public/stories/story_toddler_11/scene1_swing.mp4",
+      "audio": "public/stories/story_toddler_11/scene1.mp3"
+    },
+    {
+      "scene_number": 2,
+      "narrative_text": "Tap the YELLOW banana cluster!",
+      "interaction_type": "color_match",
+      "target_color": "yellow",
+      "video": "public/stories/story_toddler_11/scene2.mp4",
+      "success_video": "public/stories/story_toddler_11/scene2_yellow.mp4",
+      "audio": "public/stories/story_toddler_11/scene2.mp3",
+      "tap_target": "yellow banana"
+    }
+  ]
+}

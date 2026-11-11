@@ -17,6 +17,12 @@ const COLOR_SWATCH: Record<string, string> = {
   blue: "bg-blue-500",
   green: "bg-green-500",
   yellow: "bg-yellow-400",
+  pink: "bg-pink-400",
+  orange: "bg-orange-500",
+  purple: "bg-purple-500",
+  black: "bg-slate-900",
+  brown: "bg-amber-800",
+  white: "bg-white border border-slate-200",
 };
 
 const SHAPE_LABEL: Record<string, string> = {
@@ -100,6 +106,18 @@ export default function IQPuzzleRenderer({
             {puzzle.type === "color_match" && (
               <span
                 className={`h-5 w-5 rounded-full ${COLOR_SWATCH[option] ?? "bg-slate-300"}`}
+                aria-hidden
+              />
+            )}
+            {puzzle.type === "shape_tangram" && option === "circle" && (
+              <span className="h-6 w-6 rounded-full bg-amber-200" aria-hidden />
+            )}
+            {puzzle.type === "shape_tangram" && option === "square" && (
+              <span className="h-6 w-6 rounded-sm bg-amber-200" aria-hidden />
+            )}
+            {puzzle.type === "shape_tangram" && option === "triangle" && (
+              <span
+                className="h-0 w-0 border-x-[12px] border-b-[22px] border-x-transparent border-b-amber-200"
                 aria-hidden
               />
             )}

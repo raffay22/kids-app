@@ -1,0 +1,7 @@
+1
+00:00:00,081 --> 00:00:03,855
+Toby giraffe reaches his long neck high up into the tree.
+
+2
+00:00:04,458 --> 00:00:06,699
+Trace straight up to help him reach.

@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-11T09:18:52.546480+00:00",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "model_id": "eleven_multilingual_v2",
+  "character_count": 25,
+  "output_format": "mp3_44100_128",
+  "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "speed": 0.85
+  },
+  "receipt_path": "C:\\Users\\dell\\kids-learning-app\\media\\stories\\story_toddler_18\\scene2\\elevenlabs\\scene2-20261111T091852Z-49ad3a8b\\generation.json",
+  "files": {
+    "audio": "C:\\Users\\dell\\kids-learning-app\\media\\stories\\story_toddler_18\\scene2\\elevenlabs\\scene2-20261111T091852Z-49ad3a8b\\scene2.mp3",
+    "timing": "C:\\Users\\dell\\kids-learning-app\\media\\stories\\story_toddler_18\\scene2\\elevenlabs\\scene2-20261111T091852Z-49ad3a8b\\scene2.timing.json",
+    "srt": "C:\\Users\\dell\\kids-learning-app\\media\\stories\\story_toddler_18\\scene2\\elevenlabs\\scene2-20261111T091852Z-49ad3a8b\\scene2.srt",
+    "vtt": "C:\\Users\\dell\\kids-learning-app\\media\\stories\\story_toddler_18\\scene2\\elevenlabs\\scene2-20261111T091852Z-49ad3a8b\\scene2.vtt",
+    "script": "C:\\Users\\dell\\kids-learning-app\\media\\stories\\story_toddler_18\\scene2\\elevenlabs\\scene2-20261111T091852Z-49ad3a8b\\script.txt"
+  },
+  "retry_policy": "Never retry automatically. An interrupted or timed-out POST may already have consumed credits.",
+  "provider_request_id": "YnDsHa4K22OlH74C3Zxt",
+  "history_item_id": "ilWqzC8pMIF1wwWEXLGV",
+  "provider_character_cost": "10",
+  "audio_bytes": 33897,
+  "timed_text_end_seconds": 1.718,
+  "completed_at": "2026-11-11T09:18:53.602613+00:00"
+}

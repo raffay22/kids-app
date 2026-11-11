@@ -1,0 +1,31 @@
+{
+  "story_id": "story_toddler_08",
+  "title": "Fiona Frog's Big Hop",
+  "target_age_group": "1-3",
+  "difficulty_level": "beginner",
+  "theme": "pond",
+  "style": "3d-cartoon-cinematic",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica",
+  "model_id": "eleven_multilingual_v2",
+  "speed": 0.85,
+  "stars_per_action": 5,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "narrative_text": "Fiona frog wants to leap onto the lily pad. Trace an arch from Fiona to the pad.",
+      "interaction_type": "slow_trace",
+      "video": "public/stories/story_toddler_08/scene1.mp4",
+      "success_video": "public/stories/story_toddler_08/scene1_hop.mp4",
+      "audio": "public/stories/story_toddler_08/scene1.mp3"
+    },
+    {
+      "scene_number": 2,
+      "narrative_text": "Which shape is the round lily pad?",
+      "interaction_type": "shape_tangram",
+      "correct_shape": "circle",
+      "video": "public/stories/story_toddler_08/scene2.mp4",
+      "audio": "public/stories/story_toddler_08/scene2.mp3"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "story_id": "story_toddler_07",
+  "title": "Daisy Duck's Splash Pond",
+  "target_age_group": "1-3",
+  "difficulty_level": "beginner",
+  "theme": "pond",
+  "style": "3d-cartoon-cinematic",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica",
+  "model_id": "eleven_multilingual_v2",
+  "speed": 0.85,
+  "stars_per_action": 5,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "narrative_text": "Quack quack! Gently trace a wave across the water to make a splash.",
+      "interaction_type": "slow_trace",
+      "video": "public/stories/story_toddler_07/scene1.mp4",
+      "success_video": "public/stories/story_toddler_07/scene1_splash.mp4",
+      "audio": "public/stories/story_toddler_07/scene1.mp3"
+    },
+    {
+      "scene_number": 2,
+      "narrative_text": "Tap the YELLOW duckling!",
+      "interaction_type": "color_match",
+      "target_color": "yellow",
+      "video": "public/stories/story_toddler_07/scene2.mp4",
+      "success_video": "public/stories/story_toddler_07/scene2_yellow.mp4",
+      "audio": "public/stories/story_toddler_07/scene2.mp3",
+      "tap_target": "yellow duckling"
+    }
+  ]
+}

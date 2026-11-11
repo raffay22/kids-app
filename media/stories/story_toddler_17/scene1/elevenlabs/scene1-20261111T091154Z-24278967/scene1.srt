@@ -1,0 +1,7 @@
+1
+00:00:00,081 --> 00:00:03,123
+Zoe zebra has beautiful black and white stripes.
+
+2
+00:00:03,448 --> 00:00:05,515
+Trace down one stripe smoothly.

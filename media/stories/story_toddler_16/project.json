@@ -1,0 +1,33 @@
+{
+  "story_id": "story_toddler_16",
+  "title": "Wally Whale's Water Spout",
+  "target_age_group": "1-3",
+  "difficulty_level": "beginner",
+  "theme": "ocean",
+  "style": "3d-cartoon-cinematic",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica",
+  "model_id": "eleven_multilingual_v2",
+  "speed": 0.85,
+  "stars_per_action": 5,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "narrative_text": "Whoosh! Wally whale blows water high into the air. Hold down to help Wally spout.",
+      "interaction_type": "hold_breath",
+      "video": "public/stories/story_toddler_16/scene1.mp4",
+      "success_video": "public/stories/story_toddler_16/scene1_spout.mp4",
+      "audio": "public/stories/story_toddler_16/scene1.mp3"
+    },
+    {
+      "scene_number": 2,
+      "narrative_text": "Tap the BLUE water droplet!",
+      "interaction_type": "color_match",
+      "target_color": "blue",
+      "video": "public/stories/story_toddler_16/scene2.mp4",
+      "success_video": "public/stories/story_toddler_16/scene2_blue.mp4",
+      "audio": "public/stories/story_toddler_16/scene2.mp3",
+      "tap_target": "blue droplet"
+    }
+  ]
+}

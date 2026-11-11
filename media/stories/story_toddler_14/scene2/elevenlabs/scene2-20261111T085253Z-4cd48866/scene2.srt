@@ -1,0 +1,7 @@
+1
+00:00:00,058 --> 00:00:02,009
+Which leaf is at the top of the tree?
+
+2
+00:00:02,461 --> 00:00:03,704
+Tap the GREEN leaf!

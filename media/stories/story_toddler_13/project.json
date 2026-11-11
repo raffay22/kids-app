@@ -1,0 +1,33 @@
+{
+  "story_id": "story_toddler_13",
+  "title": "Sammie Sheep's Fluffy Wool",
+  "target_age_group": "1-3",
+  "difficulty_level": "beginner",
+  "theme": "farm",
+  "style": "3d-cartoon-cinematic",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica",
+  "model_id": "eleven_multilingual_v2",
+  "speed": 0.85,
+  "stars_per_action": 5,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "narrative_text": "Baa baa! Gently pat Sammie sheep by holding your touch on the soft wool.",
+      "interaction_type": "hold_breath",
+      "video": "public/stories/story_toddler_13/scene1.mp4",
+      "success_video": "public/stories/story_toddler_13/scene1_pat.mp4",
+      "audio": "public/stories/story_toddler_13/scene1.mp3"
+    },
+    {
+      "scene_number": 2,
+      "narrative_text": "Tap the WHITE cloud in the farm sky!",
+      "interaction_type": "color_match",
+      "target_color": "white",
+      "video": "public/stories/story_toddler_13/scene2.mp4",
+      "success_video": "public/stories/story_toddler_13/scene2_white.mp4",
+      "audio": "public/stories/story_toddler_13/scene2.mp3",
+      "tap_target": "white cloud"
+    }
+  ]
+}

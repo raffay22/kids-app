@@ -1,0 +1,33 @@
+{
+  "story_id": "story_toddler_04",
+  "title": "Bella Bee's Honey Flower",
+  "target_age_group": "1-3",
+  "difficulty_level": "beginner",
+  "theme": "garden",
+  "style": "3d-cartoon-cinematic",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "voice_name": "Jessica",
+  "model_id": "eleven_multilingual_v2",
+  "speed": 0.85,
+  "stars_per_action": 5,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "narrative_text": "Bella Bee is searching for sweet nectar. Hold your finger on the flower to let Bella land.",
+      "interaction_type": "hold_breath",
+      "video": "public/stories/story_toddler_04/scene1.mp4",
+      "success_video": "public/stories/story_toddler_04/scene1_land.mp4",
+      "audio": "public/stories/story_toddler_04/scene1.mp3"
+    },
+    {
+      "scene_number": 2,
+      "narrative_text": "Tap the YELLOW flower for Bella Bee!",
+      "interaction_type": "color_match",
+      "target_color": "yellow",
+      "video": "public/stories/story_toddler_04/scene2.mp4",
+      "success_video": "public/stories/story_toddler_04/scene2_yellow.mp4",
+      "audio": "public/stories/story_toddler_04/scene2.mp3",
+      "tap_target": "yellow flower"
+    }
+  ]
+}

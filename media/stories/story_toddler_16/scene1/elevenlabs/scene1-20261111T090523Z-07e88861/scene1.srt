@@ -1,0 +1,11 @@
+1
+00:00:00,081 --> 00:00:00,720
+Whoosh!
+
+2
+00:00:01,672 --> 00:00:04,505
+Wally whale blows water high into the air.
+
+3
+00:00:04,888 --> 00:00:06,920
+Hold down to help Wally spout.

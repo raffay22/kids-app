@@ -1,0 +1,7 @@
+1
+00:00:00,081 --> 00:00:03,158
+Kiki kitty wants to roll her soft ball of yarn.
+
+2
+00:00:03,611 --> 00:00:05,712
+Trace a spiral to roll the yarn.

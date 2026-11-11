@@ -1,0 +1,79 @@
+---
+description: Upload toddler and kids story media one file at a time to the public Supabase story-animations bucket with CDN caching.
+alwaysApply: true
+---
+
+# Story animations → Supabase `story-animations`
+
+When producing or updating IQ / toddler / kids story media for this app, keep every finished video and narration in the Supabase Storage bucket named **`story-animations`**.
+
+## Bucket settings
+
+- **Bucket name:** `story-animations`
+- **Access:** Public
+- **CDN caching:** Enabled (public object URLs)
+- Do not put story videos in the `phonics` bucket.
+
+## Object path layout
+
+Match the local public paths so CDN URLs stay stable:
+
+```
+story_toddler_01/cover.jpg
+story_toddler_01/scene1.mp4
+story_toddler_01/scene1.mp3
+story_toddler_01/scene2.mp4
+…
+story_toddler_07/scene2_yellow.mp4
+```
+
+Source folder on disk: `public/stories/<story_id>/`
+
+## Compress before upload
+
+Before sending any story or phonics video to a bucket, compress the local MP4s so uploads stay small and reliable.
+
+```bash
+node scripts/compress-story-and-phonics-videos.mjs
+```
+
+- Compress toddler story videos under `public/stories/**`
+- Compress phonics videos under `public/phonics/**`
+- Encode one file at a time with H.264, max width 1280, CRF 28, no audio track on silent loops
+- Replace the local file only when the compressed version is meaningfully smaller
+- Then upload **one compressed file at a time**
+
+## Upload one by one
+
+Upload **one video (or audio) file per request**, wait for success, then send the next. Do not batch-upload many files in parallel.
+
+Reasons:
+
+- Large MP4s fail less often when sent alone
+- Progress is clear for the parent review loop
+- A failed file can be retried without re-sending the whole story
+
+Preferred command (from the live project root):
+
+```bash
+node scripts/upload-story-animations.mjs --one
+```
+
+Or upload a single story after it is finished:
+
+```bash
+node scripts/upload-story-animations.mjs --story story_toddler_07
+```
+
+Credentials required in `.env.local`:
+
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+
+Create the public bucket if it is missing. Upsert on re-upload. Save public URLs to `media/stories/supabase-upload-manifest.json`.
+
+## After upload
+
+- Keep local `public/stories/...` files as the offline fallback.
+- Prefer the CDN public URL in story records when the upload succeeded.
+- Never commit `.env.local` or service-role keys.

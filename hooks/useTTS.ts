@@ -7,7 +7,11 @@ import {
   getPhonicSound,
   resolvePhonicsSpeakText,
 } from "@/utils/phonicsSounds";
-import { speakEnglish } from "@/utils/speech";
+import {
+  KIDS_SPEECH_PITCH,
+  KIDS_SPEECH_RATE,
+  speakEnglish,
+} from "@/utils/speech";
 import { getSchemaScript } from "@/utils/phonicsCatalog";
 
 const PRAISE_PHRASES = [
@@ -19,13 +23,16 @@ const PRAISE_PHRASES = [
 ];
 
 export function useTTS() {
-  const speak = useCallback((text: string, rate = 1.0, pitch = 1.1) => {
-    speakEnglish(text, { rate, pitch });
-  }, []);
+  const speak = useCallback(
+    (text: string, rate = KIDS_SPEECH_RATE, pitch = KIDS_SPEECH_PITCH) => {
+      speakEnglish(text, { rate, pitch });
+    },
+    [],
+  );
 
   const speakPraise = useCallback(() => {
     const phrase = PRAISE_PHRASES[Math.floor(Math.random() * PRAISE_PHRASES.length)];
-    speak(phrase, 0.95, 1.1);
+    speak(phrase, KIDS_SPEECH_RATE, KIDS_SPEECH_PITCH);
   }, [speak]);
 
   const speakWord = useCallback(
@@ -40,12 +47,12 @@ export function useTTS() {
         speak(phonic.speakText, PHONICS_SPEECH_RATE, PHONICS_SPEECH_PITCH);
         return;
       }
-      speak(word, 0.85, 1.1);
+      speak(word, PHONICS_SPEECH_RATE, PHONICS_SPEECH_PITCH);
     },
     [speak],
   );
 
-  /** Slow, clear phonics practice speech (rate 0.75, pitch 1.0). */
+  /** Slow, clear phonics practice speech for toddlers. */
   const speakPhonic = useCallback(
     (options: {
       letter?: string;

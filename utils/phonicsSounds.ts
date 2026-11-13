@@ -62,7 +62,8 @@ const DIGRAPH_SOUNDS: Record<string, PhonicSound> = {
 };
 
 /** Rate & pitch for speech-therapy phonics practice */
-export const PHONICS_SPEECH_RATE = 0.75;
+/** Extra-slow for letter sounds so 1–2 year olds can hear each phoneme. */
+export const PHONICS_SPEECH_RATE = 0.62;
 export const PHONICS_SPEECH_PITCH = 1.0;
 
 /**

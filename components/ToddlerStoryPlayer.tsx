@@ -42,7 +42,7 @@ export default function ToddlerStoryPlayer({
   const trophyUnlockedRef = useRef(false);
 
   const scenes = story.content.scenes ?? [];
-  const { prevId, nextId, index } = useMemo(
+  const { nextId, index } = useMemo(
     () => getAdjacentStoryIds(stories, story.story_id),
     [stories, story.story_id],
   );
@@ -108,8 +108,7 @@ export default function ToddlerStoryPlayer({
   );
 
   const goPrev = () => {
-    if (prevId) router.push(`${LIBRARY_HREF}/${prevId}`);
-    else router.push(LIBRARY_HREF);
+    router.push(LIBRARY_HREF);
   };
 
   const goNext = () => {
@@ -166,7 +165,7 @@ export default function ToddlerStoryPlayer({
       >
         <MotionPressable
           onClick={goPrev}
-          ariaLabel="Previous story"
+          ariaLabel="Back to stories"
           className="flex items-center justify-center gap-2 rounded-2xl border-b-4 border-slate-200 bg-white px-4 py-3 text-base font-bold text-slate-700 shadow-lg"
         >
           <ChevronLeft className="h-5 w-5" aria-hidden />

@@ -5,19 +5,13 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   Check,
-  Crown,
   Home,
-  Lock,
   RotateCcw,
   ShoppingCart,
   Sparkles,
   Volume2,
 } from "lucide-react";
 import MotionPressable from "@/components/MotionPressable";
-import {
-  FREE_MAX_TROLLEY_LETTERS,
-  PRO_MAX_TROLLEY_LETTERS,
-} from "@/utils/membership";
 import {
   getTargetWordsForLetter,
   TROLLEY_LETTERS,
@@ -42,7 +36,7 @@ const spring = { type: "spring" as const, stiffness: 420, damping: 24 };
 export default function AlphabetSelectorModal({
   selected,
   maxLetters,
-  isPro,
+  isPro: _isPro,
   onChangeSelected,
   shopper,
   onChangeShopper,
@@ -62,9 +56,7 @@ export default function AlphabetSelectorModal({
 
     if (selected.length >= maxLetters) {
       playBoop();
-      const msg = isPro
-        ? `You picked ${PRO_MAX_TROLLEY_LETTERS} letters — tap one to swap!`
-        : `Free accounts can pick up to ${FREE_MAX_TROLLEY_LETTERS} letters. Pro unlocks ${PRO_MAX_TROLLEY_LETTERS}!`;
+      const msg = `You picked ${maxLetters} letters — tap one to swap!`;
       setCapNotice(msg);
       speakEnglish(msg, { rate: 0.95, pitch: 1.05 });
       return;
@@ -123,25 +115,9 @@ export default function AlphabetSelectorModal({
           </div>
 
           <div className="flex flex-col items-start gap-2 sm:items-end">
-            <span
-              className={`inline-flex items-center gap-1.5 rounded-2xl border-2 px-3.5 py-2 text-xs font-extrabold uppercase tracking-wide shadow-sm ${
-                isPro
-                  ? "border-amber-300 bg-amber-50 text-amber-900"
-                  : "border-sky-200 bg-sky-50 text-sky-900"
-              }`}
-            >
-              {isPro ? (
-                <>
-                  <Crown className="h-4 w-4 text-amber-500" aria-hidden />
-                  Pro Pass · Up to {PRO_MAX_TROLLEY_LETTERS} Letters
-                </>
-              ) : (
-                <>
-                  <Lock className="h-4 w-4 text-sky-600" aria-hidden />
-                  Free Plan · Up to {FREE_MAX_TROLLEY_LETTERS} Letters (Pro ={" "}
-                  {PRO_MAX_TROLLEY_LETTERS})
-                </>
-              )}
+            <span className="inline-flex items-center gap-1.5 rounded-2xl border-2 border-emerald-200 bg-emerald-50 px-3.5 py-2 text-xs font-extrabold uppercase tracking-wide text-emerald-900 shadow-sm">
+              <Sparkles className="h-4 w-4 text-emerald-600" aria-hidden />
+              Up to {maxLetters} letters
             </span>
             <span className="text-sm font-extrabold text-slate-700">
               Selected: {selected.length} / {maxLetters}

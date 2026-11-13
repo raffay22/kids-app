@@ -221,7 +221,7 @@ export default function ToyShopRide() {
             Hear Prompt
           </button>
           <p className="rounded-2xl bg-amber-50 px-3 py-2 text-xs font-extrabold text-amber-900">
-            {isPro ? "Unlimited toys" : `${purchases} / ${FREE_MAX_COIN_PURCHASES} free toys`}
+            {isPro ? "Toys unlocked" : `${purchases} / ${FREE_MAX_COIN_PURCHASES} toys`}
           </p>
         </div>
       </div>

@@ -21,6 +21,11 @@ export default function Header() {
   const AvatarIcon = avatar.icon;
   const isHome = pathname === "/";
 
+  // Avoid SSR/client nickname mismatch hydration overlay blocking taps.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const helloName = mounted ? (activeChild?.nickname ?? "Friend") : "Friend";
+
   const [holdProgress, setHoldProgress] = useState(0);
   const [holding, setHolding] = useState(false);
   const startRef = useRef<number | null>(null);
@@ -92,22 +97,22 @@ export default function Header() {
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold text-slate-500">Hello</p>
             <p className="truncate text-lg font-bold text-slate-800">
-              {activeChild?.nickname ?? "Friend"}
+              {helloName}
             </p>
           </div>
         </Link>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <motion.div
-            key={stars}
-            initial={{ scale: 1.2 }}
+            key={mounted ? stars : "stars-ssr"}
+            initial={false}
             animate={{ scale: 1 }}
             transition={springTransition}
             className="flex items-center gap-1.5 rounded-full border-2 border-amber-300 bg-gradient-to-r from-amber-100 to-yellow-100 px-3 py-2 text-base font-bold text-amber-700 shadow-md sm:px-4"
             aria-label={`${stars} stars`}
           >
             <span aria-hidden>⭐️</span>
-            <span>{stars}</span>
+            <span suppressHydrationWarning>{stars}</span>
           </motion.div>
 
           <motion.button

@@ -8,12 +8,12 @@ import {
   Gamepad2,
   Grid,
   MessageCircleCode,
+  Moon,
   Paintbrush,
   Sparkles,
   Volume2,
   type LucideIcon,
 } from "lucide-react";
-import { speakEnglish } from "@/utils/speech";
 import { triggerHaptic } from "@/utils/haptics";
 
 type FeatureCard = {
@@ -64,6 +64,15 @@ const FEATURES: FeatureCard[] = [
     ringClass: "ring-rose-300/70",
   },
   {
+    id: "bedtime",
+    name: "Bedtime Stories",
+    href: "/games/stories/bedtime",
+    icon: Moon,
+    accentClass: "from-indigo-50/80 to-sky-100/60",
+    iconWrapClass: "bg-indigo-500 text-white shadow-indigo-300/50",
+    ringClass: "ring-indigo-300/70",
+  },
+  {
     id: "games",
     name: "Games",
     href: "/games",
@@ -104,17 +113,12 @@ export default function HomeDashboard() {
     lockRef.current = true;
     setNavigatingId(feature.id);
     triggerHaptic(30);
-
-    speakEnglish(`Let's jump into the ${feature.name} section!`, {
-      rate: 0.95,
-      pitch: 1.08,
-    });
-
+    // Open immediately — speech on leave is cancelled by StopSpeechOnNavigate.
+    router.push(feature.href);
     window.setTimeout(() => {
-      router.push(feature.href);
       lockRef.current = false;
       setNavigatingId(null);
-    }, 300);
+    }, 200);
   };
 
   return (

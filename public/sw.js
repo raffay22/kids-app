@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 
-const CACHE_VERSION = "kids-learning-v1";
+const CACHE_VERSION = "kids-learning-v2";
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const LOTTIE_CACHE = `${CACHE_VERSION}-lottie`;

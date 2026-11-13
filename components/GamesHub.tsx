@@ -2,71 +2,33 @@
 
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import {
-  Gamepad2,
-  Home,
-  Music2,
-  Coins,
-  ShoppingCart,
-  Sparkles,
-  Triangle,
-  type LucideIcon,
-} from "lucide-react";
+import { Gamepad2, Home, Sparkles } from "lucide-react";
 import MotionPressable from "@/components/MotionPressable";
-import {
-  getGamesForHub,
-  type KidGame,
-  type KidGameArtTone,
-} from "@/utils/gamesCatalog";
+import { getGamesForHub, type KidGame } from "@/utils/gamesCatalog";
 import { triggerHaptic } from "@/utils/haptics";
-import { speakEnglish } from "@/utils/speech";
+import {
+  KIDS_SPEECH_PITCH,
+  KIDS_SPEECH_RATE,
+  speakEnglish,
+} from "@/utils/speech";
 
 const spring = { type: "spring" as const, stiffness: 380, damping: 22 };
-
-const ART: Record<
-  KidGameArtTone,
-  { panel: string; badge: string; Icon: LucideIcon }
-> = {
-  lime: {
-    panel: "from-lime-300 via-emerald-300 to-teal-400",
-    badge: "text-teal-800",
-    Icon: ShoppingCart,
-  },
-  amber: {
-    panel: "from-amber-300 via-orange-300 to-rose-400",
-    badge: "text-orange-800",
-    Icon: Coins,
-  },
-  cyan: {
-    panel: "from-cyan-300 via-sky-300 to-blue-400",
-    badge: "text-sky-800",
-    Icon: Music2,
-  },
-  rose: {
-    panel: "from-rose-300 via-pink-300 to-orange-300",
-    badge: "text-rose-800",
-    Icon: Triangle,
-  },
-  sky: {
-    panel: "from-sky-300 via-cyan-300 to-teal-400",
-    badge: "text-sky-900",
-    Icon: Gamepad2,
-  },
-};
 
 function GameTile({ game, index }: { game: KidGame; index: number }) {
   const router = useRouter();
   const isLive = game.status === "live" && Boolean(game.href);
-  const art = ART[game.artTone];
-  const Icon = art.Icon;
 
   const onTap = () => {
     triggerHaptic(30);
     if (!isLive || !game.href) {
-      speakEnglish(`${game.title} is coming soon!`, { rate: 0.95, pitch: 1.1 });
+      speakEnglish(`${game.title} is coming soon!`, {
+        rate: KIDS_SPEECH_RATE,
+        pitch: KIDS_SPEECH_PITCH,
+      });
       return;
     }
-    speakEnglish(`Let's play ${game.title}!`, { rate: 0.95, pitch: 1.1 });
+    // Navigate immediately so the error overlay / speech never blocks taps.
+    // The destination game speaks its own prompt; leaving a page stops old speech.
     router.push(game.href);
   };
 
@@ -82,28 +44,31 @@ function GameTile({ game, index }: { game: KidGame; index: number }) {
       aria-label={isLive ? `Play ${game.title}` : `${game.title}, coming soon`}
       className="group relative overflow-hidden rounded-[1.75rem] border-4 border-white/90 bg-white text-left shadow-[0_18px_40px_rgba(15,80,90,0.16)]"
     >
-      <div
-        className={`relative flex h-28 items-center justify-center overflow-hidden bg-gradient-to-br sm:h-32 ${art.panel}`}
-      >
-        <motion.span
-          aria-hidden
-          className="absolute -left-4 top-3 h-16 w-16 rounded-full bg-white/25"
-          animate={{ y: [0, 10, 0], x: [0, 6, 0] }}
-          transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
+      <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 sm:aspect-[16/9]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={game.coverSrc}
+          alt={game.coverAlt}
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          draggable={false}
         />
-        <motion.span
+        <div
           aria-hidden
-          className="absolute -right-2 bottom-6 h-20 w-20 rounded-full bg-white/20"
-          animate={{ y: [0, -12, 0] }}
-          transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/55 via-slate-900/10 to-transparent"
         />
-        <span className="relative z-[1] flex items-center gap-3 rounded-3xl bg-white/30 px-4 py-3 text-white shadow-inner backdrop-blur-sm">
-          <Icon className="h-10 w-10" strokeWidth={2.25} aria-hidden />
-          <span className="text-xl font-extrabold leading-tight sm:text-2xl">{game.title}</span>
-        </span>
+        <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
+          <p className="line-clamp-2 text-lg font-extrabold leading-tight text-white drop-shadow-md sm:text-xl">
+            {game.title}
+          </p>
+        </div>
         {!isLive && (
           <span className="absolute right-3 top-3 rounded-full bg-white/95 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-teal-700 shadow">
             Coming soon
+          </span>
+        )}
+        {isLive && game.blurb.startsWith("NEW") && (
+          <span className="absolute left-3 top-3 rounded-full bg-amber-400 px-3 py-1 text-xs font-extrabold uppercase tracking-wide text-amber-950 shadow">
+            New
           </span>
         )}
       </div>
@@ -126,29 +91,8 @@ export default function GamesHub() {
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 rounded-[2rem] bg-[radial-gradient(ellipse_at_top,_#dff9fb_0%,_#fff7e6_45%,_#ffe8d6_100%)]"
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-10 top-8 -z-10 h-40 w-40 rounded-full bg-lime-300/40 blur-2xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-8 top-24 -z-10 h-48 w-48 rounded-full bg-cyan-300/35 blur-2xl"
-      />
 
       <section className="relative mb-4 overflow-hidden rounded-[1.75rem] border-4 border-white/80 bg-gradient-to-br from-teal-400 via-cyan-400 to-sky-400 p-4 text-white shadow-[0_20px_50px_rgba(8,100,120,0.28)] sm:p-5">
-        <motion.div
-          aria-hidden
-          className="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-white/20"
-          animate={{ scale: [1, 1.12, 1], rotate: [0, 8, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          aria-hidden
-          className="absolute bottom-3 right-10 h-14 w-14 rounded-full bg-lime-300/50"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
-        />
-
         <div className="relative flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-xl">
             <p className="mb-2 inline-flex items-center gap-2 text-sm font-extrabold uppercase tracking-wider text-white/90">
@@ -159,7 +103,7 @@ export default function GamesHub() {
               Games
             </h1>
             <p className="mt-2 max-w-md text-sm font-semibold text-white/95 sm:text-base">
-              Tap a game to start shopping.
+              Big taps. Bright pictures. Pick a game and play.
             </p>
           </div>
           <motion.div
@@ -179,7 +123,7 @@ export default function GamesHub() {
         {hasLive ? "Pick a game to play" : "Games are on the way — peek at what’s coming"}
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         {games.map((game, index) => (
           <GameTile key={game.id} game={game} index={index} />
         ))}

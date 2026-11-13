@@ -85,27 +85,35 @@ export function playDing() {
   tone(ctx, 1046.5, 0.3, 0.4, 0.16); // C6 sparkle
 }
 
-/** Short coin clink for the saving bank. */
-export function playClink() {
-  const ctx = getCtx();
-  if (!ctx) return;
-  const osc = ctx.createOscillator();
-  const gain = ctx.createGain();
-  osc.type = "square";
-  osc.frequency.setValueAtTime(1760, ctx.currentTime);
-  osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.09);
-  gain.gain.setValueAtTime(0.07, ctx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
-  osc.connect(gain);
-  gain.connect(ctx.destination);
-  osc.start();
-  osc.stop(ctx.currentTime + 0.14);
-}
-
 /** Gentle two-note "try again" boop — encouraging, not sad */
 export function playBoop() {
   const ctx = getCtx();
   if (!ctx) return;
   tone(ctx, 392, 0, 0.15, 0.12); // G4
   tone(ctx, 440, 0.12, 0.2, 0.12); // A4
+}
+
+/** Soft metallic coin clink for jar / tray drops */
+export function playClink() {
+  const ctx = getCtx();
+  if (!ctx) return;
+  tone(ctx, 880, 0, 0.08, 0.14);
+  tone(ctx, 1174.7, 0.05, 0.12, 0.1);
+}
+
+/** Soft saving-box drop for subtraction take-away */
+export function playBankSave() {
+  const ctx = getCtx();
+  if (!ctx) return;
+  tone(ctx, 392, 0, 0.1, 0.12);
+  tone(ctx, 523.25, 0.08, 0.16, 0.1);
+}
+
+/** Short pop for puzzle snap / shape blast */
+export function playPop() {
+  const ctx = getCtx();
+  if (!ctx) return;
+  tone(ctx, 660, 0, 0.06, 0.16);
+  tone(ctx, 880, 0.04, 0.08, 0.12);
+  tone(ctx, 1175, 0.09, 0.1, 0.08);
 }

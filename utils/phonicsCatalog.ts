@@ -364,6 +364,20 @@ export function getMediaByLetter(letter: string): PhonicsCardMedia | null {
   return getVariation(letter, 0);
 }
 
+/** Every A1–Z5 variation that has a local 3D video on disk. */
+export function listProducedPhonicsCards(): PhonicsCardMedia[] {
+  const out: PhonicsCardMedia[] = [];
+  for (const letter of LETTER_KEYS) {
+    const data = LETTERS[letter];
+    if (!data?.variations?.length) continue;
+    data.variations.forEach((_, index) => {
+      const media = getVariation(letter, index);
+      if (media?.localVideoSrc) out.push(media);
+    });
+  }
+  return out;
+}
+
 /**
  * Exact `elevenlabs_script` from alphabet_phonics_3d_schema.json.
  * Never invent a phrase — if the card exists in the schema, use that line.

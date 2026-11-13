@@ -16,6 +16,7 @@ import {
 import { resolveLottieUrl } from "@/utils/lottieUrl";
 import { triggerHaptic } from "@/utils/haptics";
 import { playBoop, playDing } from "@/utils/celebrate";
+import { applyKidsMediaPlaybackRate, KIDS_SPEECH_RATE } from "@/utils/speech";
 
 type StorySceneProps = {
   story: StoryRecord;
@@ -74,13 +75,14 @@ export default function StoryScene({
   const playNarration = useCallback(() => {
     const audio = audioRef.current;
     if (audio && scene.audio_url) {
+      applyKidsMediaPlaybackRate(audio);
       audio.currentTime = 0;
       void audio.play().catch(() => {
-        speak(scene.audio_prompt || scene.narrative_text, 0.9);
+        speak(scene.audio_prompt || scene.narrative_text, KIDS_SPEECH_RATE);
       });
       return;
     }
-    speak(scene.audio_prompt || scene.narrative_text, 0.9);
+    speak(scene.audio_prompt || scene.narrative_text, KIDS_SPEECH_RATE);
   }, [scene, speak]);
 
   useEffect(() => {
@@ -94,7 +96,9 @@ export default function StoryScene({
     const video = videoRef.current;
     if (!video || !videoSrc) return;
     video.loop = !(waking || actionDone);
+    applyKidsMediaPlaybackRate(video);
     video.load();
+    applyKidsMediaPlaybackRate(video);
     void video.play().catch(() => undefined);
   }, [videoSrc, waking, actionDone]);
 
@@ -107,7 +111,7 @@ export default function StoryScene({
       setHint(null);
       setHolding(false);
       setHoldProgress(100);
-      speak(praise, 0.95);
+      speak(praise, KIDS_SPEECH_RATE);
 
       if (successVideo) {
         setWaking(true);
@@ -358,6 +362,8 @@ export default function StoryScene({
           ref={audioRef}
           src={scene.audio_url}
           preload="auto"
+          onLoadedData={(e) => applyKidsMediaPlaybackRate(e.currentTarget)}
+          onPlay={(e) => applyKidsMediaPlaybackRate(e.currentTarget)}
           onEnded={handleNarrationEnded}
         />
       )}
@@ -381,6 +387,8 @@ export default function StoryScene({
             muted
             autoPlay
             loop={!waking && !actionDone}
+            onLoadedData={(e) => applyKidsMediaPlaybackRate(e.currentTarget)}
+            onPlay={(e) => applyKidsMediaPlaybackRate(e.currentTarget)}
             onEnded={handleSuccessVideoEnded}
           />
 

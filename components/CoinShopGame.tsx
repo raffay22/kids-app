@@ -127,7 +127,7 @@ export default function CoinShopGame() {
           Coin Toy Shop
         </p>
         <h2 className="mt-1 text-2xl font-bold text-slate-800">Count coins & buy a toy!</h2>
-        <p className="mt-1 text-sm text-slate-600">Tap coins into the saving bank, then buy.</p>
+        <p className="mt-1 text-sm text-slate-600">Tap coins into the saving box, then buy.</p>
       </section>
 
       <div className="grid gap-3 sm:grid-cols-3">
@@ -157,9 +157,9 @@ export default function CoinShopGame() {
 
       <LayoutGroup>
         <section className="kid-card border-indigo-200 bg-indigo-50/50 p-4">
-          <p className="mb-2 flex items-center gap-1.5 text-sm font-bold uppercase text-indigo-500">
-            <Coins className="h-4 w-4" aria-hidden />
-            Saving bank ({register.length} coins)
+          <p className="mb-2 flex items-center gap-1.5 text-sm font-bold uppercase text-amber-700">
+            <span aria-hidden>🐻</span>
+            Saving box ({register.length} coins)
           </p>
           <div className="flex min-h-[52px] flex-wrap gap-2">
             <AnimatePresence mode="popLayout">

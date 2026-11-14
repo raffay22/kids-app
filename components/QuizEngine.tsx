@@ -8,6 +8,8 @@ import { useActiveChild } from "@/hooks/useActiveChild";
 import { useTTS } from "@/hooks/useTTS";
 import { useSpeechRecognition } from "@/hooks/useSpeechRecognition";
 import Illustration from "@/components/Illustration";
+import FlashcardActionVideo from "@/components/FlashcardActionVideo";
+import FlashcardStillImage from "@/components/FlashcardStillImage";
 import PhonicsVideoCard, {
   type PhonicsVideoCardHandle,
 } from "@/components/PhonicsVideoCard";
@@ -19,10 +21,13 @@ import {
   CATEGORY_STYLES,
   FLASHCARD_DECK,
   fetchFlashcardsFromSupabase,
+  mergeFlashcardDeck,
   pickQuizCard,
   type FlashcardCategory,
   type FlashcardItem,
 } from "@/utils/flashcards";
+import { getNounCardByWord } from "@/utils/nounFlashcards";
+import { getVerbCardByWord } from "@/utils/verbFlashcards";
 import { formatPhonicsDisplay } from "@/utils/phonicsSounds";
 import { getExampleWordForLetter } from "@/utils/illustrations";
 import { burstConfetti, playBoop, playDing } from "@/utils/celebrate";
@@ -44,7 +49,7 @@ type QuizEngineProps = {
 export default function QuizEngine({ category }: QuizEngineProps) {
   const { user, profile, refreshProfile } = useAuth();
   const { activeChild, refreshChildren } = useActiveChild();
-  const { speakPraise, speakWord } = useTTS();
+  const { speakPlainWord, speakPraise, speakWord } = useTTS();
   const {
     speechAvailable,
     isListening,
@@ -71,7 +76,7 @@ export default function QuizEngine({ category }: QuizEngineProps) {
   useEffect(() => {
     const load = async () => {
       const remote = await fetchFlashcardsFromSupabase();
-      if (remote?.length) setFlashcardDeck(remote);
+      setFlashcardDeck(mergeFlashcardDeck(remote));
     };
     void load();
   }, []);
@@ -298,7 +303,14 @@ export default function QuizEngine({ category }: QuizEngineProps) {
 
   const style = CATEGORY_STYLES[category];
   const isAbc = category === "abc";
+  const isNoun = category === "nouns";
+  const isVerb = category === "verbs";
   const abcExample = isAbc ? (card.exampleWord ?? getExampleWordForLetter(card.word) ?? card.word) : null;
+  const nounImage =
+    card.imageSrc ?? getNounCardByWord(card.word)?.imageSrc ?? null;
+  const verbCard = getVerbCardByWord(card.word);
+  const verbVideo = card.videoUrl ?? verbCard?.videoSrc ?? null;
+  const verbPoster = card.imageSrc ?? verbCard?.imageSrc ?? undefined;
   const accuracy =
     sessionTotal > 0 ? Math.round((sessionCorrect / sessionTotal) * 100) : 0;
 
@@ -324,22 +336,41 @@ export default function QuizEngine({ category }: QuizEngineProps) {
               subtitle={abcExample}
               className="border-0 bg-transparent p-0 shadow-none"
             />
+          ) : isNoun && nounImage ? (
+            <FlashcardStillImage
+              src={nounImage}
+              alt={card.word}
+              celebrate={celebrating}
+            />
+          ) : isVerb && verbVideo ? (
+            <FlashcardActionVideo
+              videoSrc={verbVideo}
+              posterSrc={verbPoster}
+              alt={card.word}
+              celebrate={celebrating}
+            />
           ) : (
             <Illustration word={card.word} lottieUrl={card.lottieUrl} size="xl" celebrate={celebrating} />
           )}
           <p className="mt-3 text-base font-medium opacity-70">
-            {isAbc ? "Which letter is this?" : "What is this?"}
+            {isAbc ? "Which letter is this?" : isVerb ? "What action is this?" : "What is this?"}
           </p>
           <h3 className="text-3xl font-bold tracking-wide sm:text-4xl">{card.prompt ?? card.word}</h3>
           <MotionPressable
             onClick={() => {
-              if (phonicsCardRef.current) {
+              // ABC only: phonics video + letter sound.
+              if (isAbc && phonicsCardRef.current) {
                 phonicsCardRef.current.play();
+                return;
+              }
+              // Nouns & verbs: plain word only — "Drum", not "d… d… Drum".
+              if (isNoun || isVerb) {
+                speakPlainWord(card.word);
                 return;
               }
               speakWord(card.word);
             }}
-            ariaLabel={isAbc ? "Hear the letter sound" : "Hear the word"}
+            ariaLabel={isAbc ? "Hear the letter sound" : "Hear the word only"}
             className="mt-4 flex items-center gap-2 rounded-2xl border-b-4 border-white/60 bg-white/90 px-5 py-2.5 text-base font-semibold text-slate-700 shadow-lg active:translate-y-0.5"
           >
             <Volume2 className="h-5 w-5" aria-hidden />

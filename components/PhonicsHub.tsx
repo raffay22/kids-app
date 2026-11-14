@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import { Trophy, Volume2 } from "lucide-react";
 import PhonicsSoundBreakdown from "@/components/PhonicsSoundBreakdown";
 import AlphabetTracingCanvas from "@/components/AlphabetTracingCanvas";
+import SlowSpeedControl from "@/components/SlowSpeedControl";
 import { useAuth } from "@/components/AuthProvider";
 import { useActiveChild } from "@/hooks/useActiveChild";
 import { createClient } from "@/utils/supabase/client";
@@ -80,6 +81,8 @@ export default function PhonicsHub() {
           Tap cards to hear blends at a gentle pace. Trace letters to unlock the Phonics Champion trophy!
         </p>
       </section>
+
+      <SlowSpeedControl label="Phonics voice speed" />
 
       <PhonicsSoundBreakdown onBlendChange={setActiveBlend} />
 

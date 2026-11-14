@@ -6,6 +6,7 @@ import { AuthProvider } from "@/components/AuthProvider";
 import OnboardingGuard from "@/components/OnboardingGuard";
 import ProgressSyncInit from "@/components/ProgressSyncInit";
 import PWARegister from "@/components/PWARegister";
+import SensoryBootstrap from "@/components/SensoryBootstrap";
 import StopSpeechOnNavigate from "@/components/StopSpeechOnNavigate";
 import TenMinuteTimerGuard from "@/components/TenMinuteTimerGuard";
 import "./globals.css";
@@ -65,6 +66,7 @@ export default function RootLayout({
           <ActiveChildProvider>
             <OnboardingGuard>
               <TenMinuteTimerGuard>
+                <SensoryBootstrap />
                 <StopSpeechOnNavigate />
                 <AppShell>{children}</AppShell>
               </TenMinuteTimerGuard>

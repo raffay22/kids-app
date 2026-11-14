@@ -20,7 +20,7 @@ export default function FlashcardHub() {
           Tap to learn — speak when ready!
         </h2>
         <p className="mt-1.5 text-base text-slate-600">
-          Two-tap confirm for every answer. Earn{" "}
+          Nouns use 3D pictures · verbs use short 3D action clips. Earn{" "}
           <span className="inline-flex items-center gap-1 whitespace-nowrap font-semibold text-amber-600">
             <Star className="h-4 w-4 fill-amber-400 text-amber-500" aria-hidden />
             10 stars

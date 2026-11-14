@@ -1,6 +1,7 @@
 "use client";
 
-import { createEnglishUtterance } from "@/utils/speech";
+import { resolveKidsMediaRate } from "@/utils/kidsPlaybackSpeed";
+import { createEnglishUtterance, KIDS_STORY_PLAYBACK_RATE } from "@/utils/speech";
 import type { PhonicsCardMedia } from "@/utils/phonicsCatalog";
 
 export type PhonicsVoiceHandlers = {
@@ -22,7 +23,7 @@ function stopActive() {
   }
 }
 
-/** Play the schema `elevenlabs_script` in full. Call onEnded when it actually finishes. */
+/** Play phonics VO: English MP3 when present, else TTS. */
 export function playPhonicsVoice(
   media: PhonicsCardMedia | null,
   handlers: PhonicsVoiceHandlers = {},
@@ -41,6 +42,13 @@ export function playPhonicsVoice(
   if (media?.localAudioSrc) {
     const audio = new Audio(media.localAudioSrc);
     activeAudio = audio;
+    const rate = resolveKidsMediaRate(KIDS_STORY_PLAYBACK_RATE);
+    try {
+      audio.playbackRate = rate;
+      audio.defaultPlaybackRate = rate;
+    } catch {
+      // ignore
+    }
     audio.onended = finish;
     void audio.play().catch(() => {
       speakScript(script, finish);

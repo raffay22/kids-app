@@ -4,6 +4,7 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, Home, Star, Trophy } from "lucide-react";
 import StoryScene from "@/components/StoryScene";
+import SlowSpeedControl from "@/components/SlowSpeedControl";
 import MotionPressable from "@/components/MotionPressable";
 import { useAuth } from "@/components/AuthProvider";
 import { useActiveChild } from "@/hooks/useActiveChild";
@@ -136,6 +137,8 @@ export default function ToddlerStoryPlayer({
           </span>
         </p>
       </section>
+
+      <SlowSpeedControl label="Story voice speed" />
 
       <div className="grid gap-4 lg:grid-cols-2">
         {scenes.map((scene, sceneIndex) => (

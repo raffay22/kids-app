@@ -4,7 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Lock } from "lucide-react";
+import { Lock, User } from "lucide-react";
+import ProfilePeekModal from "@/components/ProfilePeekModal";
 import { useActiveChild } from "@/hooks/useActiveChild";
 import { getAvatarById } from "@/utils/avatars";
 import { triggerHaptic } from "@/utils/haptics";
@@ -23,6 +24,7 @@ export default function Header() {
 
   // Avoid SSR/client nickname mismatch hydration overlay blocking taps.
   const [mounted, setMounted] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
   useEffect(() => setMounted(true), []);
   const helloName = mounted ? (activeChild?.nickname ?? "Friend") : "Friend";
 
@@ -72,35 +74,67 @@ export default function Header() {
   useEffect(() => () => clearHold(), [clearHold]);
 
   return (
+    <>
     <header className="sticky top-0 z-20 border-b border-white/70 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-xl sm:px-6">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3">
-        <Link
-          href="/"
-          onClick={() => {
-            if (!isHome) triggerHaptic(20);
-          }}
-          className="flex min-w-0 items-center gap-3 rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-indigo-300"
-          aria-label={isHome ? "Home" : "Back to home"}
-        >
-          <div
-            className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br shadow-md ${avatar.bgClass}`}
-            title={activeChild?.nickname ?? "Learner"}
+        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              triggerHaptic(20);
+              setProfileOpen(true);
+            }}
+            className="flex shrink-0 items-center gap-2 rounded-2xl border-2 border-indigo-200 bg-white/95 py-1 pl-1 pr-2.5 shadow-md outline-none ring-indigo-100 transition hover:border-indigo-400 hover:ring-2 focus-visible:ring-2 focus-visible:ring-indigo-400 sm:pr-3"
+            title="Open profile"
+            aria-label="Open profile"
           >
-            {avatar.initial ? (
-              <span className={`text-lg font-bold ${avatar.iconClass}`}>
-                {avatar.initial}
+            <span
+              className={`relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br shadow-sm sm:h-11 sm:w-11 ${avatar.bgClass}`}
+            >
+              {avatar.initial ? (
+                <span className={`text-base font-bold sm:text-lg ${avatar.iconClass}`}>
+                  {avatar.initial}
+                </span>
+              ) : (
+                <AvatarIcon className={`h-5 w-5 sm:h-6 sm:w-6 ${avatar.iconClass}`} aria-hidden />
+              )}
+              <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white bg-indigo-500 text-white shadow">
+                <User className="h-3 w-3" aria-hidden />
               </span>
-            ) : (
-              <AvatarIcon className={`h-6 w-6 ${avatar.iconClass}`} aria-hidden />
-            )}
-          </div>
-          <div className="min-w-0">
+            </span>
+            <span className="hidden min-w-0 text-left sm:block">
+              <span className="block text-[10px] font-extrabold uppercase tracking-wide text-indigo-600">
+                Profile
+              </span>
+              <span className="block max-w-[7rem] truncate text-sm font-bold text-slate-800">
+                {helloName}
+              </span>
+            </span>
+          </button>
+          <Link
+            href="/"
+            onClick={() => {
+              if (!isHome) triggerHaptic(20);
+            }}
+            className="min-w-0 rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-indigo-300 sm:hidden"
+            aria-label={isHome ? "Home" : "Back to home"}
+          >
             <p className="truncate text-sm font-semibold text-slate-500">Hello</p>
             <p className="truncate text-lg font-bold text-slate-800">
               {helloName}
             </p>
-          </div>
-        </Link>
+          </Link>
+          <Link
+            href="/"
+            onClick={() => {
+              if (!isHome) triggerHaptic(20);
+            }}
+            className="hidden min-w-0 rounded-2xl px-1 outline-none focus-visible:ring-2 focus-visible:ring-indigo-300 sm:block"
+            aria-label={isHome ? "Home" : "Back to home"}
+          >
+            <p className="text-xs font-semibold text-slate-500">Home</p>
+          </Link>
+        </div>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <motion.div
@@ -165,5 +199,7 @@ export default function Header() {
         </div>
       </div>
     </header>
+    <ProfilePeekModal open={profileOpen} onClose={() => setProfileOpen(false)} />
+    </>
   );
 }

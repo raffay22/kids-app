@@ -1,6 +1,8 @@
 import { getPhonicSound } from "@/utils/phonicsSounds";
 import { resolveLottieUrl } from "@/utils/lottieUrl";
 import { createClient } from "@/utils/supabase/client";
+import { NOUN_OBJECT_CARDS } from "@/utils/nounFlashcards";
+import { VERB_ACTION_CARDS } from "@/utils/verbFlashcards";
 
 export type FlashcardCategory = "nouns" | "verbs" | "abc";
 
@@ -72,6 +74,8 @@ export type FlashcardItem = {
   exampleWord?: string;
   /** Supabase/CDN Lottie JSON URL when set */
   lottieUrl?: string;
+  /** Exact 3D still for nouns/objects (preferred over SVG/Lottie) */
+  imageSrc?: string;
   videoUrl?: string | null;
   audioUrl?: string | null;
 };
@@ -101,26 +105,47 @@ export const CATEGORY_STYLES: Record<
 };
 
 export const FLASHCARD_DECK: FlashcardItem[] = [
-  // Nouns & Objects
-  { id: "n-water", word: "Water", category: "nouns" },
-  { id: "n-milk", word: "Milk", category: "nouns" },
-  { id: "n-chair", word: "Chair", category: "nouns" },
-  { id: "n-dog", word: "Dog", category: "nouns" },
-  { id: "n-cat", word: "Cat", category: "nouns" },
-  { id: "n-apple", word: "Apple", category: "nouns" },
-  { id: "n-book", word: "Book", category: "nouns" },
-  { id: "n-rabbit", word: "Rabbit", category: "nouns" },
-  { id: "n-sun", word: "Sun", category: "nouns" },
-  { id: "n-cloud", word: "Cloud", category: "nouns" },
-  // Action Verbs
-  { id: "v-drink", word: "Drink", category: "verbs" },
-  { id: "v-eat", word: "Eat", category: "verbs" },
-  { id: "v-jump", word: "Jump", category: "verbs" },
-  { id: "v-sleep", word: "Sleep", category: "verbs" },
-  { id: "v-run", word: "Run", category: "verbs" },
+  // Nouns & Objects — clean 3D stills (exact word ↔ image)
+  ...NOUN_OBJECT_CARDS.map((noun) => ({
+    id: noun.id,
+    word: noun.word,
+    category: "nouns" as const,
+    imageSrc: noun.imageSrc,
+  })),
+  // Action Verbs — short 3D action clips (verb-only speech)
+  ...VERB_ACTION_CARDS.map((verb) => ({
+    id: verb.id,
+    word: verb.word,
+    category: "verbs" as const,
+    imageSrc: verb.imageSrc,
+    videoUrl: verb.videoSrc,
+  })),
   // ABC Alphabet — full A–Z with matching example images
   ...buildAbcCards(),
 ];
+
+/** Local 3D noun + verb decks always win over remote rows (old SVG / wrong icons). */
+export function mergeFlashcardDeck(remote: FlashcardItem[] | null): FlashcardItem[] {
+  const localNouns = NOUN_OBJECT_CARDS.map((noun) => ({
+    id: noun.id,
+    word: noun.word,
+    category: "nouns" as const,
+    imageSrc: noun.imageSrc,
+  }));
+  const localVerbs = VERB_ACTION_CARDS.map((verb) => ({
+    id: verb.id,
+    word: verb.word,
+    category: "verbs" as const,
+    imageSrc: verb.imageSrc,
+    videoUrl: verb.videoSrc,
+  }));
+  const localAbc = FLASHCARD_DECK.filter((card) => card.category === "abc");
+  if (!remote?.length) return [...localNouns, ...localVerbs, ...localAbc];
+
+  const remoteAbc = remote.filter((card) => card.category === "abc");
+  const abc = remoteAbc.length > 0 ? remoteAbc : localAbc;
+  return [...localNouns, ...localVerbs, ...abc];
+}
 
 export function getCardsByCategory(
   category: FlashcardCategory,

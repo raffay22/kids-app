@@ -1,4 +1,7 @@
-/** Phase 1: English-only Web Speech (en-US / en-GB). No Urdu or other locales. */
+/** Kids Web Speech — English only. */
+
+import { resolveKidsMediaRate } from "@/utils/kidsPlaybackSpeed";
+import { getSensoryTtsSpeed } from "@/utils/sensoryPrefs";
 
 export const APP_SPEECH_LANG = "en-US" as const;
 export const APP_SPEECH_LANG_FALLBACK = "en-GB" as const;
@@ -16,11 +19,18 @@ export const KIDS_STORY_PLAYBACK_RATE = 0.88;
 /** Default ElevenLabs `speed` for future moral-story VO (was 0.85). */
 export const KIDS_ELEVENLABS_SPEED = 0.72;
 
-/** Keep intentional slow phonics; cap anything faster than the toddler default. */
+/**
+ * Keep intentional slow phonics; cap anything faster than the parent TTS slider
+ * (or toddler default when slider matches).
+ */
 export function normalizeKidsSpeechRate(rate?: number): number {
-  if (rate == null || Number.isNaN(rate)) return KIDS_SPEECH_RATE;
+  const parentCap = getSensoryTtsSpeed();
+  const baseline = Math.min(KIDS_SPEECH_RATE, parentCap);
+  if (rate == null || Number.isNaN(rate)) return baseline;
   const clamped = Math.min(Math.max(rate, 0.5), 1.2);
-  return clamped <= KIDS_SPEECH_RATE ? clamped : KIDS_SPEECH_RATE;
+  // Honor explicit parent slider when callers pass sensory rate; otherwise stay toddler-soft.
+  if (Math.abs(clamped - parentCap) < 0.001) return parentCap;
+  return clamped <= baseline ? clamped : baseline;
 }
 
 export function normalizeKidsSpeechPitch(pitch?: number): number {
@@ -43,6 +53,12 @@ export function pickEnglishVoice(
   );
 }
 
+export function pickAppVoice(
+  voices: SpeechSynthesisVoice[],
+): SpeechSynthesisVoice | undefined {
+  return pickEnglishVoice(voices);
+}
+
 export function createEnglishUtterance(
   text: string,
   options?: { rate?: number; pitch?: number },
@@ -53,7 +69,8 @@ export function createEnglishUtterance(
   utterance.pitch = normalizeKidsSpeechPitch(options?.pitch);
 
   if (typeof window !== "undefined" && "speechSynthesis" in window) {
-    const voice = pickEnglishVoice(window.speechSynthesis.getVoices());
+    const voices = window.speechSynthesis.getVoices();
+    const voice = pickEnglishVoice(voices);
     if (voice) {
       utterance.voice = voice;
       utterance.lang = voice.lang.startsWith("en-GB")
@@ -96,6 +113,7 @@ export function stopKidsSpeech() {
   }
 }
 
+/** Speak English text with the device English TTS voice. */
 export function speakEnglish(
   text: string,
   options?: { rate?: number; pitch?: number },
@@ -147,8 +165,9 @@ export function applyKidsMediaPlaybackRate(
 ) {
   if (!el) return;
   try {
-    el.playbackRate = rate;
-    el.defaultPlaybackRate = rate;
+    const next = resolveKidsMediaRate(rate);
+    el.playbackRate = next;
+    el.defaultPlaybackRate = next;
   } catch {
     // some browsers reject extreme rates — ignore
   }

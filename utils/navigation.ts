@@ -17,7 +17,7 @@ import {
   ShieldCheck,
   Coins,
   ShoppingBag,
-  Sliders,
+  Settings,
   Sparkles,
   UserCheck,
   Volume2,
@@ -130,7 +130,18 @@ export const NAV_ROUTES: NavRoute[] = [
     shortLabel: "Calm Zone",
     icon: HeartHandshake,
   },
-  { href: "/pecs", label: "PECS AAC Board", shortLabel: "PECS", icon: Grid },
+  {
+    href: "/asd/emergency",
+    label: "Emergency PECS",
+    shortLabel: "PECS",
+    icon: Grid,
+  },
+  {
+    href: "/asd",
+    label: "ASD PECS & Sensory Hub",
+    shortLabel: "ASD Hub",
+    icon: HeartHandshake,
+  },
   {
     href: "/analytics",
     label: "Practice Log & Dual-Email Export",
@@ -153,7 +164,7 @@ export const NAV_ROUTES: NavRoute[] = [
     href: "/settings",
     label: "Sensory & Privacy Controls",
     shortLabel: "Settings",
-    icon: Sliders,
+    icon: Settings,
   },
   {
     href: "/admin",

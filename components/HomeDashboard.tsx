@@ -14,6 +14,11 @@ import {
   Volume2,
   type LucideIcon,
 } from "lucide-react";
+import { useSensoryPrefs } from "@/hooks/useSensoryPrefs";
+import {
+  ASD_PECS_HUB_CARD,
+  ASD_SENSORY_ACTIVITIES,
+} from "@/utils/asdSensory";
 import { triggerHaptic } from "@/utils/haptics";
 
 type FeatureCard = {
@@ -92,8 +97,8 @@ const FEATURES: FeatureCard[] = [
   },
   {
     id: "pecs",
-    name: "PECS AAC Board",
-    href: "/pecs",
+    name: "Emergency PECS",
+    href: "/asd/emergency",
     icon: Grid,
     accentClass: "from-orange-50/80 to-rose-100/60",
     iconWrapClass: "bg-[#FF7F7F] text-white shadow-orange-300/50",
@@ -107,6 +112,36 @@ export default function HomeDashboard() {
   const router = useRouter();
   const [navigatingId, setNavigatingId] = useState<string | null>(null);
   const lockRef = useRef(false);
+  const { prefs } = useSensoryPrefs();
+  const onlyAsd = prefs.onlyAsdPecsMode;
+  const showAsdHub = prefs.asdPecsMode && !onlyAsd;
+
+  const dashboardCards: FeatureCard[] = onlyAsd
+    ? ASD_SENSORY_ACTIVITIES.map((a) => ({
+        id: a.id,
+        name: a.name,
+        href: a.href,
+        icon: a.icon,
+        accentClass: a.accentClass,
+        iconWrapClass: a.iconWrapClass,
+        ringClass: a.ringClass,
+      }))
+    : [
+        ...FEATURES.filter((f) => f.id !== "pecs" || !showAsdHub),
+        ...(showAsdHub
+          ? [
+              {
+                id: ASD_PECS_HUB_CARD.id,
+                name: ASD_PECS_HUB_CARD.name,
+                href: ASD_PECS_HUB_CARD.href,
+                icon: ASD_PECS_HUB_CARD.icon,
+                accentClass: ASD_PECS_HUB_CARD.accentClass,
+                iconWrapClass: ASD_PECS_HUB_CARD.iconWrapClass,
+                ringClass: ASD_PECS_HUB_CARD.ringClass,
+              } satisfies FeatureCard,
+            ]
+          : []),
+      ];
 
   const openFeature = (feature: FeatureCard) => {
     if (lockRef.current) return;
@@ -125,15 +160,17 @@ export default function HomeDashboard() {
     <div className="space-y-6">
       <section className="text-center sm:text-left">
         <h1 className="text-2xl font-bold text-slate-800 sm:text-3xl">
-          What shall we learn today?
+          {onlyAsd ? "Sensory activities" : "What shall we learn today?"}
         </h1>
         <p className="mt-1 text-base text-slate-600">
-          Tap a big card to jump into a fun activity.
+          {onlyAsd
+            ? "Distraction-free therapy — only the 7 ASD PECS sensory tools."
+            : "Tap a big card to jump into a fun activity."}
         </p>
       </section>
 
       <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
-        {FEATURES.map((feature) => {
+        {dashboardCards.map((feature) => {
           const Icon = feature.icon;
           const busy = navigatingId === feature.id;
 

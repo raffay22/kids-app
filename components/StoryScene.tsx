@@ -73,17 +73,27 @@ export default function StoryScene({
   }, [scene.scene_number, scene.video_url, story.story_id]);
 
   const playNarration = useCallback(() => {
+    const line = scene.audio_prompt || scene.narrative_text;
     const audio = audioRef.current;
+    if (audio) {
+      try {
+        audio.pause();
+        audio.currentTime = 0;
+      } catch {
+        // ignore
+      }
+    }
+
     if (audio && scene.audio_url) {
       applyKidsMediaPlaybackRate(audio);
       audio.currentTime = 0;
       void audio.play().catch(() => {
-        speak(scene.audio_prompt || scene.narrative_text, KIDS_SPEECH_RATE);
+        speak(line, KIDS_SPEECH_RATE);
       });
       return;
     }
-    speak(scene.audio_prompt || scene.narrative_text, KIDS_SPEECH_RATE);
-  }, [scene, speak]);
+    speak(line, KIDS_SPEECH_RATE);
+  }, [scene, speak, story.story_id]);
 
   useEffect(() => {
     if (!hasProducedMedia || !autoPlayNarration) return;

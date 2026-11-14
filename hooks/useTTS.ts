@@ -11,6 +11,7 @@ import {
   KIDS_SPEECH_PITCH,
   KIDS_SPEECH_RATE,
   speakEnglish,
+  stopKidsSpeech,
 } from "@/utils/speech";
 import { getSchemaScript } from "@/utils/phonicsCatalog";
 
@@ -20,7 +21,7 @@ const PRAISE_PHRASES = [
   "Well done!",
   "Super Star!",
   "Fantastic!",
-];
+] as const;
 
 export function useTTS() {
   const speak = useCallback(
@@ -30,9 +31,24 @@ export function useTTS() {
     [],
   );
 
+  /**
+   * Nouns/verbs flashcards: say ONLY the word (e.g. "Drum").
+   * Never phonics drills ("d… d… Drum").
+   */
+  const speakPlainWord = useCallback(
+    (word: string, rate = KIDS_SPEECH_RATE, pitch = KIDS_SPEECH_PITCH) => {
+      const clean = word.trim();
+      if (!clean) return;
+      stopKidsSpeech();
+      speakEnglish(clean, { rate, pitch });
+    },
+    [],
+  );
+
   const speakPraise = useCallback(() => {
-    const phrase = PRAISE_PHRASES[Math.floor(Math.random() * PRAISE_PHRASES.length)];
-    speak(phrase, KIDS_SPEECH_RATE, KIDS_SPEECH_PITCH);
+    const pick =
+      PRAISE_PHRASES[Math.floor(Math.random() * PRAISE_PHRASES.length)];
+    speak(pick, KIDS_SPEECH_RATE, KIDS_SPEECH_PITCH);
   }, [speak]);
 
   const speakWord = useCallback(
@@ -66,5 +82,5 @@ export function useTTS() {
     [speak],
   );
 
-  return { speak, speakPraise, speakWord, speakPhonic };
+  return { speak, speakPlainWord, speakPraise, speakWord, speakPhonic };
 }

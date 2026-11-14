@@ -24,7 +24,9 @@ export default function StopSpeechOnNavigate() {
   }, [pathname]);
 
   useEffect(() => {
-    const stop = () => stopKidsSpeech();
+    const stop = () => {
+      stopKidsSpeech();
+    };
     const onVisibility = () => {
       if (document.visibilityState === "hidden") stop();
     };

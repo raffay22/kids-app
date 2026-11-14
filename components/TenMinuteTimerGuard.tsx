@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import MotionPressable from "@/components/MotionPressable";
 import { speakEnglish } from "@/utils/speech";
 
-const SESSION_MS = 10 * 60 * 1000;
+const SESSION_MS = 30 * 60 * 1000;
 
 const BREAK_MESSAGES = [
-  "Wow! You have been learning for ten minutes. Let's take a little break!",
-  "Great job practicing! Time for a quick rest break.",
-  "Super star! Ten minutes of learning complete. Stretch and breathe!",
+  "Wow! You have been learning for thirty minutes. Let's take a little break!",
+  "Great job practicing! Thirty minutes done — time for a rest break.",
+  "Super star! Thirty minutes of learning complete. Stretch and breathe!",
 ];
 
 type TenMinuteTimerGuardProps = {
@@ -57,7 +57,7 @@ export default function TenMinuteTimerGuard({
             <div className="glass-card border-amber-200/80 p-4 text-slate-800 shadow-2xl">
               <p className="text-sm font-bold text-amber-800">Break Time 🌟</p>
               <p className="mt-1 text-sm text-slate-700">
-                You&apos;ve been practicing for 10 minutes. Time for a calming
+                You&apos;ve been practicing for 30 minutes. Time for a calming
                 break!
               </p>
               <MotionPressable

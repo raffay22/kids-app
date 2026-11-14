@@ -6,7 +6,6 @@ import { BookOpen, ChevronLeft, Home, Moon } from "lucide-react";
 import MotionPressable from "@/components/MotionPressable";
 import { getBedtimeStory } from "@/utils/bedtimeStories";
 import {
-  applyKidsMediaPlaybackRate,
   KIDS_SPEECH_PITCH,
   KIDS_SPEECH_RATE,
   speakEnglish,
@@ -31,13 +30,20 @@ export default function BedtimeStoryPlayer({ storyId, routeLabel }: BedtimeStory
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !story?.video_url) return;
-    const apply = () => applyKidsMediaPlaybackRate(video);
+    const apply = () => {
+      // Bedtime keeps its own film pace (YouTube later). Do not apply parent slow control here.
+      try {
+        video.playbackRate = 1;
+        video.defaultPlaybackRate = 1;
+      } catch {
+        // ignore
+      }
+      video.muted = false;
+    };
     apply();
     video.addEventListener("loadedmetadata", apply);
-    video.addEventListener("play", apply);
     return () => {
       video.removeEventListener("loadedmetadata", apply);
-      video.removeEventListener("play", apply);
     };
   }, [story?.video_url, ready]);
 
@@ -118,12 +124,12 @@ export default function BedtimeStoryPlayer({ storyId, routeLabel }: BedtimeStory
           className="flex items-center justify-center gap-2 rounded-2xl border-b-4 border-slate-200 bg-white px-4 py-3 text-base font-bold text-slate-700 shadow-lg"
         >
           <ChevronLeft className="h-5 w-5" aria-hidden />
-          Stories list
+          All bedtime stories
         </MotionPressable>
         <MotionPressable
           onClick={() => router.push("/")}
           ariaLabel="Go to homepage"
-          className="flex items-center justify-center gap-2 rounded-2xl border-b-4 border-sky-300 bg-sky-500 px-4 py-3 text-base font-bold text-white shadow-lg"
+          className="flex items-center justify-center gap-2 rounded-2xl border-b-4 border-indigo-300 bg-indigo-500 px-4 py-3 text-base font-bold text-white shadow-lg"
         >
           <Home className="h-5 w-5" aria-hidden />
           Home

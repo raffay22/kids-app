@@ -2,11 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { Plus, User } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Plus, Sliders, User } from "lucide-react";
 import AvatarSelector from "@/components/AvatarSelector";
 import ChildSwitcher from "@/components/ChildSwitcher";
 import LogoutButton from "@/components/LogoutButton";
+import ParentalGate from "@/components/ParentalGate";
 import TrophyShowcase from "@/components/TrophyShowcase";
 import { useAuth } from "@/components/AuthProvider";
 import { useActiveChild } from "@/hooks/useActiveChild";
@@ -16,6 +17,7 @@ import { createClient } from "@/utils/supabase/client";
 import type { AgeGroup, ChildProfile } from "@/types/database";
 
 export default function ProfilePage() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const { user, profile, loading, refreshProfile } = useAuth();
   const { children, activeChild, refreshChildren, setActiveChild } = useActiveChild();
@@ -34,6 +36,7 @@ export default function ProfilePage() {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [settingsGateOpen, setSettingsGateOpen] = useState(false);
 
   useEffect(() => {
     if (searchParams.get("add") === "child") {
@@ -162,6 +165,15 @@ export default function ProfilePage() {
         <div className="mt-4">
           <ChildSwitcher />
         </div>
+
+        <button
+          type="button"
+          onClick={() => setSettingsGateOpen(true)}
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-violet-200 bg-violet-50 px-4 py-3 text-sm font-extrabold text-violet-800 shadow-md"
+        >
+          <Sliders className="h-4 w-4" aria-hidden />
+          Sensory &amp; Settings
+        </button>
 
         {!canAddChild && (
           <p className="mt-3 text-xs text-amber-700">

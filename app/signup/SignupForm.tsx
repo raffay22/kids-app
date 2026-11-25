@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { GraduationCap, Lock, Mail, Smile } from "lucide-react";
 import AuthCard from "@/components/auth/AuthCard";
 import FloatingInput from "@/components/auth/FloatingInput";
+import { useAuth } from "@/components/AuthProvider";
 import { detectCountrySilently, saveProfileCountrySafe } from "@/utils/country";
 import { mergeGuestProgressToAccount } from "@/utils/guestProgress";
 import { createClient } from "@/utils/supabase/client";
@@ -20,6 +21,7 @@ type SchoolPreview = {
 
 export default function SignupForm() {
   const router = useRouter();
+  const { refreshProfile } = useAuth();
   const searchParams = useSearchParams();
   const schoolToken = searchParams.get("school_token")?.trim() || "";
 
@@ -84,11 +86,30 @@ export default function SignupForm() {
 
     const detectedCountry = detectCountrySilently();
 
+    if (schoolToken) {
+      try {
+        localStorage.setItem("pending_school_token", schoolToken);
+      } catch {
+        /* ignore */
+      }
+    }
+
+    const emailRedirectTo =
+      typeof window !== "undefined"
+        ? `${window.location.origin}/login${
+            schoolToken ? `?school_token=${encodeURIComponent(schoolToken)}` : ""
+          }`
+        : undefined;
+
     const { data, error: authError } = await supabase.auth.signUp({
       email,
       password,
       options: {
-        data: { country: detectedCountry },
+        emailRedirectTo,
+        data: {
+          country: detectedCountry,
+          ...(schoolToken ? { school_token: schoolToken } : {}),
+        },
       },
     });
 
@@ -158,6 +179,7 @@ export default function SignupForm() {
         }
         // Persist token for checkout if paid school plan
         try {
+          localStorage.removeItem("pending_school_token");
           sessionStorage.setItem("school_token", schoolToken);
           if (actJson.monthly_price_pkr != null) {
             sessionStorage.setItem(
@@ -169,6 +191,7 @@ export default function SignupForm() {
           /* ignore */
         }
 
+        await refreshProfile();
         setLoading(false);
         if (actJson.granted_basic_pro) {
           router.push(createdChildId ? "/" : "/onboarding?school=free");

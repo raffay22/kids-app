@@ -28,7 +28,7 @@ type StorySceneProps = {
   autoPlayNarration?: boolean;
 };
 
-const HOLD_MS = 2000;
+const HOLD_MS = 1200;
 
 export default function StoryScene({
   story,
@@ -253,8 +253,29 @@ export default function StoryScene({
     if (!actionDone) setHoldProgress(0);
   };
 
-  const startHold = () => {
+  const startHold = (e?: React.PointerEvent<HTMLElement>) => {
     if (!isHoldBreath || actionDone || waking) return;
+    if (e) {
+      e.preventDefault();
+      try {
+        e.currentTarget.setPointerCapture(e.pointerId);
+      } catch {
+        // ignore if pointer capture is unsupported
+      }
+    }
+    if (!hasStartedPlaying) {
+      setHasStartedPlaying(true);
+      const video = videoRef.current;
+      if (video) {
+        applyKidsMediaPlaybackRate(video);
+        void video.play().catch(() => undefined);
+      }
+    }
+    if (holdTimerRef.current) {
+      window.clearInterval(holdTimerRef.current);
+      holdTimerRef.current = null;
+    }
+    triggerHaptic(20);
     setHolding(true);
     holdStartRef.current = Date.now();
     holdTimerRef.current = window.setInterval(() => {
@@ -427,11 +448,16 @@ export default function StoryScene({
       {videoSrc ? (
         <div
           className={`relative -mx-2.5 w-[calc(100%+1.25rem)] overflow-hidden rounded-2xl bg-sky-900 shadow-lg sm:mx-auto sm:w-full sm:rounded-3xl ${
-            isHoldBreath && hasStartedPlaying && !actionDone ? "touch-none select-none" : ""
+            isHoldBreath && !actionDone ? "touch-none select-none cursor-pointer" : ""
           }`}
+          style={
+            isHoldBreath && !actionDone
+              ? { WebkitTouchCallout: "none", WebkitUserSelect: "none" }
+              : undefined
+          }
+          onContextMenu={isHoldBreath ? (e) => e.preventDefault() : undefined}
           onPointerDown={isHoldBreath && hasStartedPlaying ? startHold : undefined}
           onPointerUp={isHoldBreath && hasStartedPlaying ? clearHold : undefined}
-          onPointerLeave={isHoldBreath && hasStartedPlaying ? clearHold : undefined}
           onPointerCancel={isHoldBreath && hasStartedPlaying ? clearHold : undefined}
         >
           <video
@@ -447,6 +473,9 @@ export default function StoryScene({
             onLoadedData={(e) => applyKidsMediaPlaybackRate(e.currentTarget)}
             onPlay={(e) => applyKidsMediaPlaybackRate(e.currentTarget)}
             onEnded={handleSuccessVideoEnded}
+            onError={() => {
+              if (waking) handleSuccessVideoEnded();
+            }}
           />
 
           {!hasStartedPlaying && (
@@ -657,6 +686,25 @@ export default function StoryScene({
             onWrong={handlePuzzleWrong}
           />
         </div>
+      ) : isHoldBreath && !actionDone && !waking ? (
+        <button
+          type="button"
+          onContextMenu={(e) => e.preventDefault()}
+          onPointerDown={startHold}
+          onPointerUp={clearHold}
+          onPointerCancel={clearHold}
+          style={{ WebkitTouchCallout: "none", WebkitUserSelect: "none" }}
+          className="relative mx-auto flex w-full max-w-sm touch-none select-none items-center justify-center overflow-hidden rounded-2xl border-b-4 border-sky-600 bg-sky-500 px-6 py-4 text-base font-extrabold text-white shadow-lg transition active:scale-[0.98]"
+        >
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 left-0 bg-emerald-400/80 transition-[width] duration-75"
+            style={{ width: `${holdProgress}%` }}
+          />
+          <span className="relative z-10">
+            {holding ? "Keep holding…" : "Press & Hold Here"}
+          </span>
+        </button>
       ) : scene.interaction_type === "slow_trace" ? (
         <MotionPressable
           onClick={handleHelpGlide}

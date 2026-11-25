@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 import Illustration from "@/components/Illustration";
 import { useAnimationLoopController } from "@/hooks/useAnimationLoopController";
 import { triggerHaptic } from "@/utils/haptics";
-import { playPhonicsVoice } from "@/utils/playPhonicsVoice";
+import { playPhonicsVoice, stopPhonicsVoice } from "@/utils/playPhonicsVoice";
 import { PHONICS_VIDEO_LOOPS_UNTIL_VOICE_ENDS } from "@/utils/phonicsDuration";
 import { stopKidsSpeech } from "@/utils/speech";
 import type { PhonicsCardMedia } from "@/utils/phonicsCatalog";
@@ -56,16 +56,40 @@ const PhonicsVideoCard = forwardRef<PhonicsVideoCardHandle, PhonicsVideoCardProp
 
     useEffect(() => {
       setVideoFailed(false);
+      return () => {
+        stopPhonicsVoice();
+      };
     }, [videoSrc]);
+
+    // Release media decoder buffer on unmount (single-player zero-memory-leak cleanup)
+    useEffect(() => {
+      const video = videoRef.current;
+      return () => {
+        stopPhonicsVoice();
+        if (video) {
+          video.pause();
+          video.removeAttribute("src");
+          video.load();
+        }
+      };
+    }, []);
 
     useEffect(() => {
       if (!showVideo) return;
+      if (videoRef.current) {
+        videoRef.current.muted = true;
+      }
       return bindVideo(videoRef.current);
     }, [bindVideo, showVideo, videoSrc]);
 
     const playCard = () => {
       triggerHaptic(30);
       const video = videoRef.current;
+
+      if (video) {
+        // Keep video strictly muted so embedded video soundtrack never overlaps phonics audio/TTS
+        video.muted = true;
+      }
 
       if (!reducedMotion && PHONICS_VIDEO_LOOPS_UNTIL_VOICE_ENDS && video && loopCap > 0) {
         video.loop = false;
@@ -74,7 +98,9 @@ const PhonicsVideoCard = forwardRef<PhonicsVideoCardHandle, PhonicsVideoCardProp
       }
 
       stopKidsSpeech();
+      stopPhonicsVoice();
 
+      const hasNativeAudio = Boolean(media?.localAudioSrc);
       playPhonicsVoice(
         media,
         {
@@ -84,7 +110,7 @@ const PhonicsVideoCard = forwardRef<PhonicsVideoCardHandle, PhonicsVideoCardProp
             video.pause();
           },
         },
-        allowTts,
+        hasNativeAudio ? false : allowTts,
       );
       onTap?.();
     };

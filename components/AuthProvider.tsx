@@ -63,12 +63,51 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       userId: string,
       authEmail?: string | null,
       authCountry?: string | null,
+      metaSchoolToken?: string | null,
     ) => {
-      const { data, error } = await client
-        .from("profiles")
-        .select("*")
-        .eq("id", userId)
-        .maybeSingle();
+      const readPendingSchoolToken = (): string | null => {
+        if (metaSchoolToken?.trim()) return metaSchoolToken.trim();
+        if (typeof window === "undefined") return null;
+        try {
+          const fromStorage = localStorage.getItem("pending_school_token")?.trim();
+          if (fromStorage) return fromStorage;
+          const fromUrl = new URLSearchParams(window.location.search)
+            .get("school_token")
+            ?.trim();
+          return fromUrl || null;
+        } catch {
+          return null;
+        }
+      };
+
+      const fetchRow = async () =>
+        client.from("profiles").select("*").eq("id", userId).maybeSingle();
+
+      let { data, error } = await fetchRow();
+
+      // Auto-activate any pending 100% free / partner school invite token (e.g. after email confirmation)
+      const pendingToken = readPendingSchoolToken();
+      if (pendingToken && (!data || !data.school_id)) {
+        try {
+          const res = await fetch("/api/schools/activate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ school_token: pendingToken }),
+          });
+          if (res.ok) {
+            try {
+              localStorage.removeItem("pending_school_token");
+            } catch {
+              /* ignore */
+            }
+            const refreshed = await fetchRow();
+            data = refreshed.data;
+            error = refreshed.error;
+          }
+        } catch {
+          /* ignore network failure; keep existing profile */
+        }
+      }
 
       if (error || !data) {
         if (isAdminEmail(authEmail)) {
@@ -115,7 +154,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           typeof data.user.user_metadata?.country === "string"
             ? data.user.user_metadata.country
             : null;
-        await fetchProfile(supabase, data.user.id, data.user.email, metaCountry);
+        const metaSchoolToken =
+          typeof data.user.user_metadata?.school_token === "string"
+            ? data.user.user_metadata.school_token
+            : null;
+        await fetchProfile(
+          supabase,
+          data.user.id,
+          data.user.email,
+          metaCountry,
+          metaSchoolToken,
+        );
       }
       setLoading(false);
     };
@@ -130,7 +179,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           typeof nextUser.user_metadata?.country === "string"
             ? nextUser.user_metadata.country
             : null;
-        await fetchProfile(supabase, nextUser.id, nextUser.email, metaCountry);
+        const metaSchoolToken =
+          typeof nextUser.user_metadata?.school_token === "string"
+            ? nextUser.user_metadata.school_token
+            : null;
+        await fetchProfile(
+          supabase,
+          nextUser.id,
+          nextUser.email,
+          metaCountry,
+          metaSchoolToken,
+        );
       } else {
         setProfile(null);
       }
@@ -143,7 +202,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!supabase || !user) return;
     const metaCountry =
       typeof user.user_metadata?.country === "string" ? user.user_metadata.country : null;
-    await fetchProfile(supabase, user.id, user.email, metaCountry);
+    const metaSchoolToken =
+      typeof user.user_metadata?.school_token === "string"
+        ? user.user_metadata.school_token
+        : null;
+    await fetchProfile(supabase, user.id, user.email, metaCountry, metaSchoolToken);
   };
 
   const signOut = async () => {

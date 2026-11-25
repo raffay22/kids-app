@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="50%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="60%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#eab308" />
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Background Sky & Garden Hills -->
+  <rect width="800" height="500" fill="url(#bg)" />
+  <circle cx="400" cy="80" r="140" fill="#86efac" opacity="0.4" />
+
+  <!-- Wooden Garden Box Frame -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="70" width="660" height="360" rx="28" fill="#78350f" />
+    <rect x="82" y="82" width="636" height="336" rx="22" fill="#92400e" />
+    <rect x="94" y="94" width="612" height="312" rx="18" fill="#14532d" />
+  </g>
+
+  <!-- Garden Soil Grid Cells -->
+  <g opacity="0.5" stroke="#166534" stroke-width="3">
+    <line x1="247" y1="94" x2="247" y2="406" />
+    <line x1="400" y1="94" x2="400" y2="406" />
+    <line x1="553" y1="94" x2="553" y2="406" />
+    <line x1="94" y1="250" x2="706" y2="250" />
+  </g>
+
+  <!-- Flower Shapes with Smiles -->
+  <!-- Red Circle Flower -->
+  <g transform="translate(170, 172)" filter="url(#shadow)">
+    <!-- Petals -->
+    <circle cx="0" cy="-36" r="22" fill="#fda4af" />
+    <circle cx="0" cy="36" r="22" fill="#fda4af" />
+    <circle cx="-36" cy="0" r="22" fill="#fda4af" />
+    <circle cx="36" cy="0" r="22" fill="#fda4af" />
+    <circle cx="-26" cy="-26" r="20" fill="#f43f5e" />
+    <circle cx="26" cy="-26" r="20" fill="#f43f5e" />
+    <circle cx="-26" cy="26" r="20" fill="#f43f5e" />
+    <circle cx="26" cy="26" r="20" fill="#f43f5e" />
+    <!-- Center -->
+    <circle cx="0" cy="0" r="32" fill="#ef4444" />
+    <!-- Happy Face -->
+    <ellipse cx="-10" cy="-6" rx="4" ry="6" fill="#ffffff" />
+    <circle cx="-10" cy="-5" r="3" fill="#1e293b" />
+    <ellipse cx="10" cy="-6" rx="4" ry="6" fill="#ffffff" />
+    <circle cx="10" cy="-5" r="3" fill="#1e293b" />
+    <path d="M -12 8 Q 0 20 12 8" stroke="#ffffff" stroke-width="3.5" fill="none" stroke-linecap="round" />
+    <ellipse cx="-16" cy="7" rx="5" ry="3" fill="#fda4af" />
+    <ellipse cx="16" cy="7" rx="5" ry="3" fill="#fda4af" />
+  </g>
+
+  <!-- Golden Star Flower (Centerpiece - BOOM!) -->
+  <g transform="translate(400, 250)" filter="url(#shadow)">
+    <!-- Magic link connection glow -->
+    <circle cx="0" cy="0" r="85" fill="#fef08a" opacity="0.3" filter="url(#glow)" />
+    <!-- Star Petals -->
+    <path d="M 0 -68 L 19 -22 L 68 -22 L 30 10 L 44 58 L 0 28 L -44 58 L -30 10 L -68 -22 L -19 -22 Z" fill="#fbbf24" stroke="#f59e0b" stroke-width="4" />
+    <circle cx="0" cy="0" r="28" fill="#fef08a" />
+    <!-- Face -->
+    <circle cx="-9" cy="-4" r="4" fill="#78350f" />
+    <circle cx="9" cy="-4" r="4" fill="#78350f" />
+    <path d="M -10 8 Q 0 18 10 8" stroke="#78350f" stroke-width="3.5" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Blue Triangle Blossom -->
+  <g transform="translate(630, 172)" filter="url(#shadow)">
+    <polygon points="0,-45 45,35 -45,35" fill="#38bdf8" stroke="#0284c7" stroke-width="4" stroke-linejoin="round" />
+    <circle cx="0" cy="4" r="16" fill="#e0f2fe" />
+    <circle cx="-6" cy="2" r="2.5" fill="#0369a1" />
+    <circle cx="6" cy="2" r="2.5" fill="#0369a1" />
+    <path d="M -6 10 Q 0 15 6 10" stroke="#0369a1" stroke-width="2.5" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Purple Square Blossom -->
+  <g transform="translate(170, 328)" filter="url(#shadow)">
+    <rect x="-36" y="-36" width="72" height="72" rx="18" fill="#c084fc" stroke="#9333ea" stroke-width="4" />
+    <circle cx="-10" cy="-6" r="3.5" fill="#581c87" />
+    <circle cx="10" cy="-6" r="3.5" fill="#581c87" />
+    <path d="M -10 8 Q 0 18 10 8" stroke="#581c87" stroke-width="3" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Orange Diamond Blossom -->
+  <g transform="translate(630, 328)" filter="url(#shadow)">
+    <polygon points="0,-44 40,0 0,44 -40,0" fill="#fb923c" stroke="#ea580c" stroke-width="4" stroke-linejoin="round" />
+    <circle cx="-8" cy="-4" r="3.5" fill="#7c2d12" />
+    <circle cx="8" cy="-4" r="3.5" fill="#7c2d12" />
+    <path d="M -8 7 Q 0 15 8 7" stroke="#7c2d12" stroke-width="3" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Sparkles / BOOM effects -->
+  <g fill="#fde047" opacity="0.9">
+    <path d="M 330 160 Q 340 160 340 150 Q 340 160 350 160 Q 340 160 340 170 Q 340 160 330 160 Z" />
+    <path d="M 470 150 Q 480 150 480 140 Q 480 150 490 150 Q 480 150 480 160 Q 480 150 470 150 Z" />
+    <path d="M 320 340 Q 330 340 330 330 Q 330 340 340 340 Q 330 340 330 350 Q 330 340 320 340 Z" />
+    <path d="M 480 340 Q 490 340 490 330 Q 490 340 500 340 Q 490 340 490 350 Q 490 340 480 340 Z" />
+  </g>
+
+  <!-- Linking Laser Beam Effect -->
+  <path d="M 170 172 Q 285 211 400 250" stroke="#fef08a" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 8" opacity="0.9" filter="url(#glow)" />
+  <path d="M 400 250 Q 515 211 630 172" stroke="#fef08a" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 8" opacity="0.9" filter="url(#glow)" />
+</svg>

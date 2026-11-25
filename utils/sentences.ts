@@ -98,7 +98,7 @@ function makeSentence(opts: {
   };
 }
 
-/** Basic — playgroup: very short / easy. */
+/** Basic — playgroup: very short / easy, natural present continuous sentences. */
 const BASIC_SENTENCES: SentenceRecord[] = [
   makeSentence({
     id: "basic_01",
@@ -106,8 +106,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Actions",
     word: "Run",
     meaning: "Move fast with your legs",
-    sentence: "I run",
-    distractors: ["jump", "sleep"],
+    sentence: "I am running",
+    distractors: ["jumping", "sleeping"],
   }),
   makeSentence({
     id: "basic_02",
@@ -115,8 +115,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Actions",
     word: "Jump",
     meaning: "Go up and down",
-    sentence: "I jump",
-    distractors: ["run", "sit"],
+    sentence: "I am jumping",
+    distractors: ["running", "sitting"],
   }),
   makeSentence({
     id: "basic_03",
@@ -124,8 +124,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Night",
     word: "Sleep",
     meaning: "Rest with eyes closed",
-    sentence: "She sleeps at night",
-    distractors: ["runs", "day"],
+    sentence: "She is sleeping at night",
+    distractors: ["running", "day"],
   }),
   makeSentence({
     id: "basic_04",
@@ -133,8 +133,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Food",
     word: "Eat",
     meaning: "Put food in your mouth",
-    sentence: "He eats an apple",
-    distractors: ["drinks", "ball"],
+    sentence: "He is eating an apple",
+    distractors: ["drinking", "ball"],
   }),
   makeSentence({
     id: "basic_05",
@@ -142,8 +142,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Food",
     word: "Drink",
     meaning: "Take a sip",
-    sentence: "I drink milk",
-    distractors: ["eat", "run"],
+    sentence: "I am drinking milk",
+    distractors: ["eating", "running"],
   }),
   makeSentence({
     id: "basic_06",
@@ -151,8 +151,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Animals",
     word: "Dog",
     meaning: "A friendly pet",
-    sentence: "The dog runs",
-    distractors: ["cat", "sleeps"],
+    sentence: "The dog is running",
+    distractors: ["cat", "sleeping"],
   }),
   makeSentence({
     id: "basic_07",
@@ -160,8 +160,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Animals",
     word: "Cat",
     meaning: "A soft pet",
-    sentence: "The cat sleeps",
-    distractors: ["dog", "jumps"],
+    sentence: "The cat is sleeping",
+    distractors: ["dog", "jumping"],
   }),
   makeSentence({
     id: "basic_08",
@@ -187,8 +187,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Play",
     word: "Ball",
     meaning: "A round toy",
-    sentence: "I play with a ball",
-    distractors: ["book", "sleep"],
+    sentence: "I am playing with a ball",
+    distractors: ["book", "sleeping"],
   }),
   makeSentence({
     id: "basic_11",
@@ -196,8 +196,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Actions",
     word: "Walk",
     meaning: "Move with steps",
-    sentence: "I walk to school",
-    distractors: ["fly", "home"],
+    sentence: "I am walking to school",
+    distractors: ["flying", "home"],
   }),
   makeSentence({
     id: "basic_12",
@@ -205,8 +205,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Actions",
     word: "Sit",
     meaning: "Rest on a chair",
-    sentence: "I sit on a chair",
-    distractors: ["stand", "run"],
+    sentence: "I am sitting on a chair",
+    distractors: ["standing", "running"],
   }),
   makeSentence({
     id: "basic_13",
@@ -214,8 +214,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Actions",
     word: "Wave",
     meaning: "Say hello with your hand",
-    sentence: "I wave hello",
-    distractors: ["sleep", "eat"],
+    sentence: "I am waving hello",
+    distractors: ["sleeping", "eating"],
   }),
   makeSentence({
     id: "basic_14",
@@ -223,8 +223,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Actions",
     word: "Clap",
     meaning: "Hit hands together",
-    sentence: "I clap my hands",
-    distractors: ["kick", "feet"],
+    sentence: "I am clapping my hands",
+    distractors: ["kicking", "feet"],
   }),
   makeSentence({
     id: "basic_15",
@@ -232,8 +232,8 @@ const BASIC_SENTENCES: SentenceRecord[] = [
     category: "Water",
     word: "Swim",
     meaning: "Move in water",
-    sentence: "The fish swims",
-    distractors: ["flies", "dog"],
+    sentence: "The fish is swimming",
+    distractors: ["flying", "dog"],
   }),
   makeSentence({
     id: "basic_16",

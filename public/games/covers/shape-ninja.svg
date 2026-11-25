@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="dojo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="blade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <filter id="neon" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur1" />
+      <feGaussianBlur stdDeviation="16" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <radialGradient id="moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Night Sky / Ninja Dojo Background -->
+  <rect width="800" height="500" fill="url(#dojo)" />
+  <circle cx="400" cy="250" r="260" fill="url(#moon)" />
+
+  <!-- Cherry blossom petals / embers in air -->
+  <g fill="#f43f5e" opacity="0.4">
+    <ellipse cx="120" cy="90" rx="6" ry="12" transform="rotate(35 120 90)" />
+    <ellipse cx="680" cy="140" rx="5" ry="10" transform="rotate(-25 680 140)" />
+    <ellipse cx="220" cy="420" rx="7" ry="14" transform="rotate(50 220 420)" />
+    <ellipse cx="710" cy="380" rx="6" ry="11" transform="rotate(-40 710 380)" />
+  </g>
+
+  <!-- Flying Crystal 1: Sliced Gem (Triangle) -->
+  <g transform="translate(210, 160)">
+    <!-- Top Half -->
+    <polygon points="-50,20 0,-60 20,-10 -30,20" fill="#ec4899" stroke="#f472b6" stroke-width="3" filter="url(#neon)" />
+    <!-- Bottom Half falling away -->
+    <polygon points="-40,40 30,10 50,40 0,60" fill="#db2777" stroke="#f472b6" stroke-width="3" transform="translate(15, 18) rotate(12)" />
+    <!-- Sparkles -->
+    <circle cx="5" cy="5" r="4" fill="#ffffff" filter="url(#neon)" />
+  </g>
+
+  <!-- Flying Crystal 2: Hexagon Crystal (Center) -->
+  <g transform="translate(420, 270)">
+    <!-- Crystal Hexagon -->
+    <polygon points="0,-70 55,-35 55,35 0,70 -55,35 -55,-35" fill="#06b6d4" stroke="#67e8f9" stroke-width="4" filter="url(#neon)" opacity="0.9" />
+    <!-- Crystal Facets -->
+    <polygon points="0,-70 0,70 -55,35 -55,-35" fill="#0891b2" opacity="0.5" />
+    <polygon points="0,-70 55,-35 0,0" fill="#a5f3fc" opacity="0.7" />
+    <!-- Shininess -->
+    <polygon points="-25,-25 -15,-35 -5,-25 -15,-15" fill="#ffffff" />
+  </g>
+
+  <!-- Flying Crystal 3: Star Gem -->
+  <g transform="translate(620, 170)">
+    <path d="M 0 -50 L 14 -16 L 50 -16 L 22 7 L 32 42 L 0 20 L -32 42 L -22 7 L -50 -16 L -14 -16 Z" fill="#fbbf24" stroke="#fde047" stroke-width="3" filter="url(#neon)" />
+  </g>
+
+  <!-- Flying Crystal 4: Neon Diamond -->
+  <g transform="translate(560, 360)">
+    <polygon points="0,-45 35,0 0,45 -35,0" fill="#a855f7" stroke="#d8b4fe" stroke-width="3" filter="url(#neon)" />
+  </g>
+
+  <!-- Dynamic Ninja Blade Neon Slash (Across whole canvas) -->
+  <g filter="url(#neon)">
+    <path d="M 80 430 Q 380 260 720 70" stroke="url(#blade)" stroke-width="12" stroke-linecap="round" fill="none" />
+    <path d="M 80 430 Q 380 260 720 70" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Blade Impact Glow / Flash -->
+  <circle cx="430" cy="240" r="16" fill="#ffffff" filter="url(#neon)" />
+  <circle cx="210" cy="330" r="10" fill="#67e8f9" filter="url(#neon)" />
+  <circle cx="600" cy="140" r="12" fill="#d8b4fe" filter="url(#neon)" />
+
+  <!-- Slash particles / shards -->
+  <g fill="#ffffff">
+    <polygon points="410,210 425,200 420,225" />
+    <polygon points="460,260 480,250 465,275" />
+    <polygon points="260,310 275,305 270,325" />
+    <polygon points="580,170 595,160 590,180" />
+  </g>
+</svg>

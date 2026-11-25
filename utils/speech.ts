@@ -95,6 +95,25 @@ export function createEnglishUtterance(
 let speakToken = 0;
 let pendingVoiceTimer: number | null = null;
 let pendingVoiceHandler: (() => void) | null = null;
+const beforeSpeakHooks = new Set<() => void>();
+
+/** Register a callback (e.g. external MP3 player) to stop before TTS speaks. */
+export function registerBeforeSpeakHook(hook: () => void): () => void {
+  beforeSpeakHooks.add(hook);
+  return () => {
+    beforeSpeakHooks.delete(hook);
+  };
+}
+
+function notifyBeforeSpeak() {
+  beforeSpeakHooks.forEach((hook) => {
+    try {
+      hook();
+    } catch {
+      // ignore hook errors
+    }
+  });
+}
 
 /** Stop any current or pending spoken line immediately (page leave / navigate). */
 export function stopKidsSpeech() {
@@ -130,6 +149,7 @@ export function speakEnglish(
 ) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
 
+  notifyBeforeSpeak();
   const myToken = ++speakToken;
 
   const speakNow = () => {

@@ -15,6 +15,7 @@ import { burstConfetti, playBoop, playDing } from "@/utils/celebrate";
 import { handleGuestAward } from "@/utils/awardProgress";
 import { logProgress } from "@/utils/logProgress";
 import { FALLBACK_PHONICS, type PhonicsBlend } from "@/utils/phonics";
+import { stopPhonicsVoice } from "@/utils/playPhonicsVoice";
 import { formatPhonicsDisplay } from "@/utils/phonicsSounds";
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -70,6 +71,7 @@ export default function PhonicsSoundBreakdown({ onBlendChange }: PhonicsSoundBre
   const advance = useCallback(
     (delta: number) => {
       if (phonicsList.length === 0) return;
+      stopPhonicsVoice();
       setCurrentIndex((prev) => (prev + delta + phonicsList.length) % phonicsList.length);
       setFeedback(null);
     },
@@ -82,6 +84,7 @@ export default function PhonicsSoundBreakdown({ onBlendChange }: PhonicsSoundBre
         (row) => row.letter.toUpperCase() === letter.toUpperCase(),
       );
       if (idx < 0) return;
+      stopPhonicsVoice();
       setCurrentIndex(idx);
       setFeedback(null);
       setShowLetterPicker(false);
@@ -123,6 +126,7 @@ export default function PhonicsSoundBreakdown({ onBlendChange }: PhonicsSoundBre
 
   const handleSpeechPractice = async () => {
     if (!current || !speechAvailable) return;
+    stopPhonicsVoice();
 
     if (useVoskPath) {
       const ready = await initVosk();
@@ -259,25 +263,17 @@ export default function PhonicsSoundBreakdown({ onBlendChange }: PhonicsSoundBre
         )}
       </AnimatePresence>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={current.id}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.22, ease: "easeOut" }}
-        >
-          <PhonicsVideoCard
-            media={getSchemaMedia(current.letter, current.example_word, current.id)}
-            fallbackWord={current.example_word}
-            lottieUrl={current.lottie_url}
-            title={displayBlend}
-            subtitle={current.example_word}
-            onTap={() => void handleCardTap()}
-            className="border-purple-300 bg-gradient-to-br from-purple-50 via-white to-pink-50"
-          />
-        </motion.div>
-      </AnimatePresence>
+      <div>
+        <PhonicsVideoCard
+          media={getSchemaMedia(current.letter, current.example_word, current.id)}
+          fallbackWord={current.example_word}
+          lottieUrl={current.lottie_url}
+          title={displayBlend}
+          subtitle={current.example_word}
+          onTap={() => void handleCardTap()}
+          className="border-purple-300 bg-gradient-to-br from-purple-50 via-white to-pink-50"
+        />
+      </div>
 
       <div className="flex flex-wrap gap-3">
         <MotionPressable

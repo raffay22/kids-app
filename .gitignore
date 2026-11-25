@@ -52,7 +52,7 @@ next-env.d.ts
 /public/phonics/
 /public/flashcards/
 /public/asd/
-/public/games/
+/public/games/trolley/
 /public/puzzle-stills/
 /video-example/
 *.mp4

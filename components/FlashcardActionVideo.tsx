@@ -30,8 +30,25 @@ export default function FlashcardActionVideo({
   }, [videoSrc]);
 
   useEffect(() => {
-    return bindVideo(videoRef.current);
+    const video = videoRef.current;
+    if (video) {
+      // Enforce muted programmatically so embedded clip audio never overlaps TTS
+      video.defaultMuted = true;
+      video.muted = true;
+    }
+    return bindVideo(video);
   }, [bindVideo, videoSrc, reducedMotion]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    return () => {
+      if (video) {
+        video.pause();
+        video.removeAttribute("src");
+        video.load();
+      }
+    };
+  }, []);
 
   const usePosterOnly = reducedMotion || videoFailed || (frozen && Boolean(posterSrc));
 

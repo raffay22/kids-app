@@ -28,7 +28,6 @@ const SOUND_CARDS: {
   Icon: typeof CloudRain;
   activeClass: string;
   idleClass: string;
-  videoSrc: string;
 }[] = [
   {
     id: "rain",
@@ -36,7 +35,6 @@ const SOUND_CARDS: {
     Icon: CloudRain,
     activeClass: "border-sky-500 bg-sky-200 text-sky-900 ring-2 ring-sky-300",
     idleClass: "border-sky-200 bg-white/90 text-sky-800",
-    videoSrc: "/asd/ripple/rain-3d-loop.mp4",
   },
   {
     id: "ocean",
@@ -44,7 +42,6 @@ const SOUND_CARDS: {
     Icon: Droplets,
     activeClass: "border-cyan-500 bg-cyan-200 text-cyan-950 ring-2 ring-cyan-300",
     idleClass: "border-cyan-200 bg-white/90 text-cyan-800",
-    videoSrc: "/asd/ripple/ocean-3d-loop.mp4",
   },
   {
     id: "wind",
@@ -53,7 +50,6 @@ const SOUND_CARDS: {
     activeClass:
       "border-emerald-500 bg-emerald-200 text-emerald-950 ring-2 ring-emerald-300",
     idleClass: "border-emerald-200 bg-white/90 text-emerald-800",
-    videoSrc: "/asd/ripple/wind-3d-loop.mp4",
   },
 ];
 
@@ -81,18 +77,15 @@ const RIPPLE_BY_SCENE: Record<AmbientKind | "default", string[]> = {
 };
 
 /**
- * Activity 7 — Looping ambient scene videos + ripples + louder sound.
+ * Activity 7 — Calming ambient scene art + interactive ripples + relaxation sounds.
  */
 export default function RippleSoundRoom() {
   const { prefs } = useSensoryPrefs();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const ripplesRef = useRef<Ripple[]>([]);
   const rafRef = useRef<number | null>(null);
   const [activeSound, setActiveSound] = useState<AmbientKind | null>(null);
-
-  const activeCard = SOUND_CARDS.find((c) => c.id === activeSound) ?? null;
 
   const redraw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -170,20 +163,6 @@ export default function RippleSoundRoom() {
     return () => stopAmbientSound();
   }, []);
 
-  // Keep looping video playing when a sound scene is active
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (!activeCard) {
-      video.pause();
-      return;
-    }
-    video.loop = true;
-    video.muted = true;
-    video.playsInline = true;
-    void video.play().catch(() => undefined);
-  }, [activeCard]);
-
   const spawnRipple = (clientX: number, clientY: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -214,16 +193,16 @@ export default function RippleSoundRoom() {
 
   const sceneLabel =
     activeSound === "rain"
-      ? "Rain video looping"
+      ? "Soft rain sound playing"
       : activeSound === "ocean"
-        ? "Ocean waves looping"
+        ? "Calm ocean waves playing"
         : activeSound === "wind"
-          ? "Wind meadow looping"
-          : "Pick Rain, Ocean, or Wind for a looping scene";
+          ? "Gentle wind sound playing"
+          : "Pick Rain, Ocean, or Soft Wind for calming relaxation sounds";
 
   return (
     <div className="relative min-h-[75vh] overflow-hidden rounded-3xl border-4 border-white bg-sky-50 text-slate-800 shadow-xl">
-      {!activeSound && <AmbientSceneArt kind={null} />}
+      <AmbientSceneArt kind={activeSound} />
 
       <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 p-4">
         <Link
@@ -244,7 +223,7 @@ export default function RippleSoundRoom() {
         </h1>
         <p className="mt-1 text-sm font-semibold text-slate-700">{sceneLabel}</p>
         <p className="mt-0.5 text-sm font-medium text-slate-600">
-          Tap the scene for ripples. Videos and sound keep looping while on.
+          Tap the calm canvas for soft ripples. Relaxation sound keeps looping while on.
         </p>
       </div>
 
@@ -252,22 +231,7 @@ export default function RippleSoundRoom() {
         ref={wrapRef}
         className="relative z-10 mx-4 mt-3 min-h-[22rem] flex-1 overflow-hidden rounded-3xl border-4 border-white/80 shadow-inner sm:min-h-[28rem]"
       >
-        {activeCard ? (
-          <video
-            key={activeCard.videoSrc}
-            ref={videoRef}
-            className="absolute inset-0 h-full w-full object-cover"
-            src={`${activeCard.videoSrc}?v=3d`}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            aria-label={`${activeCard.label} scene video looping`}
-          />
-        ) : (
-          <AmbientSceneArt kind={null} />
-        )}
+        <AmbientSceneArt kind={activeSound} />
         <canvas
           ref={canvasRef}
           className="absolute inset-0 z-10 h-full w-full touch-none cursor-pointer"

@@ -92,6 +92,7 @@ export function getMembershipTier(profile: MembershipProfile): MembershipTier {
     profile.is_pro === true ||
     profile.is_membership_active === true ||
     status === "pro" ||
+    status === "active" ||
     status === "basic_pro" ||
     status === "basic" ||
     Boolean(profile.school_code) ||

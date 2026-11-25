@@ -6,10 +6,12 @@ import { useRouter } from "next/navigation";
 import { Lock, Mail } from "lucide-react";
 import AuthCard from "@/components/auth/AuthCard";
 import FloatingInput from "@/components/auth/FloatingInput";
+import { useAuth } from "@/components/AuthProvider";
 import { createClient } from "@/utils/supabase/client";
 
 export default function LoginPage() {
   const router = useRouter();
+  const { refreshProfile } = useAuth();
   const supabase = useMemo(() => {
     try {
       return createClient();
@@ -37,9 +39,8 @@ export default function LoginPage() {
       password,
     });
 
-    setLoading(false);
-
     if (authError) {
+      setLoading(false);
       if (authError.message.toLowerCase().includes("email not confirmed")) {
         setError(
           "📩 Please check your inbox (and spam folder) to activate your account before signing in.",
@@ -50,6 +51,34 @@ export default function LoginPage() {
       return;
     }
 
+    // Activate any pending 100% free / partner school invite token right after sign-in
+    let pendingToken = "";
+    try {
+      const urlToken = new URLSearchParams(window.location.search)
+        .get("school_token")
+        ?.trim();
+      pendingToken = urlToken || localStorage.getItem("pending_school_token")?.trim() || "";
+    } catch {
+      /* ignore */
+    }
+
+    if (pendingToken) {
+      try {
+        const res = await fetch("/api/schools/activate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ school_token: pendingToken }),
+        });
+        if (res.ok) {
+          localStorage.removeItem("pending_school_token");
+        }
+      } catch {
+        /* ignore */
+      }
+      await refreshProfile();
+    }
+
+    setLoading(false);
     router.push("/");
     router.refresh();
   };

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff1f2" />
+      <stop offset="50%" stop-color="#ffe4e6" />
+      <stop offset="100%" stop-color="#fecdd3" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" fill="url(#bg)" />
+
+  <!-- Drawing Easel Paper Sheet -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="50" width="460" height="400" rx="20" fill="#ffffff" stroke="#f43f5e" stroke-width="4" />
+    <!-- Drawing clip at top -->
+    <rect x="250" y="38" width="100" height="24" rx="8" fill="#e11d48" />
+  </g>
+
+  <!-- Friendly Butterfly Outline Being Colored -->
+  <g transform="translate(300, 250)">
+    <!-- Left Wing (Already colored brightly!) -->
+    <path d="M 0 -20 C -70 -120 -180 -80 -170 10 C -160 70 -110 90 -40 60 C -10 40 0 10 0 0 Z" fill="#38bdf8" stroke="#1e293b" stroke-width="5" />
+    <circle cx="-90" cy="-20" r="22" fill="#fbbf24" stroke="#1e293b" stroke-width="4" />
+    <circle cx="-70" cy="40" r="14" fill="#f43f5e" stroke="#1e293b" stroke-width="3" />
+
+    <!-- Right Wing (Line drawing being filled with pink) -->
+    <path d="M 0 -20 C 70 -120 180 -80 170 10 C 160 70 110 90 40 60 C 10 40 0 10 0 0 Z" fill="#fda4af" stroke="#1e293b" stroke-width="5" />
+    <circle cx="90" cy="-20" r="22" fill="#ffffff" stroke="#1e293b" stroke-width="4" />
+    <circle cx="70" cy="40" r="14" fill="#ffffff" stroke="#1e293b" stroke-width="3" />
+
+    <!-- Butterfly Body -->
+    <ellipse cx="0" cy="10" rx="14" ry="55" fill="#a855f7" stroke="#1e293b" stroke-width="5" />
+    <!-- Antennas -->
+    <path d="M -5 -40 Q -25 -70 -40 -60" stroke="#1e293b" stroke-width="4" fill="none" stroke-linecap="round" />
+    <circle cx="-40" cy="-60" r="5" fill="#f43f5e" />
+    <path d="M 5 -40 Q 25 -70 40 -60" stroke="#1e293b" stroke-width="4" fill="none" stroke-linecap="round" />
+    <circle cx="40" cy="-60" r="5" fill="#f43f5e" />
+    <!-- Smiling Face -->
+    <circle cx="-4" cy="-15" r="2.5" fill="#ffffff" />
+    <circle cx="4" cy="-15" r="2.5" fill="#ffffff" />
+    <path d="M -4 -5 Q 0 -1 4 -5" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Wooden Artist Palette on Right -->
+  <g transform="translate(650, 260)" filter="url(#shadow)">
+    <!-- Palette Board -->
+    <path d="M -80 -140 C 30 -160 110 -80 100 20 C 90 120 20 160 -60 140 C -120 120 -150 40 -130 -40 C -120 -80 -100 -120 -80 -140 Z" fill="#fde68a" stroke="#d97706" stroke-width="5" />
+    <!-- Thumb hole -->
+    <ellipse cx="30" cy="60" rx="20" ry="26" fill="#fecdd3" stroke="#d97706" stroke-width="4" />
+
+    <!-- Color Blobs -->
+    <circle cx="-50" cy="-90" r="18" fill="#ef4444" />
+    <circle cx="10" cy="-100" r="18" fill="#f97316" />
+    <circle cx="60" cy="-50" r="18" fill="#eab308" />
+    <circle cx="65" cy="5" r="18" fill="#22c55e" />
+    <circle cx="-30" cy="100" r="18" fill="#3b82f6" />
+    <circle cx="-85" cy="60" r="18" fill="#a855f7" />
+    <circle cx="-100" cy="-10" r="18" fill="#ec4899" />
+  </g>
+
+  <!-- Big Paintbrush painting right now -->
+  <g transform="translate(430, 200) rotate(-35)" filter="url(#shadow)">
+    <!-- Wooden Handle -->
+    <polygon points="-8,-120 8,-120 10,40 -10,40" fill="#b45309" stroke="#78350f" stroke-width="2" />
+    <!-- Silver Ferrule -->
+    <rect x="-11" y="40" width="22" height="26" fill="#cbd5e1" stroke="#64748b" stroke-width="2" />
+    <!-- Bristles dipped in pink paint -->
+    <path d="M -11 66 C -11 85 0 105 0 110 C 0 105 11 85 11 66 Z" fill="#f43f5e" stroke="#e11d48" stroke-width="2" />
+  </g>
+
+  <!-- Little colorful paint splatters -->
+  <circle cx="100" cy="410" r="8" fill="#3b82f6" opacity="0.8" />
+  <circle cx="120" cy="425" r="4" fill="#3b82f6" opacity="0.8" />
+  <circle cx="500" cy="90" r="7" fill="#eab308" opacity="0.8" />
+  <circle cx="520" cy="75" r="4" fill="#eab308" opacity="0.8" />
+</svg>

@@ -33,6 +33,7 @@ import { getObjectCardByWord } from "@/utils/objectFlashcards";
 import { getPronounCardByWord } from "@/utils/pronounFlashcards";
 import { getVerbCardByWord } from "@/utils/verbFlashcards";
 import { formatPhonicsDisplay } from "@/utils/phonicsSounds";
+import { stopPhonicsVoice } from "@/utils/playPhonicsVoice";
 import { getExampleWordForLetter } from "@/utils/illustrations";
 import { burstConfetti, playBoop, playDing } from "@/utils/celebrate";
 import { cacheFlashcardWord, getCachedWordsForCategory } from "@/utils/flashcardCache";
@@ -173,7 +174,7 @@ export default function QuizEngine({ category }: QuizEngineProps) {
       setFeedback(null);
       setCelebrating(false);
       if (category === "abc") {
-        stopKidsSpeech();
+        stopPhonicsVoice();
       }
       void cacheFlashcardWord(pool.card);
     },
@@ -189,7 +190,7 @@ export default function QuizEngine({ category }: QuizEngineProps) {
 
   useEffect(() => {
     if (category === "abc") {
-      stopKidsSpeech();
+      stopPhonicsVoice();
     }
     setUsedIds([]);
     setSessionCorrect(0);

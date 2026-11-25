@@ -9,9 +9,11 @@
   - Sensory-friendly, distraction-free layouts that respect reduced-motion and ASD/PECS preferences.
 
 ## Strict Safety & Editing Rules
-This project is **~95% complete** and only requires targeted UI updates. Follow these rules strictly on every task:
+This project is **LIVE in production on Netlify (`growvajuniorapp.netlify.app`)** and only requires targeted updates. Follow these rules strictly on EVERY task and EVERY prompt:
 
-1. **Do NOT delete any files or folders.** Never remove, overwrite, or rename existing project files unless the user explicitly instructs you to delete a specific file.
-2. **Do NOT change existing code logic.** Preserve all existing business logic, data flow, API calls, Supabase queries, hooks, routing, and functionality. Do not perform unsolicited refactors, type cleanups, or behavioral changes.
-3. **Only modify the file(s) the user is talking about.** Restrict all edits strictly to the specific file(s) requested by the user. If a change appears to require editing another file, ask the user before touching it.
-4. **Windows commands:** Use `cmd.exe /c ...` instead of PowerShell scripts/cmdlets when running terminal commands.
+1. **DO NOT execute `git push` under ANY circumstances until explicitly instructed by the user.**
+2. **Test and verify every fix locally first (`npm run build`)** before reporting completion.
+3. **Do NOT crash the live app:** Never introduce breaking changes; preserve all existing business logic, data flow, API calls, Supabase queries, hooks, routing, and functionality.
+4. **Do NOT delete any files or folders.** Never remove, overwrite, or rename existing project files unless the user explicitly instructs you to delete a specific file.
+5. **Only modify the exact route/file(s) the user asked about.** Restrict all edits strictly to the specific part/file(s) requested by the user without changing or deleting unrelated code logic or files. If a change appears to require editing another file, ask the user before touching it.
+6. **Windows commands:** Use `cmd.exe /c ...` instead of PowerShell scripts/cmdlets when running terminal commands.

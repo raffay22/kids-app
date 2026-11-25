@@ -30,6 +30,23 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Sign in required" }, { status: 401 });
     }
 
+    // Ensure profile row exists before RPC/update (critical when email confirmation skipped signup upsert)
+    await supabase.from("profiles").upsert(
+      {
+        id: user.id,
+        parent_email: user.email ?? null,
+        updated_at: new Date().toISOString(),
+      },
+      { onConflict: "id", ignoreDuplicates: true },
+    );
+
+    // Check if user is already activated on a school to keep endpoint idempotent
+    const { data: existingProfile } = await supabase
+      .from("profiles")
+      .select("school_id, school_code, school_monthly_price_pkr, subscription_status")
+      .eq("id", user.id)
+      .maybeSingle();
+
     // Prefer RPC when migration is applied
     const { data: rpcData, error: rpcError } = await supabase.rpc(
       "activate_school_partner",
@@ -60,6 +77,8 @@ export async function POST(request: Request) {
     const schoolCode = school.school_code || school.school_token;
 
     const profilePatch: Record<string, unknown> = {
+      id: user.id,
+      parent_email: user.email ?? null,
       school_id: school.id,
       school_code: schoolCode,
       school_monthly_price_pkr: monthly,
@@ -74,8 +93,7 @@ export async function POST(request: Request) {
 
     const { error: profileError } = await supabase
       .from("profiles")
-      .update(profilePatch)
-      .eq("id", user.id);
+      .upsert(profilePatch, { onConflict: "id" });
 
     if (profileError) {
       return NextResponse.json({ error: profileError.message }, { status: 500 });
@@ -86,13 +104,15 @@ export async function POST(request: Request) {
       .update({ school_id: school.id, school_code: schoolCode })
       .eq("parent_user_id", user.id);
 
-    await supabase
-      .from("partner_schools")
-      .update({
-        joined_students_count: (school.joined_students_count ?? 0) + 1,
-        updated_at: new Date().toISOString(),
-      })
-      .eq("id", school.id);
+    if (existingProfile?.school_id !== school.id) {
+      await supabase
+        .from("partner_schools")
+        .update({
+          joined_students_count: (school.joined_students_count ?? 0) + 1,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", school.id);
+    }
 
     return NextResponse.json({
       ok: true,

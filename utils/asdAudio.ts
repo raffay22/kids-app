@@ -50,7 +50,18 @@ type AmbientHandles = {
   stop: () => void;
 };
 
-let ambient: AmbientHandles | null = null;
+const activeAmbients = new Set<AmbientHandles>();
+
+function stopAllAmbients(): void {
+  activeAmbients.forEach((handle) => {
+    try {
+      handle.stop();
+    } catch {
+      // ignore
+    }
+  });
+  activeAmbients.clear();
+}
 
 function makeNoiseBuffer(ctx: AudioContext, seconds = 2): AudioBuffer {
   const rate = ctx.sampleRate;
@@ -69,16 +80,12 @@ function makeNoiseBuffer(ctx: AudioContext, seconds = 2): AudioBuffer {
 
 /** Toggle procedural ambient soundscape. Passing null / same kind stops. */
 export function toggleAmbientSound(kind: AmbientKind | null): AmbientKind | null {
+  stopAllAmbients();
+  if (kind == null) return null;
+
   const ctx = getCtx();
   if (!ctx) return null;
   void ctx.resume().catch(() => undefined);
-
-  if (ambient) {
-    ambient.stop();
-    ambient = null;
-    if (kind == null) return null;
-  }
-  if (kind == null) return null;
 
   const source = ctx.createBufferSource();
   source.buffer = makeNoiseBuffer(ctx, 2.5);
@@ -120,34 +127,37 @@ export function toggleAmbientSound(kind: AmbientKind | null): AmbientKind | null
   source.start();
   lfo.start();
 
-  ambient = {
+  const handle: AmbientHandles = {
     stop: () => {
       try {
         const now = ctx.currentTime;
+        lfoGain.disconnect();
+        lfo.disconnect();
         gain.gain.cancelScheduledValues(now);
-        gain.gain.setTargetAtTime(0.0001, now, 0.08);
-        window.setTimeout(() => {
-          try {
-            source.stop();
-            lfo.stop();
-          } catch {
-            // ignore
-          }
-          source.disconnect();
-          filter.disconnect();
-          gain.disconnect();
-          lfo.disconnect();
-          lfoGain.disconnect();
-        }, 220);
+        gain.gain.setValueAtTime(0, now);
+        try {
+          source.stop();
+        } catch {
+          // ignore if already stopped
+        }
+        try {
+          lfo.stop();
+        } catch {
+          // ignore if already stopped
+        }
+        source.disconnect();
+        filter.disconnect();
+        gain.disconnect();
       } catch {
         // ignore
       }
     },
   };
 
+  activeAmbients.add(handle);
   return kind;
 }
 
 export function stopAmbientSound(): void {
-  toggleAmbientSound(null);
+  stopAllAmbients();
 }

@@ -4,12 +4,13 @@ import { useMemo } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { isProUser } from "@/lib/membership";
 
-/** 4 games that are 100% locked behind the Pro paywall (no free levels). */
+/** 5 games that are 100% locked behind the Pro paywall (no free levels). */
 export const PRO_LOCKED_GAME_IDS = new Set([
   "bloom-blast",
   "shape-ninja",
   "coin-toy-shop",
   "supermarket-trolley",
+  "tactile-memory",
 ]);
 
 /** Flashcard categories that are 100% free. */
@@ -39,6 +40,7 @@ export type ProFeatureKey =
   | "game:shape-ninja"
   | "game:coin-toy-shop"
   | "game:supermarket-trolley"
+  | "game:tactile-memory"
   | "game:picture-puzzle:pro"
   | "game:math:pro"
   | "game:logic:pro"

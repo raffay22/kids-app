@@ -160,7 +160,24 @@ export default function RippleSoundRoom() {
   }, [prefs.reducedMotion, redraw]);
 
   useEffect(() => {
-    return () => stopAmbientSound();
+    const handleLeave = () => {
+      stopAmbientSound();
+      setActiveSound(null);
+    };
+    const handleVisibility = () => {
+      if (document.hidden) {
+        handleLeave();
+      }
+    };
+    window.addEventListener("pagehide", handleLeave);
+    window.addEventListener("beforeunload", handleLeave);
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => {
+      window.removeEventListener("pagehide", handleLeave);
+      window.removeEventListener("beforeunload", handleLeave);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      stopAmbientSound();
+    };
   }, []);
 
   const spawnRipple = (clientX: number, clientY: number) => {
@@ -207,6 +224,10 @@ export default function RippleSoundRoom() {
       <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 p-4">
         <Link
           href="/asd"
+          onClick={() => {
+            stopAmbientSound();
+            setActiveSound(null);
+          }}
           className="inline-flex items-center gap-2 rounded-2xl border-4 border-white bg-white/90 px-4 py-2 text-sm font-bold text-slate-700 shadow-md backdrop-blur-md"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden />

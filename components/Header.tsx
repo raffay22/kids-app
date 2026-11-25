@@ -10,6 +10,7 @@ import ProfilePeekModal from "@/components/ProfilePeekModal";
 import { useAuth } from "@/components/AuthProvider";
 import { useActiveChild } from "@/hooks/useActiveChild";
 import { useStreak } from "@/hooks/useStreak";
+import { isProUser } from "@/lib/membership";
 import { getAvatarById } from "@/utils/avatars";
 import { triggerHaptic } from "@/utils/haptics";
 import { speakEnglish } from "@/utils/speech";
@@ -142,6 +143,14 @@ export default function Header() {
               <ShieldCheck className="h-4 w-4" aria-hidden />
               <span className="hidden sm:inline">Admin</span>
             </Link>
+          ) : isProUser(profile) ? (
+            <span
+              title="Growva Junior Pro Active"
+              className="inline-flex h-8 items-center justify-center gap-1.5 rounded-xl border-b-2 border-emerald-500 bg-emerald-500 px-2.5 text-xs font-black text-white shadow-sm sm:h-auto sm:rounded-2xl sm:border-b-4 sm:px-3.5 sm:py-2 sm:text-sm sm:shadow-md"
+            >
+              <Sparkles className="h-4 w-4" aria-hidden />
+              <span className="hidden sm:inline">Pro Active</span>
+            </span>
           ) : (
             <Link
               href="/upgrade"

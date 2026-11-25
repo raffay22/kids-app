@@ -87,7 +87,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       // Auto-activate any pending 100% free / partner school invite token (e.g. after email confirmation)
       const pendingToken = readPendingSchoolToken();
-      if (pendingToken && (!data || !data.school_id)) {
+      if (pendingToken && (!data || !data.school_id || data.subscription_status === "free")) {
         try {
           const res = await fetch("/api/schools/activate", {
             method: "POST",

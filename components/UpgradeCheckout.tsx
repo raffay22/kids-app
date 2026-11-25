@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Globe, GraduationCap, Sparkles } from "lucide-react";
 import { useAuth } from "@/components/AuthProvider";
-import { TIER_PRICING } from "@/lib/membership";
+import { isProUser, TIER_PRICING } from "@/lib/membership";
 import {
   COUNTRIES,
   detectCountrySilently,
@@ -58,6 +58,7 @@ export default function UpgradeCheckout() {
   };
 
   const isPK = isPakistanCountry(country);
+  const alreadyPro = isProUser(profile);
 
   useEffect(() => {
     if (tokenFromUrl) {
@@ -161,6 +162,24 @@ export default function UpgradeCheckout() {
 
   return (
     <div className="space-y-5">
+      {alreadyPro && (
+        <section className="rounded-3xl border-2 border-emerald-300 bg-emerald-50 p-5 text-center shadow-md">
+          <p className="text-lg font-extrabold text-emerald-900">
+            🎉 Your Growva Junior Pro Access is Active!
+          </p>
+          <p className="mt-1 text-sm font-medium text-emerald-800">
+            {profile?.school_code
+              ? `100% Free Partner Access (${profile.school_code}) — all games, stories, flashcards & worksheets are unlocked.`
+              : "All Pro games, stories, flashcards, and worksheets are already unlocked for your account."}
+          </p>
+          <Link
+            href="/"
+            className="mt-4 inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-6 py-3 text-sm font-extrabold text-white shadow-md transition hover:bg-emerald-700"
+          >
+            Go to Learning Home
+          </Link>
+        </section>
+      )}
       <section className="rounded-3xl border-4 border-indigo-100 bg-gradient-to-br from-indigo-50 via-white to-violet-50 p-6 shadow-xl">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>

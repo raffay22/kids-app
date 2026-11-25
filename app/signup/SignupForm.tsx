@@ -21,7 +21,7 @@ type SchoolPreview = {
 
 export default function SignupForm() {
   const router = useRouter();
-  const { refreshProfile } = useAuth();
+  const { user, refreshProfile } = useAuth();
   const searchParams = useSearchParams();
   const schoolToken = searchParams.get("school_token")?.trim() || "";
 
@@ -48,6 +48,11 @@ export default function SignupForm() {
       setSchoolError(null);
       return;
     }
+    try {
+      localStorage.setItem("pending_school_token", schoolToken);
+    } catch {
+      /* ignore */
+    }
     let cancelled = false;
     (async () => {
       const res = await fetch(
@@ -62,11 +67,33 @@ export default function SignupForm() {
       }
       setSchoolError(null);
       setSchool(data.school as SchoolPreview);
+
+      // If parent is ALREADY signed in and opened a 100% free / partner invite link, activate immediately
+      if (user) {
+        const act = await fetch("/api/schools/activate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ school_token: schoolToken }),
+        });
+        if (act.ok && !cancelled) {
+          const actJson = await act.json();
+          try {
+            localStorage.removeItem("pending_school_token");
+          } catch {
+            /* ignore */
+          }
+          await refreshProfile();
+          if (actJson.granted_basic_pro) {
+            router.replace("/");
+            router.refresh();
+          }
+        }
+      }
     })();
     return () => {
       cancelled = true;
     };
-  }, [schoolToken]);
+  }, [schoolToken, user, refreshProfile, router]);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();

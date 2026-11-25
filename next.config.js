@@ -2,6 +2,7 @@ const path = require("path");
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
+  serverExternalPackages: ["@opentelemetry/api"],
   transpilePackages: ["three", "@react-three/fiber", "@react-three/drei"],
   turbopack: {
     root: path.resolve(__dirname),

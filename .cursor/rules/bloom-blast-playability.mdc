@@ -1,0 +1,67 @@
+---
+description: Bloom Blast match-3 rules — always playable boards; rotate learning; Group 2/3 swipe; never touch finished levels
+globs: "**/bloom-blast/**"
+alwaysApply: true
+---
+
+# Bloom Blast — hard rules (all age groups)
+
+## Never touch finished levels
+
+- Only change the **current level** the user is discussing.
+- Do **not** edit levels already approved unless the user reopens that level.
+- **Groups 1 and 2 are finished** — do not edit Tiny Explorers (L1–5) or Curious Minds (L6–10) content, glyphs, voice, or gestures unless the user reopens them.
+- Group 1 controls stay **drag / tap-swap** as built — do not convert Group 1 to swipe.
+
+## Group 2 & Group 3 — swipe
+
+- Primary input: **finger swipe** to an adjacent box to swap (modern kids match-3).
+- Backup: tap one box, tap neighbor.
+- Do not change Group 1 gesture while building Group 2/3.
+
+## Biggest rule: always a playable BOOM
+
+After every start, blast, gravity, and refill:
+
+1. **No free ready match** on the board (kid must swap to score).
+2. **≥1 neighbor swap** that creates a valid 3+ match for that level’s rules.
+
+**Never ship a sparse-target board** (too few blues / too few bigs). Colour and size levels use `buildGuaranteedChallengeBoard` — mostly TARGET tiles (~60%+), planted one-swap, randomized (no identical loop). Do not refill with a blocker-only checker.
+
+## Rotate learning each replay (all 3 groups)
+
+Via `beginPlaySession(levelId)`:
+
+- **Colour levels**: rotate target colour; TTS says colour only (`Blue… BOOM!`).
+- **Size levels (L4)**: teach by **seeing**, not reading tags.
+  - Rotate BIG / TALL / SHORT / SMALL / TINY / FAT / THIN.
+  - Board always shows BOTH sides of the pair (tall next to short, fat next to thin).
+  - Glyph scale follows **tile size**, not the banner word — never draw every icon as SHORT on a SHORT round.
+  - BIG/SMALL → shapes · TALL/SHORT → boy/girl/house/building/chair · TINY → bug/seed/button · FAT/THIN → shape width contrast.
+  - Word chips on tiles are optional; voice + visual contrast do the teaching.
+- **L1**: progressive shapes; TTS says shape only (`Circle… BOOM!`).
+- **L2**: adjective + shape (unchanged style).
+- **L6–8**: rotate fruit / veggie / vehicle packs; TTS adjective + name; labels on tiles.
+- **L9**: rotate `Blast only VEGETABLES!` ↔ `Blast only FRUITS!`. TTS says category only (`Blast vegetables… BOOM!` / `Blast fruits… BOOM!`) — not each item adjective.
+- **L10**: rotate color + category banners (e.g. green vegetables / red fruits).
+- **L11**: rotate space/sky pack; TTS object + space fact.
+- **L12**: rotate plant-part challenge; TTS plant fact lines.
+- **L13**: rotate living ↔ non-living; TTS `Living thing… BOOM!` / `Non living thing… BOOM!`.
+- **L14**: rotate solid / liquid / gas; TTS `[Item] is a [State]… BOOM!`.
+- **L15**: rotate adjectives ↔ verbs; TTS `[Word] is an Adjective/Verb… BOOM!`.
+- **L16**: rotate math targets 10 / 12 / 15 / 20 / 30; TTS `[Equation] is [N]… BOOM!`.
+
+## Match rules
+
+- **none**: same tile id.
+- **color**: same colorKey — board mostly that colour.
+- **size**: same size — board mostly that size.
+- **category**: same fruit/vegetable category — board mostly that category (~65%).
+- **colorCategory**: same colorKey + category — board mostly dual targets (~65%).
+- **plantPart**: same plant part key — board mostly that part (~65%).
+- **living**: living vs non-living — board mostly target side (~65%).
+- **matter**: same matter state — board mostly that state (~65%).
+- **speechPart**: same part of speech — board mostly adjectives or verbs (~65%).
+- **mathTarget**: equation result equals target — board mostly correct equations (~65%).
+
+Ortho row/col ≥3. Score only from the kid’s swap — no auto-cascade.

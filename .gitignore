@@ -1,0 +1,75 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# supabase cli temp
+supabase/.temp/
+
+# netlify local
+.netlify
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Large local media — keep on disk / Supabase CDN; do not push to GitHub
+/public/stories/
+/public/phonics/
+/public/flashcards/
+/public/asd/
+/public/games/
+/public/puzzle-stills/
+/video-example/
+*.mp4
+*.mp3
+*.webm
+*.mov
+*.wav
+*.m4a
+
+# Corrupted / unreadable local script (recreate if needed)
+/scripts/restore-phonics-scripts.mjs
+
+# Local workspace MCP config (contains secret tokens)
+.agents/mcp_config.json
+
+# Local scratch / temporary folders
+/tmp/
+/public/_tmp_sql/
+/scripts/__pycache__/
+/pdfssheetskids.md/
